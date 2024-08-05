@@ -1,0 +1,280 @@
+ul#navigation
+{
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    left: -1px;
+    /*bottom: 180px;*/
+    bottom: 460px;
+    list-style: none;
+    z-index: 9999;
+}
+ul#navigation li
+{
+    width: 110px;
+    text-decoration: none;
+    line-height: 1.7em;
+    list-style: none;
+}
+ul#navigation li a
+{
+    position: fixed;
+    margin: 0px;
+    display: block;
+    margin-left: -2px;
+    width: 110px;
+    height: 70px;
+    background-color: #CFCFCF;
+    background-repeat: no-repeat;
+    background-position: right center;
+    border: 1px solid #AFAFAF;
+    -moz-border-radius: 0px 10px 10px 0px;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -khtml-border-bottom-right-radius: 10px;
+    -khtml-border-top-right-radius: 10px;
+    border-radius: 0px 10px 10px 0px;
+    behavior: url('../css/PIE.htc');
+    -pie-track-active: false;
+    opacity: 0.6;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+}
+ul#navigation a, a:hover
+{
+    color: #0D0914;
+    text-decoration: none;
+    font-weight: bold;
+}
+ul#navigation .home a
+{
+    background-image: url(../Images/home.png);
+}
+ul#navigation .about a
+{
+    background-image: url(../Images/changePwd/btnToolPwd.png);
+}
+ul#Help .about2 a
+{
+    background-image: url(../Images/Howto/btnToolHelp.png);
+}
+
+ul#HelpSelect .HelpSelect a
+{
+    background-image: url(../Images/Howto/btnToolHelp.png);
+}
+
+ul#CloseHelp a
+{
+    background-image: url(../Images/Howto/btnToolClose.png);
+}
+ul#Help .CloseHelp a
+{
+    background-image: url(../Images/upgradeClass/btnToolData.png);
+}
+ul#navigation .search a
+{
+    background-image: url(../images/search.png);
+}
+ul#navigation .podcasts a
+{
+    background-image: url(../images/ipod.png);
+}
+ul#navigation .rssfeed a
+{
+    background-image: url(../images/rss.png);
+}
+ul#navigation .photos a
+{
+    background-image: url(../images/camera.png);
+}
+ul#navigation .contact a
+{
+    background-image: url(../images/mail.png);
+}
+
+
+ul#Help
+{
+    position: fixed;
+    margin: 0px;
+    padding: 0px; /*top: 10px;*/
+    left: -1px;
+    bottom: 100px;
+    list-style: none;
+    z-index: 1999;
+}
+ul#FAQ
+{
+    position: fixed;
+    margin: 0px;
+    padding: 0px; /*top: 10px;*/
+    left: -1px;
+    bottom: 20px;
+    list-style: none;
+    z-index: 1999;
+}
+ul#HelpSelect
+{
+    position: fixed;
+    margin: 0px;
+    padding: 0px; /*top: 10px;*/
+    left: -1px;
+    bottom: 20px;
+    list-style: none;
+    z-index: 9999;
+}
+ul#CloseHelp
+{
+    right: -55px;
+    position: fixed;
+    margin: 0px;
+    padding: 0px; /*top: 10px;*/
+    top: 50px;
+    list-style: none;
+    z-index: 9999;
+    list-style: none;
+}
+ul#Help li
+{
+    width: 110px;
+    text-decoration: none;
+    line-height: 1.7em;
+    list-style: none;
+}
+ul#FAQ li
+{
+    width: 110px;
+    text-decoration: none;
+    line-height: 1.7em;
+    list-style: none;
+}
+ul#HelpSelect li
+{
+    width: 110px;
+    text-decoration: none;
+    line-height: 1.7em;
+    list-style: none;
+}
+ul#CloseHelp li
+{
+    width: 110px;
+    text-decoration: none;
+    line-height: 1.7em;
+    text-align: right;
+    list-style: none;
+}
+
+
+
+ul#Help li a
+{
+    display: block;
+    margin-left: -2px;
+    width: 110px;
+    height: 70px;
+    background-color: #CFCFCF;
+    background-repeat: no-repeat;
+    background-position: right center;
+    border: 1px solid #AFAFAF;
+    -moz-border-radius: 0px 10px 10px 0px;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -khtml-border-bottom-right-radius: 10px;
+    -khtml-border-top-right-radius: 10px;
+    border-radius: 0px 10px 10px 0px;
+    behavior: url('../css/PIE.htc');
+    -pie-track-active: false;
+    opacity: 0.6;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+}
+ul#FAQ li a
+{
+    display: block;
+    margin-left: -2px;
+    width: 110px;
+    height: 70px;
+    background-color: #CFCFCF;
+    background-repeat: no-repeat;
+    background-position: right center;
+    border: 1px solid #AFAFAF;
+    -moz-border-radius: 0px 10px 10px 0px;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -khtml-border-bottom-right-radius: 10px;
+    -khtml-border-top-right-radius: 10px;
+    border-radius: 0px 10px 10px 0px;
+    behavior: url('../css/PIE.htc');
+    -pie-track-active: false;
+    opacity: 0.6;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+}
+ul#HelpSelect li a
+{
+    display: block;
+    margin-left: -2px;
+    width: 110px;
+    height: 70px;
+    background-color: #CFCFCF;
+    background-repeat: no-repeat;
+    background-position: right center;
+    border: 1px solid #AFAFAF;
+    -moz-border-radius: 0px 10px 10px 0px;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -khtml-border-bottom-right-radius: 10px;
+    -khtml-border-top-right-radius: 10px;
+    border-radius: 0px 10px 10px 0px;
+    behavior: url('../css/PIE.htc');
+    -pie-track-active: false;
+    opacity: 0.6;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+}
+ul#CloseHelp li a
+{
+    display: block;
+    margin-left: 40px;
+    width: 120px;
+    height: 70px;
+    background-color: #CFCFCF;
+    background-repeat: no-repeat;
+    background-position: left center;
+    border: 1px solid #AFAFAF;
+    -moz-border-radius: 10px 0px 0px 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -webkit-border-top-left-radius: 10px;
+    -khtml-border-bottom-left-radius: 10px;
+    -khtml-border-top-left-radius: 10px;
+    border-radius: 10px 0px 0px 10px;
+    behavior: url('../css/PIE.htc');
+    -pie-track-active: false;
+    opacity: 0.6;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+}
+
+
+
+ul#Help a, a:hover
+{
+    color: #0D0914;
+    text-decoration: none;
+    font-weight: bold;
+}
+ul#FAQ a, a:hover
+{
+    color: #0D0914;
+    text-decoration: none;
+    font-weight: bold;
+}
+ul#HelpSelect a, a:hover
+{
+    color: #0D0914;
+    text-decoration: none;
+    font-weight: bold;
+}
+ul#CloseHelp a, a:hover
+{
+    color: #0D0914;
+    text-decoration: none;
+    font-weight: bold;
+}
+
