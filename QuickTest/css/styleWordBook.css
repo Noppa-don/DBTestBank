@@ -1,0 +1,89 @@
+﻿#tools_wordbook
+{
+    display: none;
+    position: absolute;
+    top: 10%;
+    background-color: #C7DA6A;
+    border-radius: 5px;
+    width: 790px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    height: 430px;
+    padding-top: 10px;
+}
+#wordbookMain
+{
+    height: 418px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+}
+.headAlphabet
+{
+    text-align: right;
+    font-size: 40px;
+    padding-right: 6px;
+}
+.backAlphabet
+{
+    background-color: Gray;
+    float: left;
+    width: 50px;
+    height: 50px;
+    z-index: 999;
+}
+.wordsBook
+{
+    background: rgb(232, 241, 183);
+    height: 356px;
+    overflow-y: scroll;
+    margin-top: 5px;
+}
+.Alphabet
+{
+    width: 70px;
+    height: 70px;
+    border: 2px solid #ffffff;
+    position: static;
+    margin: 18px;
+    float: left;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.55;
+    border-radius: 5px;
+    background-color: rgb(133, 192, 57);
+    color: #ffffff;
+    cursor: pointer;
+}
+wordHead
+{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.wordsBook table
+{
+    font-size: 13px;
+    font-family: Arial,Helvetica,sans-serif;
+}
+.wordsBook td
+{
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 5px;
+}
+.clear
+{
+    clear: both;
+    line-height: 0;
+    height: 0;
+}
+
+wordsBook td i
+{
+    font-size: 10px;
+}
+f
+{
+    color: rgb(126, 126, 126);
+}
