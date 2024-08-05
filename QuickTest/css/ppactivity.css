@@ -1,0 +1,71 @@
+﻿#PanelMakeToDestination .startPoint {
+    background: url('../Images/Activity/home.png');
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    background-size: cover;
+}
+
+#PanelMakeToDestination .endPoint {
+    background: url('../Images/Activity/endflag.png');
+    width: 22px;
+    height: 32px;
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    background-size: cover;
+}
+
+#imgHere {
+    width: 11px;
+}
+#PanelTools > div {
+    padding: 0!important; 
+    width: inherit!important;
+    height: inherit!important;
+}
+#PanelTools > div > div {
+    background: url('../Images/Activity/tool.png') no-repeat;
+        width: 100%;
+    height: 100%;
+    background-size: 70%;
+    background-position-y: 50%;
+    background-position-x: 45%;
+}
+
+#BtnSwapQuestion.leapQuestion {
+    background-image: url("../Images/Activity/leap.png");
+    background-size: cover;
+}
+
+#BtnSwapQuestion.noleapQuestion {
+    background: url("../Images/Activity/activitypagepad2.png") -270px -135px;
+}
+
+#BtnNext {
+    background-size: 85px;
+    background-image: url("../Images/Activity/lefthand.png");
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+}
+#BtnPrev{
+    background-size: 85px;
+    background-image: url("../Images/Activity/righthand.png");
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+}
+#BtnExitQuiz{
+    background-image:url("../Images/Activity/exit.png");background-repeat: no-repeat;background-size: 85px;
+}
+#CloseDivSlide {
+            width: 50px;
+            height: 50px;
+            background: url('../Images/Activity/close.png');
+            float: right;
+            background-repeat: no-repeat;
+            margin-right: -20px;
+            margin-top: -20px;
+                background-size: cover;
+        }
