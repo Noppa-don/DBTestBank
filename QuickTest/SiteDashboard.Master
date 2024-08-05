@@ -1,0 +1,905 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="SiteDashboard.Master.vb"
+    Inherits="QuickTest.newSite" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Comatible" content="IE=edge" />
+    <link href="css/newStyle.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery-ui-1.8.18.custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/fixMenuSlide.css" rel="stylesheet" type="text/css" />
+    <link href="./css/iframestyle.css" rel="stylesheet" type="text/css" />
+    <link href="./css/contactstyle.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./shadowbox/shadowbox.css" type="text/css" />
+    <style type="text/css">
+        .new, .old {
+            background-size: contain;
+            padding-left: 70px !important;
+        }
+
+        div.extendmenu {
+            width: 60px;
+            height: 60px;
+            position: relative;
+            top: 5px;
+            border-radius: 5px;
+            background-size: cover;
+            cursor: pointer;
+        }
+
+        div#btnNews {
+            background-image: url('../Images/ExtendMenu/btnToolNews.png');
+        }
+
+        div#btnSession {
+            background-image: url('../Images/ExtendMenu/btnToolSession.png');
+        }
+
+        div#btnContactSupport {
+            background-image: url('../Images/Support.png');
+        }
+
+        div#Chat {
+            background-image: url('../Images/ExtendMenu/btnToolChat.png');
+        }
+
+        div#btnExtendMenu {
+            background-image: url('../Images/ExtendMenu/btnToolExtendMenu.png');
+        }
+
+        .menu1 {
+            background-image: url('../Images/1600x900_01.png');
+        }
+
+        .menu2 {
+            background-image: url('../Images/1600x900_02.png');
+        }
+
+        .menu3 {
+            background-image: url('../Images/1600x900_03.png');
+        }
+
+        .menu4 {
+            background-image: url('../Images/1600x900_04.png');
+        }
+
+        .menu5 {
+            background-image: url('../Images/1600x900_05.png');
+        }
+
+        .menu6 {
+            background-image: url('../Images/1600x900_06.png');
+        }
+
+        .ForSpnNotification {
+            background-color: red;
+            position: absolute;
+            left: 35px;
+            top: -5px;
+            width: 25px;
+            height: 25px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            font-size: 13px;
+            display: none;
+        }
+    </style>
+
+    <telerik:RadCodeBlock ID="RadCodeBlockStyle" runat="server">
+        <%If IsAndroid = True Then%>
+        <style type="text/css">
+            .ulTopMenu {
+                font-size: 13px !important;
+                width: 1000px !important;
+            }
+
+            #main, .content {
+                width: 860px !important;
+            }
+
+            .ulTopMenu li a {
+                padding: 10px 45px 20px 45px !important;
+                height: 50px !important;
+                line-height: 50px !important;
+                font-size: 20px !important;
+            }
+        </style>
+        <%End If%>
+    </telerik:RadCodeBlock>
+
+    <telerik:RadCodeBlock ID='RadcodeBlock1' runat="server">
+        <script src="<%=ResolveUrl("~")%>js/jquery-1.7.1.js" type="text/javascript"></script>
+        <script src="<%=ResolveUrl("~")%>js/GFB.js" type="text/javascript"></script>
+        <script src="<%=ResolveUrl("~")%>js/json2.js" type="text/javascript"></script>
+        <script src="<%=ResolveUrl("~")%>js/Animation.js" type="text/javascript"></script>
+        <script src="<%=ResolveUrl("~")%>js/jquery-ui-1.8.18.min.js" type="text/javascript"></script>
+<%--        <script src="<%=ResolveUrl("~")%>Scripts/jquery.signalR-2.0.2.min.js" type="text/javascript"></script>
+        <script src='<%=ResolveClientUrl("~/signalr/hubs") %>' type="text/javascript"></script> --%>          
+    </telerik:RadCodeBlock>
+
+    <telerik:RadCodeBlock ID='RadcodeBlock2' runat="server">
+        <%--<script src="<%=ResolveUrl("~")%>js/modernizr.custom.js" type="text/javascript"></script>--%>
+    </telerik:RadCodeBlock>
+
+    <telerik:RadCodeBlock ID='RadcodeBlock3' runat="server">
+    </telerik:RadCodeBlock>
+
+    <telerik:RadCodeBlock ID='RadcodeBlock4' runat="server">
+    </telerik:RadCodeBlock>
+
+    <telerik:RadCodeBlock ID='RadcodeBlock5' runat="server">
+        <script type="text/javascript">var baseUrl = "<%= ResolveUrl("~/") %>"; </script>
+        <% If Not IE = "1" Then%>
+    <%--    <script src="<%=ResolveUrl("~")%>js/DashboardSignalR.js" type="text/javascript"></script>--%>
+        <%End If%>
+    </telerik:RadCodeBlock>
+
+    <telerik:RadCodeBlock ID='RadcodeBlock6' runat="server">
+    </telerik:RadCodeBlock>
+
+    <telerik:RadCodeBlock ID='RadcodeBlock7' runat="server">
+        <script type="text/javascript">var FontSize = '<%=Session("FontSize") %>';</script>
+
+    </telerik:RadCodeBlock>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+    <style type="text/css">
+        ul li {
+            list-style-type: initial;
+            margin: initial;
+            padding: initial;
+            line-height: initial;
+        }
+
+        .topMenu {
+            position: relative;
+            list-style: none;
+            float: left;
+            margin: 0;
+            padding: 0;
+        }
+
+        .ulTopMenu {
+            margin-top: 20px;
+            width: 966px;
+            position: relative;
+            display: inline-block;
+            margin: 0 0.2%;
+            background-color: #F68500;
+            list-style: none;
+            padding: 0;
+            text-shadow: 1px 1px #7E4D0E;
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+            box-shadow: 0 1px 2px rgba(0,0,0,.2);
+            color: #FFF;
+            border: solid 1px #4f674f;
+            /*background: #F78D1D;
+            background: -webkit-gradient(linear, left top, left bottom, from(#FAA51A), to(#F47A20));
+            background: -moz-linear-gradient(top, #FAA51A, #F47A20);*/
+            -webkit-border-radius: 0.5em;
+            -moz-border-radius: 0.5em;
+            border-radius: 0.5em;
+            background: #faa51a; /* Old browsers */
+            /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZhYTUxYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNDdhMjAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+            background: -moz-linear-gradient(top, #faa51a 0%, #f47a20 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#faa51a), color-stop(100%,#f47a20)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #faa51a 0%,#f47a20 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #faa51a 0%,#f47a20 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #faa51a 0%,#f47a20 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #96c396 0%,#4f674f 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#faa51a', endColorstr='#f47a20',GradientType=0 ); /* IE6-8 */
+        }
+
+            .ulTopMenu a {
+                height: 22px;
+                padding: 10px 50px 20px 50px;
+                display: block;
+                cursor: pointer;
+                border-right: solid 1px #F4F7FF;
+                color: #fff;
+                text-transform: uppercase;
+                text-decoration: none;
+                font: 150% 'THSarabunNew';
+                line-height: 1.5;
+            }
+
+                .ulTopMenu a:hover {
+                    color: #444; /*!important
+            font-weight: bolder;*/
+                    text-shadow: none;
+                    text-decoration: none;
+                }
+
+        .currentPage {
+            color: Yellow;
+            font-weight: bolder;
+        }
+
+        ul#ChangeFontSize, ul#ChangeSession, ul#ResetGroupSubjectPwd {
+            position: fixed;
+            margin: 0px;
+            padding: 0px;
+            left: -1px;
+            bottom: 100px;
+            list-style: none;
+            z-index: 9999;
+            margin-left: -52px;
+        }
+
+        ul#ResetGroupSubjectPwd {
+            bottom: 465px;
+        }
+
+            ul#ChangeFontSize li, ul#ChangeSession li, ul#ResetGroupSubjectPwd li {
+                width: 110px;
+                height: 190px;
+                background-color: #CFCFCF;
+                border: 1px solid #AFAFAF;
+                -moz-border-radius: 0px 10px 10px 0px;
+                -webkit-border-bottom-right-radius: 10px;
+                -webkit-border-top-right-radius: 10px;
+                -khtml-border-bottom-right-radius: 10px;
+                -khtml-border-top-right-radius: 10px;
+                border-radius: 0px 10px 10px 0px;
+                behavior: url('../css/PIE.htc');
+                -pie-track-active: false;
+                opacity: 0.6;
+                filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+            }
+
+            ul#ResetGroupSubjectPwd li {
+                height: 70px;
+            }
+
+        #btnChangefontsize {
+            width: 60px;
+            position: absolute;
+            text-align: center;
+            top: 6px;
+            right: 1px;
+            display: none;
+        }
+        /*#btnChangefontsize input[type="button"]
+        {
+            width: 40px;
+            height: 40px;
+        }*/
+        div#TxtMenu, div#txtChangeSession {
+            width: 50px;
+            height: auto;
+            text-align: center;
+            font-size: 20px;
+            top: 55px;
+            position: absolute;
+            font-weight: bold;
+        }
+    </style>
+    <style type="text/css">
+        ul#ExtraMenu {
+            position: fixed;
+            margin: 0px;
+            padding: 0px;
+            left: -1px;
+            bottom: 182px;
+            list-style: none;
+            z-index: 9999;
+        }
+
+            ul#ExtraMenu li {
+                width: 110px;
+                text-decoration: none;
+                line-height: 1.7em;
+                list-style: none;
+            }
+
+                ul#ExtraMenu li a {
+                    position: fixed;
+                    margin: 0px;
+                    padding-left: 4px;
+                    width: 305px;
+                    height: 70px;
+                    background-color: #CFCFCF;
+                    background-repeat: no-repeat;
+                    background-position: right center;
+                    border: 1px solid #AFAFAF;
+                    -moz-border-radius: 0px 10px 10px 0px;
+                    -webkit-border-bottom-right-radius: 10px;
+                    -webkit-border-top-right-radius: 10px;
+                    -khtml-border-bottom-right-radius: 10px;
+                    -khtml-border-top-right-radius: 10px;
+                    border-radius: 0px 10px 10px 0px;
+                    behavior: url('../css/PIE.htc');
+                    -pie-track-active: false;
+                    opacity: 0.6;
+                    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+                    display: -ms-flexbox;
+                }
+
+        div.extendmenu {
+            width: 60px;
+            height: 60px;
+            position: relative;
+            top: 5px;
+            border-radius: 5px;
+            background-size: cover;
+            cursor: pointer;
+        }
+
+        div#btnNews {
+            background-image: url('../Images/ExtendMenu/btnToolNews.png');
+        }
+
+        div#btnSession {
+            background-image: url('../Images/ExtendMenu/btnToolSession.png');
+        }
+
+        div#btnContactSupport {
+            background-image: url('../Images/Support.png');
+        }
+
+        div#Chat {
+            background-image: url('../Images/ExtendMenu/btnToolChat.png');
+        }
+
+        div#btnExtendMenu {
+            background-image: url('../Images/ExtendMenu/btnToolExtendMenu.png');
+        }
+
+        .ForSpnNotification {
+            background-color: red;
+            position: absolute;
+            left: 35px;
+            top: -5px;
+            width: 25px;
+            height: 25px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            font-size: 13px;
+            display: none;
+        }
+    </style>
+   <link href="css/LogoutStyle.css" rel="stylesheet" />
+
+    <!--[if gte IE 9]>
+        <style type="text/css">
+        .gradient{filter:none;}
+        </style>
+        <![endif]-->
+
+    <%--<script src="../js/jquery-1.7.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            var dashboardMode = $("#hdKeepCurrentPage").val();
+            $('.topMenu').children().each(function () {
+                if ($(this).parent().hasClass('Student') && dashboardMode == "0") {
+                    $(this).addClass('currentPage');
+                }
+                else if ($(this).parent().hasClass('Quiz') && dashboardMode == "1") {
+                    $(this).addClass('currentPage');
+                }
+                else if ($(this).parent().hasClass('Homework') && dashboardMode == "2") {
+                    $(this).addClass('currentPage');
+                }
+                else if ($(this).parent().hasClass('Practice') && dashboardMode == "3") {
+                    $(this).addClass('currentPage');
+                }
+                else if ($(this).parent().hasClass('Print') && dashboardMode == "4") {
+                    $(this).addClass('currentPage');
+                }
+                else if ($(this).parent().hasClass('Testset') && dashboardMode == "5") {
+                    $(this).addClass('currentPage');
+                }
+                else {
+                    $(this).removeClass('currentPage');
+                }
+            });
+            $('.topMenu').click(function () {
+                if ($(this).hasClass('Student')) {
+                    $("#hdKeepCurrentPage").val("0");
+                }
+                else if ($(this).hasClass('Quiz')) {
+                    $("#hdKeepCurrentPage").val("1");
+                }
+                else if ($(this).hasClass('Homework')) {
+                    $("#hdKeepCurrentPage").val("2");
+                }
+                else if ($(this).hasClass('Practice')) {
+                    $("#hdKeepCurrentPage").val("3");
+                }
+                else if ($(this).hasClass('Print')) {
+                    $("#hdKeepCurrentPage").val("4");
+                }
+                else if ($(this).hasClass('Testset')) {
+                    $("#hdKeepCurrentPage").val("5");
+                }
+            });
+        });        
+    </script>--%>
+
+    <telerik:RadCodeBlock ID='RadCodeBlockMaster' runat="server">
+
+        <script type="text/javascript">
+            var ua = navigator.userAgent.toLowerCase();
+            var isAndroid = ua.indexOf("android") > -1;
+            $(function () {
+
+                //Hover animation
+                InjectHoverShake('.topMenu');
+                InjectionHover('.TestsetMenu h3', 3);
+                InjectionHover('.HaveRoom div', 5);
+                InjectionHover('#imgChooseClass', 5, false);
+
+                //page transition
+                if (!isAndroid) {
+                    FadePageTransition();
+                    $('.topMenu').click(function () {
+                        FadePageTransitionOut();
+                    });
+                    $(':submit').click(function () {
+                        FadePageTransitionOut();
+                    })
+                }
+
+                //เมื่อกด Tab Menu ส้มๆ ข้างบน
+                $('a').each(function () {
+                    //new FastButton(this, TriggerClickTagA);
+                });
+
+                //ปุ่ม Resize Font-Size
+                if ($('#btnFontSize0').length != 0) {
+                    new FastButton(document.getElementById('btnFontSize0'), TriggerClickFontSize0);
+                }
+                if ($('#btnFontSize1').length != 0) {
+                    new FastButton(document.getElementById('btnFontSize1'), TriggerClickFontSize1);
+                }
+                if ($('#btnFontSize2').length != 0) {
+                    new FastButton(document.getElementById('btnFontSize2'), TriggerClickFontSize2);
+                }
+
+                $('#btnNews').click(function () {
+                    if (isAndroid) {
+                        $.fancybox({
+                            'autoScale': true,
+                            'transitionIn': 'none',
+                            'transitionOut': 'none',
+                            'href': '<%=ResolveUrl("~")%>SchoolNewsPage.aspx',
+                            'type': 'iframe',
+                            'width': 750,
+                            'minHeight': 450
+                        });
+                    }
+                    else {
+                        $.fancybox({
+                            'autoScale': true,
+                            'transitionIn': 'none',
+                            'transitionOut': 'none',
+                            'href': '<%=ResolveUrl("~")%>SchoolNewsPage.aspx',
+                            'type': 'iframe',
+                            'width': 1000,
+                            'minHeight': 650
+                        });
+                    }
+                });
+               
+
+                //Check WebConfig RunMode
+                var RunModeConfig = '<%= BusinessTablet360.ClsKNSession.RunMode %>';
+                if (RunModeConfig == 'wordonly' || RunModeConfig == 'twotests') {
+                    $('#liStudent').hide();
+                    $('#liQuiz').hide();
+                    $('#liHomework').hide();
+                    $('#liPractice').hide();
+                    $('#liPrint').css('width', '490px');
+                    $('#liTestset').css('width', '490px');
+                    //$('div#Chat').hide();
+                    //$('div#ChangeSession').hide();
+                }
+                else if (RunModeConfig == 'standalonenotablet') {
+                    $('#liStudent').hide();
+                    $('#liHomework').hide();
+                    $('#liQuiz').css('width', '245px');
+                    $('#liPractice').css('width', '245px');
+                    $('#liPrint').css('width', '245px');
+                    $('#liTestset').css('width', '245px');
+                    //$('div#Chat').hide();
+                    //$('div#ChangeSession').hide();
+                }
+                else if (RunModeConfig == 'labonly') {
+
+                    //$('#liHomework').hide();
+                    //$('#liPractice').hide();
+                    //$('#liStudent').css('width', '245px');
+                    //$('#liQuiz').css('width', '245px');
+                    //$('#liPrint').css('width', '245px');
+                    //$('#liTestset').css('width', '245px');
+
+                    $('#liHomework').hide();
+                    $('#liPractice').hide();
+                    $('#liStudent').css('width', '320px');
+                    $('#liQuiz').css('width', '320px');
+                    $('#liPrint').hide();
+                    $('#liTestset').css('width', '320px');
+
+                    //$('div#Chat').hide();
+                    //$('div#ChangeSession').hide();
+                }
+                else {
+                    $('#liHomework').css('width', '180px')
+                    $('#liPractice').css('width', '156px')
+                    $('#liStudent').css('width', '175px');
+                    $('#liQuiz').css('width', '140px');
+                    $('#liPrint').css('width', '165px');
+                    $('#liTestset').css('width', '154px');
+                }
+
+                var WithT360 = '<%= HttpContext.Current.Application("ConnectedWithT360").ToString() %>';
+                if ((WithT360 == 'True') || (WithT360 == 'true')) {
+                    $('#ExtraMenu').children('li').children('a').css('margin-left', '-250px');
+                } else {
+                    $('#ExtraMenu').children('li').children('a').css('width', '120px').css('margin-left', '-66px');
+                }
+                // ปุ่ม extramenu android click เอา
+                $('#btnExtendMenu').click(function () {
+                    if (isAndroid == true) {
+                        if ($(this).hasClass('active')) {
+                            if ((WithT360 == 'True') || (WithT360 == 'true')) {
+                                $('#ExtraMenu').children('li').children('a').css('margin-left', '-186px');
+                            } else {
+                                $('#ExtraMenu').children('li').children('a').css('width', '120px').css('margin-left', '-66px');
+                            }
+                            $(this).removeClass('active');
+                        } else {
+                            $('#ExtraMenu').children('li').children('a').css('margin-left', '0px');
+                            $(this).addClass('active');
+                        }
+                    }
+                });
+                // ปุ่ม extramenu pc hover เอา
+                $('#ExtraMenu').hover(function () {
+                    if (isAndroid != true) {
+                        if ((WithT360 == 'True') || (WithT360 == 'true')) {
+                            $(this).stop().animate({ 'marginLeft': '250px' }, 300);
+                        } else {
+                            $(this).children('li').children('a').css('width', '120px');
+                            $(this).stop().animate({ 'marginLeft': '66px' }, 300);
+                        }
+                    }
+                }, function () {
+                    if (isAndroid != true) {
+                        $(this).stop().animate({ 'marginLeft': '0px' }, 400);
+                    }
+                });
+
+                $('#navigation > li').hover(function () {
+                    $('a', $(this)).stop().animate({ 'marginLeft': '0px' }, 200);
+                }, function () {
+                    $('a', $(this)).stop().animate({ 'marginLeft': '-52px' }, 200);
+                });
+
+                $('#ResetGroupSubjectPwd').hover(function () {
+                    $(this).stop().animate({ 'marginLeft': '0px' }, 200);
+                }, function () {
+                    $(this).stop().animate({ 'marginLeft': '-52px' }, 200);
+                });
+
+                $('#ChangeFontSize').hover(function () {
+                    $(this).stop().animate({ 'marginLeft': '0px' }, 200);
+                }, function () {
+                    $(this).stop().animate({ 'marginLeft': '-52px' }, 200);
+                });
+
+                $('#Help a').stop().animate({ 'marginLeft': '-52px' }, 1000);
+                $('#Help > li').hover(function () {
+                    $('a', $(this)).stop().animate({ 'marginLeft': '-2px' }, 200);
+                }, function () {
+                    $('a', $(this)).stop().animate({ 'marginLeft': '-52px' }, 200);
+                });
+
+                //หาว่ามี Notification ที่หน้า Chat มารึเปล่า
+                CheckChatNotification();
+
+                    var $btnLogout = $('<ul>', { id: 'btnLogout' }).append($('<li>').append($('<a>', { 'onclick': 'Logout();' })));
+                    $('body').append($btnLogout);
+
+                    var $btnContact = $('<ul>', { id: 'btnContact' }).append($('<li>').append($('<a>', { 'onclick': 'GotoContact();' })));
+                    $('body').append($btnContact);
+
+            });
+
+            //function TriggerClickTagA(e) {
+            //    var obj = e.target;
+            //    window.location($(obj).attr('href'));
+            //}
+
+            function TriggerClickFontSize0(e) {
+                SetFontSize(0, e)
+            }
+
+            function TriggerClickFontSize1(e) {
+                SetFontSize(1, e)
+            }
+
+            function TriggerClickFontSize2(e) {
+                SetFontSize(2, e)
+            }
+
+            function ChangePassword() {
+                $.fancybox({
+                    'autoScale': true,
+                    'transitionIn': 'none',
+                    'transitionOut': 'none',
+                    'href': '<%=ResolveUrl("~")%>UserToChangePassword.aspx',
+                    'type': 'iframe',
+                    'width': 600,
+                    'minHeight': 450
+                    //'onClose': refreshPage()
+                });
+            }
+
+            function ResetGroupsubjectPassword() {
+                $.fancybox({
+                    'autoScale': true,
+                    'transitionIn': 'none',
+                    'transitionOut': 'none',
+                    'href': '<%=ResolveUrl("~")%>admin/ResetGroupSubjectPassword.aspx',
+                    'type': 'iframe',
+                    'width': 800,
+                    'minHeight': 500
+                    //'onClose': refreshPage()
+                });
+            }
+
+            function ChatWithParent() {
+                window.location = '<%=ResolveUrl("~")%>Watch/ChatTeacherSelectParent.aspx';
+            }
+
+            function CloseHelpPanel() {
+                $.fancybox.close();
+            }
+
+            function ChangeSession() {
+                $.fancybox({
+                    'autoScale': true,
+                    'transitionIn': 'none',
+                    'transitionOut': 'none',
+                    'href': '<%=ResolveUrl("~")%>Session/SelectSession.aspx?lb=1',
+                    'type': 'iframe',
+                    'width': 700,
+                    'minHeight': 550
+                    //'onClose': refreshPage()
+                });
+
+            }
+
+            function ContactSupport() {
+                //window.open('<%=ResolveUrl("~")%>ContactSupport.aspx', '_blank');
+                window.open('<%=ResolveUrl("~")%>Support/MainSupportPage.aspx', '_blank');
+            }
+
+            function CheckChatNotification() {
+                $.ajax({
+                    type: "POST",
+                    url: "<%=ResolveUrl("~")%>WebServices/DashboardSignalRService.asmx/ServiceCheckChatNotification",
+                    contentType: "application/json; charset=utf-8", dataType: "json",
+                    success: function (msg) {
+                        if (msg.d !== '') {
+                            if (msg.d == 0) {
+                                $('#spnNotification').hide();
+                            }
+                            else {
+                                $('#spnNotification').show();
+                                $('#spnNotification').text(msg.d);
+                            }
+                        }
+                        else {
+                            $('#spnNotification').hide();
+                        }
+                    },
+                    error: function myfunction(request, status) {
+                        //alert('บางอย่างผิดพลาดโปรดลองอีกครั้ง')
+                    }
+                });
+            }
+
+              
+
+            //$('#Help').click(function () {$.fancybox({'autoScale': true,'transitionIn': 'none','transitionOut': 'none','href': '<%=ResolveUrl("~")%>ShowImgHelpPage.aspx?FolderName=' + FolderName + '&PageName=' + PageName,'type': 'iframe','width': 600,'minHeight':450});});
+        
+        </script>
+        <script type="text/javascript">
+            // Css for IE,Safari,Firefox
+            $(function () {
+                if ($.browser.msie || !!navigator.userAgent.match(/Trident\/7\./) || navigator.userAgent.indexOf('Firefox') > -1) {
+                    $('li#liTestset').children('a').css('border-right-color', 'transparent');
+                    if ($.browser.version < 10.0 || navigator.userAgent.indexOf('Firefox') > -1) {
+                        $('div.extendmenu').css({ 'display': 'table-cell', 'float': 'left' });
+                    }
+                    if ($.browser.version < 9.0) {
+                        $('div.showMenuFixedBar').css({ 'right': '-38px' });
+                    }
+                }
+                if (navigator.userAgent.indexOf('Safari') > -1) {
+                    $('.ulTopMenu').css('width', '980px');
+                    $('div.extendmenu').css({ 'display': 'table-cell', 'float': 'left' });
+                }
+
+                //var ww = ($(window).width() < window.screen.width) ? $(window).width() : window.screen.width; //get proper width
+                //var mw = 480; // min width of site
+                //var ratio = ww / mw; //calculate ratio
+                //if (ww < mw) { //smaller than minimum size
+                //    $('#Viewport').attr('content', 'initial-scale=' + ratio + ', maximum-scale=' + ratio + ', minimum-scale=' + ratio + ', user-scalable=yes, width=' + ww);
+                //} else { //regular size
+                //    $('#Viewport').attr('content', 'initial-scale=1.0, maximum-scale=2, minimum-scale=1.0, user-scalable=yes, width=' + ww);
+                //    $('meta[name=viewport]').attr('content', 'width=1200,user-scalable=yes,initial-scale=0.1, maximum-scale=0.1, minimum-scale=0.1');
+                //}
+            });
+        </script>
+         <script type="text/javascript">
+            $(document).ready(function () {
+                var ww = ($(window).width() < window.screen.width) ? $(window).width() : window.screen.width; //get proper width
+                if (ww == 0) {
+                    setTimeout(function () {
+                        ww = ($(window).width() < window.screen.width) ? $(window).width() : window.screen.width; //get proper width
+                    }, 1200);
+                    if (ww == 0) { ww = 640 };
+                }
+                var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+                var pageLocation = window.location.href;
+                var scale;                
+                if (pageLocation.toLowerCase().indexOf('activitypage_pad') != -1) {
+                    scale = ww / 942;
+                    if (iOS) {
+                        if (ww < 768) {
+                            scale = ww / 580;
+                        } else {
+                            scale = ww / 742;
+                        }
+                    } else {
+                        scale = ww / 942;
+                    }
+                } else {
+                    if (iOS) {
+                        if (ww < 768) { // iphone 5,6
+                            scale = ww / 750;
+                        } else { //ipad mini
+                            scale = ww / 950;
+                        }
+                    } else {
+                        scale = ww / 1200;
+                    }                  
+                }               
+                $('meta[name=viewport]').attr('content', 'width=device-width,user-scalable=no,initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale);             
+            });
+        </script>
+
+    </telerik:RadCodeBlock>
+
+</head>
+<body>
+    <%If Not BusinessTablet360.ClsKNSession.IsMaxONet Then %>
+    <script src="<%=ResolveUrl("~")%>js/bg.js" type="text/javascript"></script>
+    <%End If %>
+    <form id="form1" runat="server">
+        <asp:HiddenField runat="server" ID="hdd" ClientIDMode="Static" Value="1" />
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+        </telerik:RadScriptManager>
+        <center>
+
+            <ul class="ulTopMenu" style="margin-top: 15px;">
+                <li id="liStudent" class="topMenu Student"><a class="currentPage" href="<%=ResolveUrl("~")%>Student/DashboardStudentPage.aspx">นักเรียน</a></li>
+                <li id="liQuiz" class="topMenu Quiz"><a href="<%=ResolveUrl("~")%>Quiz/DashboardQuizPage.aspx">ควิซ</a></li>
+                <li id="liHomework" class="topMenu Homework"><a href="<%=ResolveUrl("~")%>Homework/DashboardHomeworkPage.aspx">การบ้าน</a></li>
+                <li id="liPractice" class="topMenu Practice"><a href="<%=ResolveUrl("~")%>Practice/DashboardPracticePage.aspx">ฝึกฝน</a></li>
+                <li id="liPrint" class="topMenu Print"><a href="<%=ResolveUrl("~")%>PrintTestset/DashboardPrintTestsetPage.aspx">ใบงานมาตรฐาน</a></li>
+                <li id="liTestset" class="topMenu Testset"><a href="<%=ResolveUrl("~")%>Testset/DashboardSetupPage.aspx"
+                    style="border-right: initial;">จัดชุดด้วยตนเอง</a></li>
+                <%-- <li class="topMenu"><a href="<%=ResolveUrl("~")%>DashboardSystemPage.aspx" style="border-right: initial;">ภาพรวม</a></li>--%>
+            </ul>
+        </center>
+        <%--<ul id="ChangeSession" style="bottom: 500px;">
+            <li class="about" style="height: 100px;" onclick="ChangeSession()">
+                <div id="txtChangeSession">เปลี่ยนห้อง</div>
+
+            </li>
+        </ul>--%>
+   
+        <%If BusinessTablet360.ClsKNSession.RunMode = "full" Or BusinessTablet360.ClsKNSession.RunMode = "studenttablet" Or BusinessTablet360.ClsKNSession.RunMode = "labonly" Then%>
+        <ul id="ExtraMenu" class="about" style="display:none;">
+            <li class="about">
+                <a style="margin-left: 0px; display: flex;">
+                    <%If HttpContext.Current.Application("ConnectedWithT360") = True Then%>
+                    <div id="btnContactSupport" onclick="ContactSupport()" class="extendmenu" title="ติดต่อเจ้าหน้าที่"></div>
+                    <div id="Chat" onclick="ChatWithParent()" class="extendmenu" title="คุยกับนักเรียน">
+                        <span id="spnNotification" class="ForSpnNotification"></span>
+                    </div>
+                    <div id="btnNews" class="extendmenu" title="ข่าวประกาศโรงเรียน"></div>
+                    <%End If%>
+                    <div id="btnSession" onclick="ChangeSession()" class="extendmenu" title="ควบคุมการสอนห้องอื่น"></div>
+                    <div id="btnExtendMenu" class="extendmenu"></div>
+                </a>
+            </li>
+        </ul>
+        <%End If%>
+        <%If BusinessTablet360.ClsKNSession.RunMode = "standalonenotablet" And HttpContext.Current.Session("UserName").ToString().ToLower() = "admin" Then%>
+        <ul id="ResetGroupSubjectPwd" class="about">
+            <li class="about"><a title="Reset รหัสผ่าน ให้แต่ละหมวด" onclick="ResetGroupsubjectPassword()" style="margin-left: 0px; color: #0D0914; text-decoration: none; font-weight: bold;">Reset<br />
+                รหัสผ่าน</a>
+                <div onclick="ResetGroupsubjectPassword()" style="cursor: pointer; background-image: url(../Images/changePwd/btnResetPwd.png); background-repeat: no-repeat; width: 61px; height: 60px; top: 6px; position: absolute; right: 0px">
+                </div>
+            </li>
+        </ul>
+        <%End If%>
+
+        <ul id="Help" style="display:none;" clientidmode="Static" runat="server">
+            <li class="about2" style="z-index: 99;"><a title="สงสัยในการใช้งาน ทำตามขั้นตอนตัวอย่างนี้นะคะ"
+                id="HelpLogin">
+                <div style="margin-top: 7px;">
+                    <span style="font-size: initial; position: relative; left: 10px;">ช่วย</span>
+                </div>
+                <div>
+                    <span style="font-size: initial; position: relative; left: 8px;">เหลือ</span>
+                </div>
+            </a></li>
+        </ul>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+
+    <script src="<%=ResolveUrl("~")%>js/ResizeText.js" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~")%>shadowbox/shadowbox.js" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~")%>js/jquery.fancybox.js" type="text/javascript"></script>
+
+        <% If HttpContext.Current.Session("PDeviceId") Is Nothing Or HttpContext.Current.Session("TabletUser") = False Then %>
+            <%If not BusinessTablet360.ClsKNSession.IsMaxONet Then %>
+ 
+            <script type="text/javascript">
+
+                Shadowbox.init({
+                    skipSetup: false
+                });
+
+                var $dialogLogout = $('<div>');
+                var myBtn = {};
+                myBtn["ยกเลิก"] = function () {
+                    $dialogLogout.dialog('close');
+                };
+                myBtn["ตกลง"] = function () {
+                    window.location = '../loginpage.aspx';
+                };
+                      <%If HttpContext.Current.Application("runmode") = "twotests" Then%>
+            $dialogLogout.dialog({ buttons: myBtn, draggable: false, resizable: false, modal: true, autoOpen: false }).dialog('option', 'title', 'ต้องการออกจาก 2Tests ?');
+        <%Else%>
+            $dialogLogout.dialog({ buttons: myBtn, draggable: false, resizable: false, modal: true, autoOpen: false }).dialog('option', 'title', 'ต้องการออกจาก Pointplus ?');
+        <%end If%>
+
+                function Logout() {
+                    $dialogLogout.dialog('open');
+                }
+
+                function GotoContact() {
+                    Shadowbox.open({
+                        content: '<div style="overflow: hidden;white-space: nowrap; background-color:white;"><iframe scrolling="no" style="overflow: hidden;white-space: nowrap; " src="<%=ResolveUrl("~")%>Contact.aspx" frameborder="0" width="700" height="570"></iframe></div>',
+                        player: "html",
+                        title: "ติดต่อเรา",
+                        height: 570,
+                        width: 700
+                    });
+                };
+
+            </script>
+        <%End If %>
+    <%End If %>
+</body>
+</html>
