@@ -1,0 +1,175 @@
+﻿Imports System.Web.Script.Serialization
+Imports KnowledgeUtils
+Public Class DefaultMaxOnet
+    Inherits System.Web.UI.Page
+
+    Private db As New ClassConnectSql()
+    Protected SubjectsIdStr As String = ""
+    Protected EnableSelect As Boolean = False
+
+    Private SubjectsId As New List(Of String)({CommonSubjectsText.ThaiSubjectId, CommonSubjectsText.EnglishSubjectId, CommonSubjectsText.SocialSubjectId, CommonSubjectsText.MathSubjectId,
+                                                    CommonSubjectsText.ScienceSubjectId, CommonSubjectsText.HomeSubjectId, CommonSubjectsText.HealthSubjectId, CommonSubjectsText.ArtSubjectId})
+    Protected ThaiId As String = CommonSubjectsText.ThaiSubjectId
+    Protected MathId As String = CommonSubjectsText.MathSubjectId
+    Protected EngId As String = CommonSubjectsText.EnglishSubjectId
+    Protected SocialId As String = CommonSubjectsText.SocialSubjectId
+    Protected ScienceId As String = CommonSubjectsText.ScienceSubjectId
+    Protected HomeId As String = CommonSubjectsText.HomeSubjectId
+    Protected HealthId As String = CommonSubjectsText.HealthSubjectId
+    Protected ArtId As String = CommonSubjectsText.ArtSubjectId
+
+    Protected StudentId As String = ""
+    Protected StudentClass As String = ""
+
+    Protected DeviceId As String
+    Protected TokenId As String
+
+    Protected CreditAmount As Integer = 0
+
+    Private SubjectRegistered As New List(Of MaxonetSubjectClassRegister)
+    Protected SubjectRegisteredJson As String
+
+    Private js As New JavaScriptSerializer()
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Page.Header.DataBind()
+
+        HttpContext.Current.Session.Abandon()
+        HttpContext.Current.Session.Clear()
+
+        DeviceId = Request.QueryString("DeviceUniqueID")
+        TokenId = Request.QueryString("token")
+
+        If DeviceId Is Nothing OrElse TokenId Is Nothing OrElse DeviceId = "" OrElse TokenId = "" Then
+            deviceDisable.Style.Item("display") = "block"
+            Exit Sub
+        End If
+
+        ' check ว่า status ยัง active อยู่หรือเปล่า
+        TokenId = Guid.Parse(TokenId).ToString("D")
+        Dim sql As String = "SELECT k.KCU_OwnerId,s.Student_CurrentClass FROM maxonet_tblKeyCodeUsage k INNER JOIN t360_tblStudent s ON k.KCU_OwnerId = s.Student_Id "
+        sql &= " WHERE k.KCU_IsActive = 1 And k.KCU_DeviceId = '" & DeviceId.CleanSQL & "' AND k.KCU_Token = '" & TokenId.CleanSQL & "';"
+        Dim dt As DataTable = db.getdata(sql)
+        If dt.Rows.Count = 0 Then
+            ' deviceDisable.Style.Item("display") = "block"
+            Response.Redirect("~/DroidPad/NotUsage.aspx")
+            Exit Sub
+        End If
+
+        StudentId = dt.Rows(0)("KCU_OwnerId").ToString()
+        StudentClass = ChangeStudentClass(dt.Rows(0)("Student_CurrentClass").ToString())
+
+        Dim keyCode_Type As Integer = GetKeyCodeType()
+        ' case keycode ที่ลงทะเบียนใหม่ หมดอายุแล้ว
+        If keyCode_Type = EnumMaxOnetKeyCodeType.keyCodeExpire Then
+            Response.Redirect("~/DroidPad/NotUsage.aspx")
+        End If
+
+        ' assign value
+        initialDataSubjectRegistered()
+
+        CreditAmount = (keyCode_Type - GetStudentSubjectAmount())
+
+        If Request.QueryString("addSubject") IsNot Nothing Then
+            ' จำนวนวิชาที่สามารถลงได้
+            If (CreditAmount > 0) Then
+                ' change object to json string
+                SubjectRegisteredJson = js.Serialize(SubjectRegistered)
+
+                ' ให้เพิมวิชาได้เลย
+                deviceEnable.Style.Item("display") = "block"
+            Else
+                ' แสดงหน้าเพื่อให้เพิ่ม โควต้าลงทะเบียน
+                divAddCreditMaxoent.Style.Item("display") = "block"
+            End If
+        Else
+            If Not IsRegisterSubjectMaxonet() Then
+                'check ว่าลงทะเบียนเลือกวิชาหรือยัง
+                If keyCode_Type = EnumMaxOnetKeyCodeType.OneSubject Then
+                    EnableSelect = True
+                    SetSubjectsIdStr(8)
+                ElseIf keyCode_Type = EnumMaxOnetKeyCodeType.ThreeSubjects Then
+                    SetSubjectsIdStr(3)
+                ElseIf keyCode_Type = EnumMaxOnetKeyCodeType.FiveSubjects Then
+                    SetSubjectsIdStr(5)
+                Else
+                    SetSubjectsIdStr(8)
+                End If
+                deviceEnable.Style.Item("display") = "block"
+            Else
+                'HttpContext.Current.Session("DisableGetDailyActivities") = Nothing
+                Response.Redirect(String.Format("ChooseTestsetMaxOnet.aspx?deviceUniqueId={0}&token={1}", DeviceId, TokenId))
+            End If
+        End If
+    End Sub
+
+    Private Function GetKeyCodeType() As Integer
+        Dim sql As String = "SELECT KeyCode_Code FROM maxonet_tblKeyCodeUsage  WHERE KCU_DeviceId = '" & DeviceId.CleanSQL & "' AND KCU_Token = '" & TokenId.CleanSQL & "';"
+        Dim keyCode As String = db.ExecuteScalar(sql)
+
+        sql = "SELECT KeyCode_Type FROM maxonet_tblKeyCode  WHERE KeyCode_Code = '" & keyCode.CleanSQL & "' AND GETDATE() < KeyCode_ExpireDate ;"
+        Dim dbLicenseKey As New ClassConnectSql(False, ConfigurationManager.ConnectionStrings("LicensKeyConnectionString").ConnectionString)
+        Dim result As String = dbLicenseKey.ExecuteScalar(sql)
+        Dim keyCodeType As Integer = If((result = ""), -1, CInt(result))
+        Return keyCodeType
+    End Function
+
+
+    Private Sub SetSubjectsIdStr(subjectAmount As Integer)
+        subjectAmount = subjectAmount - 2
+        For index = 0 To subjectAmount
+            SubjectsIdStr &= SubjectsId(index) & ","
+        Next
+        SubjectsIdStr &= SubjectsId(subjectAmount + 1)
+    End Sub
+
+    Private Function IsRegisterSubjectMaxonet() As Boolean
+        Dim sql As String = "SELECT * FROM maxonet_tblStudentSubject WHERE SS_StudentId = '" & StudentId.CleanSQL & "';"
+        Dim dt As DataTable = db.getdata(sql)
+        If dt.Rows.Count > 0 Then Return True
+        Return False
+    End Function
+
+    Private Sub initialDataSubjectRegistered()
+        'Dim tempSubjectClass As New List(Of MaxonetSubjectClassRegister)
+        Dim sql As String = "SELECT * FROM maxonet_tblStudentSubject WHERE SS_StudentId = '" & StudentId.CleanSQL & "' ORDER BY SS_SubjectId;"
+        Dim dt As DataTable = db.getdata(sql)
+        For Each r In dt.Rows
+            Dim subjectId As String = r("SS_SubjectId").ToString()
+            Dim classId As String = r("SS_LevelId").ToString()
+            Dim subject As MaxonetSubjectClassRegister = (From t In SubjectRegistered Where t.SubjectId = subjectId).SingleOrDefault()
+            If subject Is Nothing Then
+                Dim tsc As New MaxonetSubjectClassRegister With {.SubjectId = subjectId, .ClassId = New List(Of String)({classId})}
+                SubjectRegistered.Add(tsc)
+            Else
+                subject.ClassId.Add(classId)
+            End If
+        Next
+
+        'Return db.getdata(sql).Rows.Count
+    End Sub
+
+    Private Function GetStudentSubjectAmount() As Integer
+        Dim i As Integer = 0
+        For Each subject In SubjectRegistered
+            i += subject.ClassId.Count
+        Next
+        Return i
+    End Function
+
+    Private Function ChangeStudentClass(className As String) As String
+        Dim c As Array = className.Split(".")
+        Dim addNumber As Integer = If((c(0) = "ป"), 3, 9)
+        Return String.Format("K{0}", CInt(c(1)) + addNumber)
+    End Function
+
+    Private Enum EnumMaxOnetKeyCodeType
+        OneSubject
+        ThreeSubjects
+        FiveSubjects
+        EightSubjects
+
+        keyCodeExpire = -1
+    End Enum
+
+End Class
