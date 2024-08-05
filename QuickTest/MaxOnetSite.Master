@@ -1,0 +1,26 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="MaxOnetSite.master.vb" Inherits="QuickTest.MaxOnetSite" %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="css/jquery-ui-1.8.18.custom.min.css" rel="stylesheet" />
+            <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+                <link rel="stylesheet" type="text/css" href="./shadowbox/shadowbox.css">
+                <script type="text/javascript" src="./shadowbox/shadowbox.js"></script>
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="HeadStyleContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ExtraScript" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+        </div>
+    </form>
+</body>
+</html>
