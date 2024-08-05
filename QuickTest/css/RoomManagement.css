@@ -1,0 +1,75 @@
+﻿.StudentsManagement {
+    width: 710px;
+    margin-left: auto;
+    margin-right: auto;
+    /*border: 1px solid;*/
+    height: auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+    .StudentsManagement .NoOfStudent {
+        text-align: right;
+        font-size: 28px;
+        padding-right: 10px;
+    }
+
+    .StudentsManagement .StudentManagementBtn {
+        padding: 0px 10px;
+        margin-top: 5px;
+    }
+
+        .StudentsManagement .StudentManagementBtn #btnConfirmAddRoom, .StudentsManagement .StudentManagementBtn #btnCloseAddRoom, .StudentsManagement .StudentManagementBtn #btnEditAddRoom {
+            float: right;
+            margin-left: 5px;
+        }
+
+    .StudentsManagement .Students {
+        width: 690px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid #E78F08;
+        height: 177px;
+        overflow-y: scroll;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        border-radius: 5px;
+        padding: 0 0 5px 0;
+    }
+
+        .StudentsManagement .Students .StudentId {
+            width: 152px;
+            margin: 5px;
+            padding: 2px;
+            display: inline-block;
+            position: relative;
+        }
+
+            .StudentsManagement .Students .StudentId input[type='text'] {
+                width: 110px!important;
+                position: absolute;
+                right: 2px;
+                top: 2px;
+            }
+                .StudentsManagement .Students .StudentDuplucate {
+                    border: 1px solid red;
+                    background: rgb(245, 230, 230);
+                }
+
+            .StudentsManagement .Students .StudentId .numberCircle {
+                border-radius: 50%;
+                background: #F6A828;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                font-size: 18px;
+            }
+
+            /* Dialog*/
+#DialogChangeNoOfStudent label {
+    font-size:26px;
+}
+#DialogChangeNoOfStudent #btnConfirmChangeNoOfStudent, #DialogChangeNoOfStudent #btnCancleChangeNoOfStudent {
+    float:right;
+    margin-left:5px;
+}
