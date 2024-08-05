@@ -1,0 +1,349 @@
+﻿/*.ans {
+-webkit-animation:TestShake 0.4s;
+}
+   @-webkit-keyframes TestShake {
+            20% {
+            -webkit-transform:translate(2px ,1px) rotate(2deg);
+            }
+            40% {
+            -webkit-transform:translate(2px ,1px) rotate(-2deg);
+            }
+            60% {
+            -webkit-transform:translate(2px ,1px) rotate(2deg);
+            }
+            80% {
+            -webkit-transform:translate(2px ,1px) rotate(-2deg);
+            }
+            100% {
+            -webkit-transform:translate(2px ,1px) rotate(0deg);
+            }
+        }*/
+ul {
+    counter-reset: li; /*list-style-type: decimal;*/
+    margin-top: 0px;
+    list-style: none; /*list-style-image:url('/img/smile_1.png');*/
+}
+
+#sortable > li:before, #normal > li:before {
+    content: "ลำดับที่ " counter(li) "          "; /*list-style-type:decimal;*/
+    counter-increment: li;
+    color: Orange;
+}
+
+li {
+    background-color: white;
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    width: 613px;
+    text-align: left;
+    padding-left: 20px;
+    line-height: 40px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.MainDivNormal {
+    font: normal 35px 'THSarabunNew';
+    background-color: #3A8B99;
+}
+
+.MainDivNotReply {
+    font: normal 35px 'THSarabunNew';
+    background-color: #FFE000;
+}
+
+.ForBtn {
+    width: 65px;
+    height: 65px;
+    margin: 7px 0 0 17px;
+}
+
+#panelTime > div {
+    margin-left: 25px;
+}
+
+#TimeCountDown {
+    width: 400px;
+    height: 68px;
+}
+
+    #TimeCountDown > div {
+        height: 68px;
+        float: left;
+        text-align: center;
+        line-height: 65px;
+    }
+
+        #TimeCountDown > div > img {
+            height: 56px;
+        }
+
+#DivScored > div {
+    height: 50%;
+    text-align: center;
+    font-size: 25px;
+    position: relative;
+}
+
+.OrangeBack {
+    margin: -34px auto 0 auto;
+}
+
+.ForSortBtn {
+    font: 100% 'THSarabunNew';
+    border: 0;
+    padding: 2px 0 3px 0;
+    background: #1EC9F4;
+    border-radius: .5em;
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    color: #FFF;
+    border: solid 1px #0D8AA9;
+    background: #46C4DD;
+    background: -webkit-gradient(linear, left top, left bottom, from(#63CFDF), to(#17B2D9));
+    text-shadow: 1px 1px #178497;
+}
+
+.ForDivLeapChoice {
+    list-style: none;
+    z-index: 999;
+    height: 100%;
+    border-radius: 0.2em;
+    border: 1px outset;
+}
+
+.ImgSkip {
+    position: absolute;
+    right: 35%;
+    top: 20%;
+    z-index: 99;
+}
+
+#ShowLimitAmount {
+    background-color: rgb(255, 29, 29);
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    border-radius: 1em;
+    border: 2px white solid;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+#DivIntro {
+    position: relative;
+    height: 70px;
+    width: 945px;
+    border: 20px;
+    padding: 10px;
+}
+
+#mainIntro {
+    position: relative;
+    border-radius: 10px;
+    background-color: #b39eb5;
+    height: 50px;
+    font-weight: bold;
+    width: 925px;
+    padding: 10px;
+}
+
+.prettyIntro {
+    display: none;
+}
+
+#mainIntroAudio {
+    position: relative;
+    border-radius: 10px;
+    height: auto;
+    font-weight: bold;
+    width: 690px;
+    padding-top: 10px;
+}
+
+#spnTest, #spnClose {
+    cursor: pointer;
+}
+
+#divClose {
+    color: #fff;
+    z-index: 555;
+    position: absolute;
+    right: 12%;
+    top: 10%;
+    font-size: medium;
+    cursor: pointer;
+}
+
+#mainPretty {
+    height: 90%;
+    width: 70%;
+    font-weight: bold;
+    margin-left: -35%;
+    margin-top: -20%;
+    left: 50%;
+    top: 50%;
+    z-index: 100;
+}
+
+#introHtml {
+    position: relative;
+    border-radius: 10px;
+    background-color: #fff;
+    height: 100%;
+    font-weight: bold;
+    width: 100%;
+    padding: 70px;
+    margin-top: -37%;
+    left: 65%;
+    z-index: 100;
+    border: 10px solid #b39eb5;
+    overflow-y: scroll;
+}
+
+.RightDiv {
+    background-color: #56C5FF;
+    width: 90px;
+    margin: 0 0 5px 7px;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.NotReplyEmpty {
+    margin-left: 36px;
+    height: 260px;
+    margin-top: 30px;
+    text-align: center;
+    vertical-align: middle;
+    display: block;
+    background-color: white;
+    border: 1px dashed black;
+    color: black;
+    line-height: 8em;
+    font-weight: bold;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.MainQuestionAnswerNormal {
+    overflow: auto;
+    margin-left: 5px;
+    height: 472px;
+    border-radius: 12px;
+}
+
+
+.QuestionNormal {
+    position: relative;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #ffc76f;
+    width: 800px;
+    border: 20px;
+    padding: 20px;
+}
+
+
+#btnChoice {
+    margin-left: 6px;
+    margin-bottom: 40px;
+    -webkit-border-radius: 10px;
+    border: 2px solid #FAA51A;
+    width: 100px;
+    float: left;
+    height: 110px;
+    position: relative;
+    background-color: #F4F7FF;
+}
+
+
+.ShowScore {
+    background-color: white;
+    margin: -617px 0px 0px 700px;
+    padding: 5px;
+    width: 613px;
+    text-align: center;
+    padding-left: 20px;
+    line-height: 14px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 17px;
+}
+
+ul#ShowScorePanel li a {
+    position: fixed;
+    margin: 0px;
+    display: block;
+    margin-left: -2px;
+    width: 110px;
+    height: 70px;
+    background-color: #CFCFCF;
+    background-repeat: no-repeat;
+    background-position: right center;
+    border: 1px solid #AFAFAF;
+    -moz-border-radius: 0px 10px 10px 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -khtml-border-bottom-right-radius: 10px;
+    -khtml-border-top-right-radius: 10px;
+    border-radius: 0px 10px 10px 10px;
+    behavior: url('../css/PIE.htc');
+    -pie-track-active: false;
+    opacity: 0.6;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+    font-weight: bold;
+    color: black;
+}
+
+#DivBlock {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    text-align: center;
+    display: none;
+}
+
+#DivVs {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 110px;
+}
+
+.ForEachDivVs {
+    width: 250px;
+    height: 363px;
+    display: inline-block;
+}
+
+
+/*ul#navigation {
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    left: -1px;
+    bottom: 180px;
+    list-style: none;
+    z-index: 9999;
+}
+
+ul#ShowScorePanel a, a:hover
+{
+    color: #0D0914;
+    text-decoration: none;
+    font-weight: bold;
+}*/
+/*ul#navigation .home a
+{
+    background-image: url(../Images/home.png);
+}
+ul#navigation .about a
+{
+    background-image: url(../Images/changePwd/btnToolPwd.png);
+}*/
