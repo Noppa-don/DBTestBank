@@ -1,0 +1,60 @@
+﻿#PanelMakeToDestination .startPoint {
+    background: url('../Images/Activity/activitypagepad2.png') 0px -280px;
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    top: 25px;
+    left: 10px;
+}
+
+#PanelMakeToDestination .endPoint {
+    background: url('../Images/Activity/activitypagepad2.png') -250px -230px;
+    width: 22px;
+    height: 32px;
+    position: absolute;
+    right: 10px;
+    top: 25px;
+}
+
+#PanelTools > div > div {
+    background: url('../Images/Activity/activitypagepad2.png') -178px -228px;
+    width: 100%;
+    height: 100%;
+}
+
+#BtnSwapQuestion.leapQuestion {
+    background: url("../Images/Activity/activitypagepad2.png") -180px -135px;
+}
+
+#BtnSwapQuestion.noleapQuestion {
+    background: url("../Images/Activity/activitypagepad2.png") -270px -135px;
+}
+
+#BtnNext {
+    background: url("../Images/Activity/bnext.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+#BtnPrev{
+    background: url('../Images/Activity/bback.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+#BtnExitQuiz{
+    background:url("../Images/Activity/exit.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+#CloseDivSlide , #CloseDivSelectExplain ,#CloseDivReportExam {
+            width: 50px;
+            height: 50px;
+            background: url('../Images/Activity/activitypagepad2.png') -250px -265px;
+            float: right;
+            background-repeat: no-repeat;
+            margin-right: -20px;
+            margin-top: -20px;
+            cursor: pointer;
+        }
