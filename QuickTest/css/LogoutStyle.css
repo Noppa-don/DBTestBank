@@ -1,0 +1,74 @@
+﻿
+#btnLogout,#btnContact {
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    right: -1px;
+    bottom: 92px;
+    list-style: none;
+    z-index: 9999;
+    margin-right: -45px;
+}
+
+#btnContact {
+    bottom: 175px!important;
+}
+
+
+    #btnLogout li {
+        width: 110px;
+        text-decoration: none;
+        line-height: 1.7em;
+        list-style: none;
+        background-color:initial;
+        margin:0!important;
+        padding:0!important;
+        text-align:initial!important;
+        border:initial!important;
+    }
+
+    #btnContact li {
+        width: 110px;
+        text-decoration: none;
+        line-height: 1.7em;
+        list-style: none;
+        background-color:initial;
+        margin:0!important;
+        padding:0!important;
+        text-align:initial!important;
+        border:initial!important;
+    }
+
+        #btnLogout li a {
+            position: fixed;
+            margin: 0px;
+            display: block;
+            margin-left: -2px;
+            width: 110px;
+            height: 70px;
+            background-color: #CFCFCF;
+            background-repeat: no-repeat;
+            background-position: left center;
+            border: 1px solid #AFAFAF;
+            background-image: url('../images/logout.png');
+            opacity: 0.6;
+            border-radius: 10px 0 0 10px;
+            cursor: pointer;
+        }
+
+        #btnContact li a {
+            position: fixed;
+            margin: 0px;
+            display: block;
+            margin-left: -2px;
+            width: 110px;
+            height: 70px;
+            background-color: #F7F7F7;
+            background-repeat: no-repeat;
+            background-position: left center;
+            border: 1px solid #AFAFAF;
+            background-image: url('../images/contactreal.png');
+            opacity: 0.6;
+            border-radius: 10px 0 0 10px;
+            cursor: pointer;
+        }
