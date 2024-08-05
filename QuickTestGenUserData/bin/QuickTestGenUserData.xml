@@ -1,0 +1,2139 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+QuickTestGenUserData
+</name>
+</assembly>
+<members>
+<member name="M:QuickTestGenUserData.ClassConnectSql.#ctor(System.Boolean,System.String)">
+ <summary>
+ ถ้าส่ง false มา , หรือ ไม่ได้ส่งมาเลย แปลว่าเป็น webform ก็จะเรียก หา connectionstring แบบนึง
+ </summary>
+ <param name="IsWinFormApp"></param>
+ <remarks></remarks>
+</member>
+<member name="M:QuickTestGenUserData.ClsConnect.ExecuteLineFromFile(System.String)">
+ <summary>
+ อ่านไฟล์ทีละบรรทัด พักไว้ให้ครบ 100 บรรทัด แล้วส่งไป execute ทีละก้อน 100 บรรทัด 
+ ซึ่งไฟล์จะต้องเป็นบรรทัดละ 1 คำสั่ง, ปิดท้ายบรรทัดด้วย ; เสมอทุกบรรทัด
+ </summary>
+ <param name="filePath">ต้องเป็น full path to File name เลย</param>
+ <returns>จำนวนวินาทีที่ใช้ไป</returns>
+ <remarks></remarks>
+</member>
+<member name="M:QuickTestGenUserData.ClsConnect.CleanString(System.String)">
+ <summary>
+ ใช้สำหรับการแทนที่ค่า (replace) ตัวอักษร ก่อนจะส่งลงไป save, execute, etc กับ DB Server เช่น SQLServer จะส่ง ' ไป save ไม่ได้ จะทำให้ error ทันที
+ </summary>
+ <param name="inString"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:QuickTestGenUserData.ClsPDF.GetTSQS(System.String,System.Boolean)">
+ <summary>
+ หาคำถามสำหรับนำไป Gen ไฟล์ Word โดยถ้าเป็นโหมดแบบ Preview จะเลือกไปแค่ Qset เดียว เอาไปเป็นตัวอย่างเฉยๆ
+ </summary>
+ <param name="testSetId">Id ของ tblTestset ชุดข้อสอบที่เลือกมา</param>
+ <param name="IsPreview">เป็นโหมดแบบแสดงแค่บางส่วนใช่ไหม ?</param>
+ <returns>Datatable คำถาม</returns>
+ <remarks></remarks>
+</member>
+<member name="M:QuickTestGenUserData.ClsPDF.GetQuestion(System.String,System.String,System.Boolean)">
+ <summary>
+ ทำการหาคำถามจากชุดข้อสอบที่เลือกมา
+ </summary>
+ <param name="TestSetId">Id ของ tblTestset ชุดข้อสอบที่เลือกมา</param>
+ <param name="QuestionSetId">Id ของ tblQuestionSet ชุดคำถามที่เลือกมา</param>
+ <param name="IsPreview">เป็นโหมดแสดงเฉพาะบางส่วน ?</param>
+ <returns>Datatable คำถาม</returns>
+ <remarks></remarks>
+</member>
+<member name="M:QuickTestGenUserData.ClsPDF.GetAnswerDetails(System.String)">
+ <summary>
+ หาข้อมูลคำตอบของคำถามข้อนี้
+ </summary>
+ <param name="Question_Id">Id ของ tblQuestion คำถาม</param>
+ <returns>Datatable ของคำตอบ ของคำถามที่เลือกมา</returns>
+ <remarks></remarks>
+</member>
+<member name="M:QuickTestGenUserData.ClsPDF.GenFilePath(System.String)">
+ <summary>
+ ทำการต่อสตริงประกอบ Path รูปขึ้นมาตาม QsetId
+ </summary>
+ <param name="QSetId">QsetId ของคำถาม/คำตอบ ข้อนั้น</param>
+ <returns>สตริง Path รูปที่ถูกต้องตาม QsetId</returns>
+ <remarks></remarks>
+</member>
+<member name="M:QuickTestGenUserData.ClsPDF.RemoveDuplicationBRTag(System.String)">
+ <summary>
+ ทำการ replace string Tag Br ให้ถูกต้อง
+ </summary>
+ <param name="inString">ข้อมูลที่ต้องการให้ Replace</param>
+ <returns>ข้อมูลที่ Replace Tag BR เรียบร้อย</returns>
+ <remarks></remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogAlert._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogAlert._ScriptManager1">
+<summary>
+ScriptManager1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogAlert._RadFormDecorator1">
+<summary>
+RadFormDecorator1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogAlert._PartMsg">
+<summary>
+PartMsg control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogConfirmFirst._Head1">
+<summary>
+Head1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogConfirmFirst._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogConfirmFirst._ScriptManager1">
+<summary>
+ScriptManager1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogConfirmFirst._RadFormDecorator1">
+<summary>
+RadFormDecorator1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogConfirmFirst._HfMsg2">
+<summary>
+HfMsg2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogConfirmFirst._HfId">
+<summary>
+HfId control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogConfirmFirst._PartMsg">
+<summary>
+PartMsg control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogConfirmSecond._Head1">
+<summary>
+Head1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogConfirmSecond._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogConfirmSecond._ScriptManager1">
+<summary>
+ScriptManager1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogConfirmSecond._RadFormDecorator1">
+<summary>
+RadFormDecorator1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogConfirmSecond._HfId">
+<summary>
+HfId control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogConfirmSecond._PartMsg">
+<summary>
+PartMsg control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogInput._Head1">
+<summary>
+Head1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogInput._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogInput._ScriptManager1">
+<summary>
+ScriptManager1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogInput._RadFormDecorator1">
+<summary>
+RadFormDecorator1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogInput._lblHead">
+<summary>
+lblHead control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogInput._TxtData">
+<summary>
+TxtData control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogMsg._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogMsg._ScriptManager1">
+<summary>
+ScriptManager1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogMsg._RadFormDecorator1">
+<summary>
+RadFormDecorator1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogMsg._PartMsg">
+<summary>
+PartMsg control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogTwoInput._Head1">
+<summary>
+Head1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogTwoInput._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogTwoInput._ScriptManager1">
+<summary>
+ScriptManager1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogTwoInput._RadFormDecorator1">
+<summary>
+RadFormDecorator1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogTwoInput._lblHead1">
+<summary>
+lblHead1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogTwoInput._TxtData1">
+<summary>
+TxtData1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogTwoInput._lblHead2">
+<summary>
+lblHead2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.DialogTwoInput._TxtData2">
+<summary>
+TxtData2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="M:QuickTestGenUserData.WindowsTelerik.ShowConfirmSingle(System.String,System.Web.UI.Page,Telerik.Web.UI.RadWindow)">
+ <summary>
+ โชว์ข้อความถามรอบเดียว ควรส่ง Msg อันเดียว
+ </summary>
+ <param name="Msg"></param>
+ <param name="CurrentPage"></param>
+ <param name="DialogConfirm"></param>
+ <remarks></remarks>
+</member>
+<member name="M:QuickTestGenUserData.WindowsTelerik.ShowConfirmDouble(System.String,System.Web.UI.Page,Telerik.Web.UI.RadWindow)">
+ <summary>
+ โชว์ข้อความถามสองรอบ ควรส่ง Msg สองข้อความ โดยเชื่อมด้วย ","
+ </summary>
+ <param name="Msg"></param>
+ <param name="CurrentPage"></param>
+ <param name="DialogConfirmFirst"></param>
+ <remarks></remarks>
+</member>
+<member name="M:QuickTestGenUserData.WindowsTelerik.ShowInput(System.String,System.Web.UI.Page,Telerik.Web.UI.RadWindow)">
+ <summary>
+ โชว์หน้าต่างเล็กๆไว้เก็บ Input กลับมา ควรส่ง msg 3 parameter 'title','label1','textbox1'
+ </summary>
+ <param name="Msg"></param>
+ <param name="CurrentPage"></param>
+ <param name="DialogInput"></param>
+ <remarks></remarks>
+</member>
+<member name="M:QuickTestGenUserData.WindowsTelerik.ShowTwoInput(System.String,System.Web.UI.Page,Telerik.Web.UI.RadWindow)">
+ <summary>
+ โชว์หน้าต่างเล็กๆไว้เก็บ Input สอง Input กลับมา ควรส่ง msg 5 parameter 'title','label1','textbox1','label2','textbox2'
+ </summary>
+ <param name="Msg"></param>
+ <param name="CurrentPage"></param>
+ <param name="DialogInput"></param>
+ <remarks></remarks>
+</member>
+<member name="M:QuickTestGenUserData.WindowsTelerik.ShowYearToYear(System.String,System.Web.UI.Page,Telerik.Web.UI.RadWindow)">
+ <summary>
+ โชว์หน้าเลือกปี ถึง ปี
+ </summary>
+ <param name="CurrentPage"></param>
+ <param name="DialogYearToYear"></param>
+ <remarks></remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserMainPage._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserMainPage._hederKeyTxt">
+<summary>
+hederKeyTxt control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserMainPage._ddlProvince">
+<summary>
+ddlProvince control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserMainPage._ddlAmphur">
+<summary>
+ddlAmphur control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserMainPage._ddlTambol">
+<summary>
+ddlTambol control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserMainPage._ddlSchool">
+<summary>
+ddlSchool control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserMainPage._txtSchoolName">
+<summary>
+txtSchoolName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserMainPage._btnSearch">
+<summary>
+btnSearch control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserMainPage._DetailDiv">
+<summary>
+DetailDiv control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserMainPage._lblSchoolSelected">
+<summary>
+lblSchoolSelected control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserMainPage._btnAddUser">
+<summary>
+btnAddUser control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserMainPage._gvUser">
+<summary>
+gvUser control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._HeaderDetailText">
+<summary>
+HeaderDetailText control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._IsAllowUpdateSchoolShortName">
+<summary>
+IsAllowUpdateSchoolShortName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._txtFirstName">
+<summary>
+txtFirstName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._txtLastName">
+<summary>
+txtLastName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._txtUserName">
+<summary>
+txtUserName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._chkIsContact">
+<summary>
+chkIsContact control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._txtPreficSchool">
+<summary>
+txtPreficSchool control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._txtPassword">
+<summary>
+txtPassword control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._rdbAllSubject">
+<summary>
+rdbAllSubject control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._rdbSelectSubject">
+<summary>
+rdbSelectSubject control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._btnOK">
+<summary>
+btnOK control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._DetailDiv">
+<summary>
+DetailDiv control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._radioP">
+<summary>
+radioP control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._radioM">
+<summary>
+radioM control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._radioPM">
+<summary>
+radioPM control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._PanelUserSubjectClass">
+<summary>
+PanelUserSubjectClass control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._ChkAll">
+<summary>
+ChkAll control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._PrimaryPanel">
+<summary>
+PrimaryPanel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C4_1">
+<summary>
+C4_1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C4_2">
+<summary>
+C4_2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C4_3">
+<summary>
+C4_3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C4_4">
+<summary>
+C4_4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C4_5">
+<summary>
+C4_5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C4_6">
+<summary>
+C4_6 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C4_7">
+<summary>
+C4_7 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C4_8">
+<summary>
+C4_8 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C5_1">
+<summary>
+C5_1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C5_2">
+<summary>
+C5_2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C5_3">
+<summary>
+C5_3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C5_4">
+<summary>
+C5_4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C5_5">
+<summary>
+C5_5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C5_6">
+<summary>
+C5_6 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C5_7">
+<summary>
+C5_7 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C5_8">
+<summary>
+C5_8 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C6_1">
+<summary>
+C6_1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C6_2">
+<summary>
+C6_2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C6_3">
+<summary>
+C6_3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C6_4">
+<summary>
+C6_4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C6_5">
+<summary>
+C6_5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C6_6">
+<summary>
+C6_6 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C6_7">
+<summary>
+C6_7 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C6_8">
+<summary>
+C6_8 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C7_1">
+<summary>
+C7_1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C7_2">
+<summary>
+C7_2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C7_3">
+<summary>
+C7_3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C7_4">
+<summary>
+C7_4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C7_5">
+<summary>
+C7_5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C7_6">
+<summary>
+C7_6 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C7_7">
+<summary>
+C7_7 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C7_8">
+<summary>
+C7_8 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C8_1">
+<summary>
+C8_1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C8_2">
+<summary>
+C8_2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C8_3">
+<summary>
+C8_3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C8_4">
+<summary>
+C8_4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C8_5">
+<summary>
+C8_5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C8_6">
+<summary>
+C8_6 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C8_7">
+<summary>
+C8_7 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C8_8">
+<summary>
+C8_8 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C9_1">
+<summary>
+C9_1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C9_2">
+<summary>
+C9_2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C9_3">
+<summary>
+C9_3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C9_4">
+<summary>
+C9_4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C9_5">
+<summary>
+C9_5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C9_6">
+<summary>
+C9_6 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C9_7">
+<summary>
+C9_7 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C9_8">
+<summary>
+C9_8 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._MiddlePanel">
+<summary>
+MiddlePanel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C10_1">
+<summary>
+C10_1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C10_2">
+<summary>
+C10_2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C10_3">
+<summary>
+C10_3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C10_4">
+<summary>
+C10_4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C10_5">
+<summary>
+C10_5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C10_6">
+<summary>
+C10_6 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C10_7">
+<summary>
+C10_7 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C10_8">
+<summary>
+C10_8 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C11_1">
+<summary>
+C11_1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C11_2">
+<summary>
+C11_2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C11_3">
+<summary>
+C11_3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C11_4">
+<summary>
+C11_4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C11_5">
+<summary>
+C11_5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C11_6">
+<summary>
+C11_6 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C11_7">
+<summary>
+C11_7 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C11_8">
+<summary>
+C11_8 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C12_1">
+<summary>
+C12_1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C12_2">
+<summary>
+C12_2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C12_3">
+<summary>
+C12_3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C12_4">
+<summary>
+C12_4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C12_5">
+<summary>
+C12_5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C12_6">
+<summary>
+C12_6 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C12_7">
+<summary>
+C12_7 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C12_8">
+<summary>
+C12_8 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C13_1">
+<summary>
+C13_1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C13_2">
+<summary>
+C13_2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C13_3">
+<summary>
+C13_3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C13_4">
+<summary>
+C13_4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C13_5">
+<summary>
+C13_5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C13_6">
+<summary>
+C13_6 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C13_7">
+<summary>
+C13_7 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C13_8">
+<summary>
+C13_8 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C14_1">
+<summary>
+C14_1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C14_2">
+<summary>
+C14_2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C14_3">
+<summary>
+C14_3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C14_4">
+<summary>
+C14_4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C14_5">
+<summary>
+C14_5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C14_6">
+<summary>
+C14_6 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C14_7">
+<summary>
+C14_7 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C14_8">
+<summary>
+C14_8 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C15_1">
+<summary>
+C15_1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C15_2">
+<summary>
+C15_2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C15_3">
+<summary>
+C15_3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C15_4">
+<summary>
+C15_4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C15_5">
+<summary>
+C15_5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C15_6">
+<summary>
+C15_6 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C15_7">
+<summary>
+C15_7 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.UserPage._C15_8">
+<summary>
+C15_8 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:QuickTestGenUserData.My.MyWebExtension">
+ <summary>
+ Module used to define the properties that are available in the My Namespace for Web projects.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:QuickTestGenUserData.My.MyWebExtension.Computer">
+ <summary>
+ Returns information about the host computer.
+ </summary>
+</member>
+<member name="P:QuickTestGenUserData.My.MyWebExtension.User">
+ <summary>
+ Returns information for the current Web user.
+ </summary>
+</member>
+<member name="P:QuickTestGenUserData.My.MyWebExtension.Request">
+ <summary>
+ Returns Request object.
+ </summary>
+</member>
+<member name="P:QuickTestGenUserData.My.MyWebExtension.Response">
+ <summary>
+ Returns Response object.
+ </summary>
+</member>
+<member name="P:QuickTestGenUserData.My.MyWebExtension.Log">
+ <summary>
+ Returns the Asp log object.
+ </summary>
+</member>
+<member name="F:QuickTestGenUserData.FilterAndPrintLog._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.FilterAndPrintLog._RadScriptManager1">
+<summary>
+RadScriptManager1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.FilterAndPrintLog._lblLogName">
+<summary>
+lblLogName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.FilterAndPrintLog._DpkStartDate">
+<summary>
+DpkStartDate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.FilterAndPrintLog._DpkEndDate">
+<summary>
+DpkEndDate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.FilterAndPrintLog._btnShowLog">
+<summary>
+btnShowLog control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.FilterAndPrintLog._btnExport">
+<summary>
+btnExport control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.FilterAndPrintLog._btnBack">
+<summary>
+btnBack control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.FilterAndPrintLog._GvLog">
+<summary>
+GvLog control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserManagerPage._Head1">
+<summary>
+Head1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserManagerPage._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserManagerPage._RadScriptManager1">
+<summary>
+RadScriptManager1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserManagerPage._RadWindowManager1">
+<summary>
+RadWindowManager1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserManagerPage._RadDialogConfirmFirst">
+<summary>
+RadDialogConfirmFirst control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserManagerPage._RadDialogConfirmSecond">
+<summary>
+RadDialogConfirmSecond control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserManagerPage._RadDialogAlert">
+<summary>
+RadDialogAlert control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserManagerPage._HyperLink2">
+<summary>
+HyperLink2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserManagerPage._lbAddUser">
+<summary>
+lbAddUser control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserManagerPage._Lc1">
+<summary>
+Lc1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserManagerPage._CmbSchool">
+<summary>
+CmbSchool control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserManagerPage._tdSearch">
+<summary>
+tdSearch control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserManagerPage._txtName">
+<summary>
+txtName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserManagerPage._txtSchoolCode">
+<summary>
+txtSchoolCode control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserManagerPage._BtnFind">
+<summary>
+BtnFind control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserManagerPage._GvUser">
+<summary>
+GvUser control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._Head1">
+<summary>
+Head1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._RadCodeBlock1">
+<summary>
+RadCodeBlock1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._RadScriptManager1">
+<summary>
+RadScriptManager1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._RadWindowManager1">
+<summary>
+RadWindowManager1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._RadDialogConfirmFirst">
+<summary>
+RadDialogConfirmFirst control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._RadDialogAlert">
+<summary>
+RadDialogAlert control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._lbtnSearchUser">
+<summary>
+lbtnSearchUser control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._lbtnAddUser">
+<summary>
+lbtnAddUser control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._lblSchool">
+<summary>
+lblSchool control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._txtFirstName">
+<summary>
+txtFirstName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._txtLastName">
+<summary>
+txtLastName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._txtUserName">
+<summary>
+txtUserName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._txtPSW">
+<summary>
+txtPSW control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._txtCFPSW">
+<summary>
+txtCFPSW control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._lblNotChangePassword">
+<summary>
+lblNotChangePassword control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._DpkStartDate">
+<summary>
+DpkStartDate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._DpkEndDate">
+<summary>
+DpkEndDate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._GvCondition">
+<summary>
+GvCondition control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.GenUserPage._BtnSave">
+<summary>
+BtnSave control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="M:QuickTestGenUserData.GenUserPage.RaisePostBackEvent1(System.String)">
+ <summary>
+ เช็คว่าเป็น Checkbox ทั้งหมดหรือไม่ ถ้าใช่ให้ปรับลูกด้วย ถ้าไม่ใช่ไม่ต้องทำอะไร
+ </summary>
+ <param name="eventArgument"></param>
+ <remarks></remarks>
+</member>
+<member name="F:QuickTestGenUserData.LoginGenUser._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.LoginGenUser._txtvalidate">
+<summary>
+txtvalidate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.LoginGenUser._txtusername">
+<summary>
+txtusername control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.LoginGenUser._RequiredFieldValidator2">
+<summary>
+RequiredFieldValidator2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.LoginGenUser._txtpassword">
+<summary>
+txtpassword control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.LoginGenUser._RequiredFieldValidator3">
+<summary>
+RequiredFieldValidator3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.LoginGenUser._BtnSubmit">
+<summary>
+BtnSubmit control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.LocalControl._CbProvince">
+<summary>
+CbProvince control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.LocalControl._CbDistrict">
+<summary>
+CbDistrict control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.LocalControl._CbSubDistrict">
+<summary>
+CbSubDistrict control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.WebForm1._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTestGenUserData.WebForm1._ErrorLabel">
+<summary>
+ErrorLabel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+</members>
+</doc>
