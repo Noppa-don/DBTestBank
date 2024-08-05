@@ -1,0 +1,111 @@
+﻿#AnswerExp .ImgCircle {
+    top: 30px;
+    left: -5px;
+}
+
+#AnswerExp > div {
+    padding: 10px 0;
+    border-bottom: 1px solid grey;
+    position: relative;
+}
+
+    #AnswerExp > div > div {
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 35px;
+    }
+
+        #AnswerExp > div > div > div {
+            border: 1px dashed;
+            border-width: 2px;
+            border-radius: 5px;
+            margin-left: 25px;
+            margin-right: 10px;
+            padding: 10px;
+        }
+        #AnswerExp > div > div > table tr td:last-child > div{
+            border: 1px dashed;
+            border-width: 2px;
+            border-radius: 5px;           
+            padding: 10px;
+        }
+
+    #AnswerExp > div div.Correct {
+        background-color: #2CA505;
+        color: white;
+    }
+
+        #AnswerExp > div div.Correct div, ul > li > div.Correct {
+            background-color: #77BD60;
+        }
+
+    #AnswerExp > div div.InCorrect {
+        background-color: #FF0B00;
+        color: white;
+    }
+
+        #AnswerExp > div div.InCorrect div, ul > li > div.InCorrect {
+            background-color: #FF7A74;
+        }
+
+    #AnswerExp > div div.NotAnswered {
+        padding: 0 10px;
+    }
+
+        #AnswerExp > div div.NotAnswered div {
+            background-color: rgb(192, 226, 255);
+            /*display: none;*/
+        }
+
+#btnAnswerExp,#btnMoreDetail {
+    width: 50px;
+    height: 50px;
+    display: none;
+    position: absolute;
+    right: 16px;
+    top: 13px;
+    z-index: 9;
+    background-image: url('../images/activity/SelectExplain/idea2.png');
+    background-size: contain;
+}
+
+ #btnQuestionExp {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 3px;
+    top: 50px;
+    z-index: 9;
+    background-image: url('../images/activity/SelectExplain/ShowExplain.png');
+        background-size: contain;
+}
+#btnSendComment {
+      width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 3px;
+    top: 105px;
+    z-index: 9;
+    background-image: url('../images/activity/SelectExplain/SendComment.png');
+        background-size: contain;
+}
+
+div#QuestionExp {
+    border: 1px dashed;
+    border-width: 2px;
+    background-color: #FFE3B6;
+    width: 98%;
+    padding: 10px;
+    word-wrap: break-word;
+    border-radius: 5px;
+    /*display: none;*/
+}
+
+ul > li > div.Correct, ul > li > div.InCorrect {
+    border: 1px dashed;
+    padding: 10px;
+    border-width: 2px;
+    border-radius: 5px;
+    margin: 10px 10px 10px 0;
+    display: none;
+}
