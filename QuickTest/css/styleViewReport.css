@@ -1,0 +1,212 @@
+﻿@import url(../fonts/thsarabunnew.css);
+body
+{
+    font: normal 0.95em 'THSarabunNew';
+    background: #000 url(../images/back.jpg) no-repeat center fixed;
+    color: #444;
+}
+.mainDiv
+{
+    background-color: #D3F2F7;
+    border: 1px outset;
+    text-align: center;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+    behavior: url('../css/PIE.htc');
+    -pie-track-active: false;
+}
+input[type=checkbox]
+{
+    position: absolute;
+    left: -999em;
+}
+input[type=checkbox] + label
+{
+    height: 21px;
+    padding-left: 21px;
+    background: url(../images/bullet.gif) center left no-repeat;
+}
+input[type=checkbox]:checked + label
+{
+    background-image: url(../images/bullet_checked.gif);
+    color: #53CE53;
+}
+input[type=checkbox]:disabled + label
+{
+    color: Gray;
+    background-image: url(../images/bullet-disable.gif);
+}
+label
+{
+    cursor: pointer;
+}
+table
+{
+    width: 100%;
+}
+tr
+{
+    height: 45px;
+}
+th
+{
+    font: bold 100% 'THSarabunNew';
+}
+td
+{
+    font: normal 100% 'THSarabunNew';
+    width: 155px;
+}
+/* all div menu --- reportGraph */
+.divMenuLeft
+{
+    width: 230px;
+    height: 500px;
+    background-color: #FFC76F;
+    text-align: center;
+    margin-top: 10%; /*border: 1px solid #F47A20;*/
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+    behavior: url('../css/PIE.htc');
+    -pie-track-active: false;
+}
+.divMenuLeft img
+{
+    cursor: pointer;
+}
+.divClass
+{
+    width: 220px;
+    height: 300px;
+    background-color: #F4F7FF;
+    border: solid 1px #AFAFAF;
+    margin-top: 1px;
+    margin-left: 4px;
+    margin-bottom: 4px;
+    text-align: center;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 1em;
+    behavior: url('../css/PIE.htc');
+    -pie-track-active: false;
+}
+.divClass button
+{
+    width: 100px;
+    height: 40px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.divClassRoom
+{
+    width: 210px;
+    height: 235px;
+    background-color: #F4F7FF;
+    border: solid 1px #AFAFAF;
+    margin-top: 1px;
+    margin-left: 4px;
+    margin-bottom: 4px;
+    text-align: center;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 1em;
+    behavior: url('../css/PIE.htc');
+    -pie-track-active: false;
+}
+.divClassRoom button
+{
+    cursor: pointer;
+}
+.divClassEvent
+{
+    width: 200px;
+    height: 170px;
+    background-color: #F4F7FF;
+    border: solid 1px #AFAFAF;
+    margin-top: 1px;
+    margin-left: 4px;
+    margin-bottom: 4px;
+    text-align: center;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 1em;
+    behavior: url('../css/PIE.htc');
+    -pie-track-active: false;
+}
+.divClassEvent button
+{
+    cursor: pointer;
+}
+
+.divReviewSwipe
+{
+    position: absolute;
+    width: 99.90%;
+    height: 75%;
+}
+.shDiv
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 1px outset;
+    cursor: pointer;
+    background-image: url('../images/Activity/back.png');
+    background-repeat: no-repeat;
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    border-radius: 0.2em;
+    behavior: url('../css/PIE.htc');
+    -pie-track-active: false;
+}
+
+footer
+{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width: 930px;
+    font: 150% 'THSarabunNew';
+    text-shadow: 1px 1px #7E4D0E;
+    height: 20px;
+    padding: 5px 0 20px 0;
+    text-align: center;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    color: #FFF;
+    border: solid 1px #DA7C0C;
+    background: #F78D1D;
+    background: -webkit-gradient(linear, left top, left bottom, from(#FAA51A), to(#F47A20));
+    background: -moz-linear-gradient(top,  #FAA51A,  #F47A20);
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    behavior: url('../css/PIE.htc');
+    -pie-track-active: false;
+}
+
+footer p
+{
+    line-height: 1.7em;
+    padding: 0 0 10px 0;
+}
+
+footer a
+{
+    color: #FFF;
+    text-decoration: none;
+}
+
+footer a:hover
+{
+    color: #444;
+    text-shadow: none;
+    text-decoration: none;
+}
