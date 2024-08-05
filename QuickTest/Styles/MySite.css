@@ -1,0 +1,178 @@
+﻿.int, .float {
+    text-align: right;
+}
+
+/* Page   
+----------------------------------------------------------*/
+
+.fullPanel {
+    width: 100%;
+}
+
+.ShiftLeft {
+    text-align: left;
+}
+
+.ShiftRight {
+    text-align: right;
+}
+
+.FloatLeft {
+    float: left;
+}
+
+/*Homework*/
+.DivModuleParent {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.DivModulePanel {
+    height: 310px;
+    width: 270px;
+    margin: 5px 0px 5px 25px;
+    border-radius: 5px; /*display: inline-table;*/
+    float: left;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.DivModuleSubPanel {
+    height: 280px;
+    width: 96%;
+    border-radius: 5px;
+    position: relative;
+    top: 15px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0 2%;
+}
+
+.DivModuleItem {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    margin-bottom: 5px;
+    border-bottom: 1px dotted;
+    border-top: 1px dotted;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.DivModuleItemSubImage {
+    position: absolute;
+    margin-top: 10px;
+    right: 5px;
+}
+
+.DivModuleSelectParent {
+    height: 90px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 0 10px 10px 10px; /*background-image: url("/images/bk.jpg"); 	background-size: contain;*/
+    border: 1px solid #FFA032;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.DivModuleSelect {
+    width: 283px;
+    height: 83px;
+    margin-right: 10px;
+    position: relative;
+    display: inline-block;
+    /*background-image: url("/images/bkDiv.jpg");*/
+    background-size: cover;
+    -ms-behavior: url('../css/backgroundsize.min.htc');
+}
+.MdModuleHomeworkTime{
+    background-image: url("/images/homework/MdModuleHomeworkTiime.png");
+}
+.MdModule {
+    /*background-image: url("/images/bkDiv-gray.jpg");*/
+    background-image: url("/images/homework/MdModule.png");
+}
+
+.MdClass {
+    background-image: url("/images/homework/MdClass.png");
+}
+
+    .MdClass > .DivModuleSelectText {
+        color: #880505 !important;
+    }
+
+.MdRoom {
+    background-image: url("/images/homework/MdRoom.png");
+}
+
+    .MdRoom > .DivModuleSelectText {
+        color: #A98700 !important;
+    }
+
+.MdStudent {
+    background-image: url("/images/homework/MdStudent.png");
+}
+
+    .MdStudent > .DivModuleSelectText {
+        color: rgb(190, 6, 150) !important;
+    }
+
+.DivModuleSelectImg {
+    width: 90px;
+    height: 50px;
+    opacity: 1;
+    border-radius: 5px;
+    position: absolute;
+    left: 10px;
+    top: 14px;
+    overflow: hidden;
+}
+
+.DivModuleSelectText {
+    width: 155px;
+    height: 50px;
+    white-space: pre-line;
+    position: absolute;
+    left: 110px;
+    top: 15px;
+    font-size: 20px;
+    font-family: 'Arvo',sans-serif;
+    color: #697B00;
+    overflow: hidden;
+}
+.MdModule > .DivModuleSelectText{
+    padding-top: 15px;
+}
+
+.MdClass > .DivModuleSelectText,.MdRoom > .DivModuleSelectText,.MdStudent > .DivModuleSelectText{
+    text-align: center;
+    padding-top: 15px;
+}
+
+.DivModuleSelectTextFull.HomeworkTime {
+    width: 250px;
+    height: 55px;
+    white-space: pre-line;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    font-size: 20px;
+    font-family: 'Arvo',sans-serif;
+    color: #697B00;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.DivModuleSelectClose {
+    width: 25px;
+    height: 25px;
+    position: absolute;   
+    top: -2px;
+    right: 0px;
+    cursor: pointer;
+}
