@@ -1,0 +1,43 @@
+﻿.mainDivSocial {
+    background-color: #eabfd8;
+}
+
+div.divSocial > div {
+    width: 32px;
+    height: 32px;
+    /*background-color: white;*/
+    margin: 5px;
+    display: inline-flex;
+    border-radius: 5px;
+}
+
+    div.divSocial > div:hover, div.divSocial > div.active, .statusFavorite:hover, .statusFavorite.active {
+        cursor: pointer;
+        background-color: #50579f;
+    }
+
+
+.statusFavorite {
+    width: 32px;
+    height: 64px;
+    display: inline-flex;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+
+.favoriteStudent {
+    height: 32px;
+    position: absolute;
+    bottom: 0;
+}
+
+    .favoriteStudent > div {
+        /*width:32px;*/
+        height: 32px;
+        display: inline-flex;
+    }
+
+    .underLine{
+            border: 1px solid #50579f;
+    }
