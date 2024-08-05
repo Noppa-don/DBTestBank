@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\PublishTemp\QTGUSDT</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Code/mdExportExcel.vb">
+      <publishTime>11/21/2017 16:25:24</publishTime>
+    </File>
+    <File Include="bin/BusinessTablet360.dll">
+      <publishTime>11/21/2017 16:41:12</publishTime>
+    </File>
+    <File Include="bin/BusinessTablet360.pdb">
+      <publishTime>11/21/2017 16:41:12</publishTime>
+    </File>
+    <File Include="bin/Elmah.dll">
+      <publishTime>08/01/2017 12:01:49</publishTime>
+    </File>
+    <File Include="bin/Elmah.pdb">
+      <publishTime>08/01/2017 12:01:46</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.dll">
+      <publishTime>08/01/2017 12:01:49</publishTime>
+    </File>
+    <File Include="bin/itextsharp.dll">
+      <publishTime>08/01/2017 12:01:50</publishTime>
+    </File>
+    <File Include="bin/KnowledgeUtils.dll">
+      <publishTime>08/01/2017 12:01:47</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.dll">
+      <publishTime>08/01/2017 12:01:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.QualityTools.Testing.Fakes.dll">
+      <publishTime>07/07/2015 00:51:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>08/01/2017 12:02:26</publishTime>
+    </File>
+    <File Include="bin/NewRelic.Api.Agent.dll">
+      <publishTime>08/01/2017 12:01:47</publishTime>
+    </File>
+    <File Include="bin/QuickTestGenUserData.dll">
+      <publishTime>11/22/2017 10:18:17</publishTime>
+    </File>
+    <File Include="bin/QuickTestGenUserData.pdb">
+      <publishTime>11/22/2017 10:18:17</publishTime>
+    </File>
+    <File Include="bin/QuickTestGenUserData.xml">
+      <publishTime>11/22/2017 10:18:17</publishTime>
+    </File>
+    <File Include="bin/Telerik.Web.UI.dll">
+      <publishTime>08/01/2017 12:01:50</publishTime>
+    </File>
+    <File Include="bin/Telerik.Web.UI.Skins.dll">
+      <publishTime>08/01/2017 12:01:50</publishTime>
+    </File>
+    <File Include="bin/WindowsBase.4.0.0.0.Fakes.fakesconfig">
+      <publishTime>11/21/2017 15:00:32</publishTime>
+    </File>
+    <File Include="Common/DialogAlert.aspx">
+      <publishTime>08/01/2017 12:02:49</publishTime>
+    </File>
+    <File Include="Common/DialogConfirmFirst.aspx">
+      <publishTime>08/01/2017 12:02:49</publishTime>
+    </File>
+    <File Include="Common/DialogConfirmSecond.aspx">
+      <publishTime>08/01/2017 12:02:49</publishTime>
+    </File>
+    <File Include="Common/DialogInput.aspx">
+      <publishTime>08/01/2017 12:02:49</publishTime>
+    </File>
+    <File Include="Common/DialogMsg.aspx">
+      <publishTime>08/01/2017 12:02:49</publishTime>
+    </File>
+    <File Include="Common/DialogTwoInput.aspx">
+      <publishTime>08/01/2017 12:02:50</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>08/01/2017 12:02:49</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>08/01/2017 12:02:48</publishTime>
+    </File>
+    <File Include="Images/eraser.png">
+      <publishTime>08/01/2017 12:02:50</publishTime>
+    </File>
+    <File Include="Images/freehand.png">
+      <publishTime>08/01/2017 12:02:50</publishTime>
+    </File>
+    <File Include="Images/viewLog.png">
+      <publishTime>11/08/2017 10:54:46</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>11/21/2017 11:37:44</publishTime>
+    </File>
+    <File Include="QuickTestGenUser/FilterAndPrintLog.aspx">
+      <publishTime>11/20/2017 09:33:08</publishTime>
+    </File>
+    <File Include="QuickTestGenUser/GenUserManagerPage.aspx">
+      <publishTime>11/09/2017 11:20:07</publishTime>
+    </File>
+    <File Include="QuickTestGenUser/GenUserPage.aspx">
+      <publishTime>08/01/2017 12:02:50</publishTime>
+    </File>
+    <File Include="QuickTestGenUser/LoginGenUser.aspx">
+      <publishTime>08/01/2017 12:02:50</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.10.1.custom.min.js">
+      <publishTime>08/01/2017 12:03:20</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8.18.js">
+      <publishTime>08/01/2017 12:03:32</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>08/01/2017 12:02:50</publishTime>
+    </File>
+    <File Include="TestThrowError.aspx">
+      <publishTime>08/01/2017 12:02:49</publishTime>
+    </File>
+    <File Include="UserControl/LocalControl.ascx">
+      <publishTime>08/01/2017 12:02:50</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/22/2017 10:29:47</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
