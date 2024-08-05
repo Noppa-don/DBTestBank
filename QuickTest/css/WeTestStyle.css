@@ -1,0 +1,48 @@
+﻿#main {
+	border-style: solid;
+	border-width: 29px 79px 63px 52px;
+	-moz-border-image: url(../Images/MaxOnet/borderimg.png) 29 79 63 52 stretch;
+	-webkit-border-image: url(../Images/MaxOnet/borderimg.png) 29 79 63 52 stretch;
+	-o-border-image: url(../Images/MaxOnet/borderimg.png) 29 79 63 52 stretch;
+	border-image: url(../Images/MaxOnet/borderimg.png) 29 79 63 52 stretch;
+}
+
+.clock{
+	position: relative;
+    bottom: 105px;
+	float:right;
+    display:block!important;
+}
+
+.Report {
+    background: url(../images/MaxOnet/WeTest/Result.png) center left no-repeat!important;
+}
+
+.Practice {
+    background: url(../images/MaxOnet/WeTest/Practice.png) center left no-repeat!important;
+}
+
+.Activity {
+    background: url(../images/MaxOnet/WeTest/Activity.png) center left no-repeat!important;
+}
+
+.menuBar {
+    margin: 5px; width: 240px; height: 180px; position: static; background: #9ed055; color: #FFF; padding: 9px; text-align: center; border-radius: 1em;
+    margin-left: auto; margin-right: auto; display: inline-block; cursor: pointer; padding-top: 25px;
+}
+
+h1 {
+    font-size: 32px;
+    color: #de6800;
+    font-weight: bold;
+}
+
+html {
+    background-color:#a0c56a ;
+    background-attachment: fixed;
+    background-position: center top; 
+     background-size:initial;
+}
+.RegisterPageButton {
+    background-color: #e81062;
+}
