@@ -1,0 +1,757 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 34.75, 28.25" name="DataClassesTablet360">
+  <DataContextMoniker Name="/DataClassesTablet360DataContext" />
+  <nestedChildShapes>
+    <classShape Id="33bbe281-6b93-46b2-9c66-56389184f407" isExpanded="false" absoluteBounds="24.875, 7.125, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/uvwFoundTablet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="18cd1328-9723-46ea-852f-751d0ffdf990" absoluteBounds="24.89, 7.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f2241f50-7a01-4f33-9966-2a118ecb3848" isExpanded="false" absoluteBounds="24.875, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/uvwPercentClass" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7fdea587-f793-4871-b947-2f9af9c9ce73" absoluteBounds="24.89, 4.2100000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7adffa00-a968-40a6-baf8-f91a42c952f3" isExpanded="false" absoluteBounds="24.875, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/uvwStatisticReport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="afdde810-d588-4308-bf8b-ba7d630581b0" absoluteBounds="24.89, 1.5850000000000009, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="687129db-3099-4d87-b9a0-aa5bf8db509a" isExpanded="false" absoluteBounds="24.875, 5.375, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/uvwUseLocation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a4a31e9b-b9ce-4c7b-8305-a1e5e48d2c8a" absoluteBounds="24.89, 5.8350000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ad2fa5a4-86c7-4293-8d34-21bf732daf26" isExpanded="false" absoluteBounds="1, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblMenuItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6556c9cf-cee2-4317-98d5-d014cda87ca1" absoluteBounds="1.0150000000000001, 0.96, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ec5ec675-64a5-40a5-87f2-bda416cb98ca" isExpanded="false" absoluteBounds="8.5, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblProvice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e24df66a-0917-440c-ac1e-9cc17d424af8" absoluteBounds="8.515, 1.2100000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4e2213ef-5f8c-44cf-8fbd-96e9d6fe5896" isExpanded="false" absoluteBounds="11.25, 0.625, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblDistrict" />
+      <nestedChildShapes>
+        <elementListCompartment Id="41a9a777-d0e3-42f5-957d-bc987cdd42e4" absoluteBounds="11.265, 1.0850000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="569f0ada-1a35-4b62-bbf3-ddabfed8c0b2" isExpanded="false" absoluteBounds="14, 0.625, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblSubDistrict" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cafde0b8-a5a3-45f5-bdad-2bc7b5a28555" absoluteBounds="14.015, 1.0850000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.5 : 0.9125); (11.25 : 0.9125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblProvice/t360_tblProvice_t360_tblDistrict" />
+      <nodes>
+        <classShapeMoniker Id="ec5ec675-64a5-40a5-87f2-bda416cb98ca" />
+        <classShapeMoniker Id="4e2213ef-5f8c-44cf-8fbd-96e9d6fe5896" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.25 : 0.85); (14 : 0.85)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblDistrict/t360_tblDistrict_t360_tblSubDistrict" />
+      <nodes>
+        <classShapeMoniker Id="4e2213ef-5f8c-44cf-8fbd-96e9d6fe5896" />
+        <classShapeMoniker Id="569f0ada-1a35-4b62-bbf3-ddabfed8c0b2" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7024aa10-06fd-465f-8608-022872d5d4ca" absoluteBounds="21.875, 11.875, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblNetwork" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aad61f83-bef4-4a51-9f04-4729fb793631" absoluteBounds="21.89, 12.335, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4b0a784e-9137-4ade-928a-83b6bf2afe7c" isExpanded="false" absoluteBounds="16.75, 6.75, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblTabletOwner" />
+      <nestedChildShapes>
+        <elementListCompartment Id="763db380-a475-429d-9a0d-42978774c433" absoluteBounds="16.765, 7.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="637fe5ee-9288-4882-b338-902e463d58d4" isExpanded="false" absoluteBounds="19.625, 6.25, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblTabletLost" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2b3c710f-75b2-44d2-b07e-20ecb92ba23b" absoluteBounds="19.64, 6.71, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(18.75 : 6.75); (19.625 : 6.7)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblTabletOwner/t360_tblTabletOwner_t360_tblTabletLost" />
+      <nodes>
+        <classShapeMoniker Id="4b0a784e-9137-4ade-928a-83b6bf2afe7c" />
+        <classShapeMoniker Id="637fe5ee-9288-4882-b338-902e463d58d4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1b3ea663-8cf0-4346-91a8-c9bc157edfe4" isExpanded="false" absoluteBounds="19.625, 8.625, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblTabletLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ccb4104e-12a0-4245-8cb4-1af1399b3228" absoluteBounds="19.64, 9.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(18.29687875 : 7.2); (18.29687875 : 8.85); (19.625 : 8.85)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblTabletOwner/t360_tblTabletOwner_t360_tblTabletLog" />
+      <nodes>
+        <classShapeMoniker Id="4b0a784e-9137-4ade-928a-83b6bf2afe7c" />
+        <classShapeMoniker Id="1b3ea663-8cf0-4346-91a8-c9bc157edfe4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="fc850daa-3c03-4615-a913-ee473c439f98" isExpanded="false" absoluteBounds="16, 12, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblClass" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1a0f8ec7-3216-4926-992b-014b8e73667f" absoluteBounds="16.015, 12.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6e1620e1-69cc-4c0f-9ec5-a40387dd4921" absoluteBounds="14.125, 14.125, 2, 2.15549967447917">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblRoom" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4d37dc06-8e81-453f-8e12-d936fc9012e4" absoluteBounds="14.14, 14.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(16.4687505 : 12.45); (16.4687505 : 15.3964998372396); (16.125 : 15.3964998372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblClass/t360_tblClass_t360_tblRoom" />
+      <nodes>
+        <classShapeMoniker Id="fc850daa-3c03-4615-a913-ee473c439f98" />
+        <classShapeMoniker Id="6e1620e1-69cc-4c0f-9ec5-a40387dd4921" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="20a68b1c-0dc7-4539-a355-eee6eecaf758" isExpanded="false" absoluteBounds="3.5, 3.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblUnit" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a8b3aaa-3167-4d83-95ec-6fead60c7724" absoluteBounds="3.5149999999999997, 3.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bbd0d90d-043d-4aa3-8c02-981d0f0a359d" isExpanded="false" absoluteBounds="6, 3.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblLesson" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4d00895d-be3c-4373-a52a-bb4797ddc063" absoluteBounds="6.0150000000000006, 3.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="73ac18cf-f74a-455b-9cb8-3af68090666a" isExpanded="false" absoluteBounds="8.5, 3.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblPart" />
+      <nestedChildShapes>
+        <elementListCompartment Id="134ce352-bfe8-4211-a56f-3820473435d6" absoluteBounds="8.515, 3.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 3.725); (6 : 3.725)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblUnit/t360_tblUnit_t360_tblLesson" />
+      <nodes>
+        <classShapeMoniker Id="20a68b1c-0dc7-4539-a355-eee6eecaf758" />
+        <classShapeMoniker Id="bbd0d90d-043d-4aa3-8c02-981d0f0a359d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8 : 3.725); (8.5 : 3.725)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblLesson/t360_tblLesson_t360_tblPart" />
+      <nodes>
+        <classShapeMoniker Id="bbd0d90d-043d-4aa3-8c02-981d0f0a359d" />
+        <classShapeMoniker Id="73ac18cf-f74a-455b-9cb8-3af68090666a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7bcc745a-0235-48c9-86db-b44fae9d75b9" isExpanded="false" absoluteBounds="1.125, 5.75, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblSubjectClass" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e91d0a26-316b-410f-8bd6-9706b69e2ff2" absoluteBounds="1.1400000000000001, 6.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ad4fb1f6-6b65-44bb-a727-454ffce4ab7b" isExpanded="false" absoluteBounds="1.125, 7.375, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblSubjectType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a18e5c3d-351e-485c-88e9-09d5e2cae883" absoluteBounds="1.1400000000000001, 7.8350000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fa1e77f3-8887-4520-8e41-cd75a951189b" isExpanded="false" absoluteBounds="1.125, 3.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblSubject" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7bf8b97f-dd3d-44ce-aecd-3bbdc2b2972e" absoluteBounds="1.1400000000000001, 3.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.125 : 3.725); (3.5 : 3.725)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblSubject/t360_tblSubject_t360_tblUnit" />
+      <nodes>
+        <classShapeMoniker Id="fa1e77f3-8887-4520-8e41-cd75a951189b" />
+        <classShapeMoniker Id="20a68b1c-0dc7-4539-a355-eee6eecaf758" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.125 : 3.95); (2.125 : 5.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblSubject/t360_tblSubject_t360_tblSubjectClass" />
+      <nodes>
+        <classShapeMoniker Id="fa1e77f3-8887-4520-8e41-cd75a951189b" />
+        <classShapeMoniker Id="7bcc745a-0235-48c9-86db-b44fae9d75b9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.80919230769231 : 3.95); (3.50811604300728 : 4.39274122271377 : JumpStart); (3.66939616275043 : 4.43477098304393 : JumpEnd); (4.25 : 4.58607692307692); (4.25 : 6.75); (3.85409643967679 : 6.96994642240178 : JumpStart); (3.70840356032321 : 7.05088691093155 : JumpEnd); (3.33784643967679 : 7.25675197795734 : JumpStart); (3.19215356032321 : 7.33769246648711 : JumpEnd); (3.125 : 7.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblSubject/t360_tblSubject_t360_tblSubjectType" />
+      <nodes>
+        <classShapeMoniker Id="fa1e77f3-8887-4520-8e41-cd75a951189b" />
+        <classShapeMoniker Id="ad4fb1f6-6b65-44bb-a727-454ffce4ab7b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b332bbfc-bb24-461b-9ecf-ebd111ec4db8" isExpanded="false" absoluteBounds="1, 9.125, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblSchoolSubjectType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2d20b339-2d22-43a6-b51e-946864d5195f" absoluteBounds="1.0150000000000001, 9.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.0625 : 7.825); (2.0625 : 9.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblSubjectType/t360_tblSubjectType_t360_tblSchoolSubjectType" />
+      <nodes>
+        <classShapeMoniker Id="ad4fb1f6-6b65-44bb-a727-454ffce4ab7b" />
+        <classShapeMoniker Id="b332bbfc-bb24-461b-9ecf-ebd111ec4db8" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="62da771e-5a99-476f-81b5-73181c893589" isExpanded="false" absoluteBounds="6.375, 11.125, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblTestType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f068077c-dca5-4253-967b-eca4f8e4f5f7" absoluteBounds="6.39, 11.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="60fd57e2-e809-4b04-be69-0e008a9d7fae" absoluteBounds="6.75, 13.625, 2, 4.46311686197917">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblTeacher" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e7a33d3a-6f52-4316-87b6-ab669cca99b6" absoluteBounds="6.765, 14.085, 1.9700000000000002, 3.9031168619791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8441fd67-e8b0-4501-8d52-29a37965b824" isExpanded="false" absoluteBounds="3.875, 7.625, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblStudentHomeWork" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df0bebf0-729c-4fc6-add7-05980b6b9422" absoluteBounds="3.8899999999999997, 8.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.75 : 18.0231754557292); (5.84375 : 18.0231754557292); (5.84375 : 8.075)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblTeacher/t360_tblTeacher_t360_tblStudentHomeWork" />
+      <nodes>
+        <classShapeMoniker Id="60fd57e2-e809-4b04-be69-0e008a9d7fae" />
+        <classShapeMoniker Id="8441fd67-e8b0-4501-8d52-29a37965b824" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.89715284615385 : 7.625); (3.78125 : 7.50909715384615); (3.78125 : 4.60625); (3.125 : 3.95)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblStudentHomeWork/t360_tblStudentHomeWork_t360_tblSubject" />
+      <nodes>
+        <classShapeMoniker Id="8441fd67-e8b0-4501-8d52-29a37965b824" />
+        <classShapeMoniker Id="fa1e77f3-8887-4520-8e41-cd75a951189b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="af0f2559-fd7d-4168-8a2a-f615ec18da6b" isExpanded="false" absoluteBounds="3.625, 15.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblStudentCheckName" />
+      <nestedChildShapes>
+        <elementListCompartment Id="525df3ce-4b1a-4566-9cbe-f2bb3e5cd29e" absoluteBounds="3.6399999999999997, 15.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.75 : 15.7928357278646); (6.375 : 15.7928357278646); (6.375 : 15.725); (5.92708333333333 : 15.725 : JumpStart); (5.76041666666667 : 15.725 : JumpEnd); (5.625 : 15.725)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblTeacher/t360_tblTeacher_t360_tblStudentCheckName" />
+      <nodes>
+        <classShapeMoniker Id="60fd57e2-e809-4b04-be69-0e008a9d7fae" />
+        <classShapeMoniker Id="af0f2559-fd7d-4168-8a2a-f615ec18da6b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.093748 : 3.95); (2.093748 : 5.5); (3.265 : 5.5); (3.265 : 15.725); (3.625 : 15.725)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblSubject/t360_tblSubject_t360_tblStudentCheckName" />
+      <nodes>
+        <classShapeMoniker Id="fa1e77f3-8887-4520-8e41-cd75a951189b" />
+        <classShapeMoniker Id="af0f2559-fd7d-4168-8a2a-f615ec18da6b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5b32d78d-865e-4d4d-9051-ccb90d9a756a" isExpanded="false" absoluteBounds="6.625, 7.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblStudentTest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="013cd3b7-e1b6-431f-a5d0-1d79f8b0c138" absoluteBounds="6.64, 7.9600000000000009, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.4999995 : 13.625); (7.4999995 : 11.825); (6.125 : 11.825); (6.125 : 7.725); (6.625 : 7.725)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblTeacher/t360_tblTeacher_t360_tblStudentTest" />
+      <nodes>
+        <classShapeMoniker Id="60fd57e2-e809-4b04-be69-0e008a9d7fae" />
+        <classShapeMoniker Id="5b32d78d-865e-4d4d-9051-ccb90d9a756a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.125 : 11.125); (7.125 : 7.95)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblTestType/t360_tblTestType_t360_tblStudentTest" />
+      <nodes>
+        <classShapeMoniker Id="62da771e-5a99-476f-81b5-73181c893589" />
+        <classShapeMoniker Id="5b32d78d-865e-4d4d-9051-ccb90d9a756a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.125 : 3.93892207692308); (3.51107792307692 : 4.325); (7.625 : 4.325); (7.625 : 7.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblSubject/t360_tblSubject_t360_tblStudentTest" />
+      <nodes>
+        <classShapeMoniker Id="fa1e77f3-8887-4520-8e41-cd75a951189b" />
+        <classShapeMoniker Id="5b32d78d-865e-4d4d-9051-ccb90d9a756a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="dddf5626-355b-4cea-9ae8-70db8cce3bc0" isExpanded="false" absoluteBounds="1, 10.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblStudentRoom" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3c5df478-9191-4dad-9b5d-e875e40875a4" absoluteBounds="1.0150000000000001, 10.96, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a65eb628-16ab-42fd-846d-3db8b1a7bb4f" absoluteBounds="9.625, 13.625, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblTeacherRoom" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ba4790bb-5084-4a6e-8fab-89be1756f517" absoluteBounds="9.64, 14.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.75 : 15.5713525390625); (9.625 : 15.5713525390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblTeacher/t360_tblTeacher_t360_tblTeacherRoom" />
+      <nodes>
+        <classShapeMoniker Id="60fd57e2-e809-4b04-be69-0e008a9d7fae" />
+        <classShapeMoniker Id="a65eb628-16ab-42fd-846d-3db8b1a7bb4f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="977e4b1a-4193-4240-a515-4b8efb73dd55" isExpanded="false" absoluteBounds="22.125, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_uvwTabletDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dc3d18e1-de0c-434c-bfd0-2fd379c8491a" absoluteBounds="22.14, 1.585, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0dac051d-0faa-45f9-a858-e80ba8621b21" isExpanded="false" absoluteBounds="22.375, 9.375, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblTempStudent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="57c4acbf-5239-4739-9d6f-21bbe7dd0bc2" absoluteBounds="22.39, 9.835, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="353e63c7-22c2-408c-9940-ef991fbce436" absoluteBounds="18.5, 12.75, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblNetworkHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d2487ea5-86a4-422a-9f53-ae2dffc08798" absoluteBounds="18.515, 13.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(21.875 : 13.9671541341146); (20.5 : 13.9671541341146)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblNetwork/t360_tblNetwork_t360_tblNetworkHistory" />
+      <nodes>
+        <classShapeMoniker Id="7024aa10-06fd-465f-8608-022872d5d4ca" />
+        <classShapeMoniker Id="353e63c7-22c2-408c-9940-ef991fbce436" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4d1e89d6-3b23-4f9f-85d7-c6288a2ced4c" absoluteBounds="5.375, 19.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblModule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cec14bae-14bc-4463-8bf6-82861fa942d4" absoluteBounds="5.39, 20.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="08b02499-49dc-401d-b5c3-19029ae77dd1" absoluteBounds="12.625, 20, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblModuleDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e0f79e51-bbcb-40ae-af0f-29f430cb8fbb" absoluteBounds="12.64, 20.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="57640c53-126e-4a6d-a7eb-56161a9615fb" absoluteBounds="10.25, 20, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblModuleAssignmentDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bf7591e6-1359-4b03-847f-285bf9aabc09" absoluteBounds="10.265, 20.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="124dc996-82f7-4b54-90cc-c818ca9ecb15" absoluteBounds="6.375, 22.75, 2, 4.2708154296875">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblTestSet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db38e3e8-5fa3-47cd-afa5-4f7c8d98afa1" absoluteBounds="6.39, 23.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9735ac9e-844f-487c-adb3-d6e43a25b252" absoluteBounds="3.5, 11.125, 2.25, 6.7707340494791666">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblStudent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6347be29-4fd8-4e08-a9e8-994564827b58" absoluteBounds="3.515, 11.585, 2.2199999999999998, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.5 : 11.125); (3 : 10.95)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblStudent/t360_tblStudent_t360_tblStudentRoom" />
+      <nodes>
+        <classShapeMoniker Id="9735ac9e-844f-487c-adb3-d6e43a25b252" />
+        <classShapeMoniker Id="dddf5626-355b-4cea-9ae8-70db8cce3bc0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.8125 : 11.125); (4.8125 : 8.075)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblStudent/t360_tblStudent_t360_tblStudentHomeWork" />
+      <nodes>
+        <classShapeMoniker Id="9735ac9e-844f-487c-adb3-d6e43a25b252" />
+        <classShapeMoniker Id="8441fd67-e8b0-4501-8d52-29a37965b824" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.6718775 : 11.125); (3.6718775 : 7.5312505); (6.625 : 7.5312505)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblStudent/t360_tblStudent_t360_tblStudentTest" />
+      <nodes>
+        <classShapeMoniker Id="9735ac9e-844f-487c-adb3-d6e43a25b252" />
+        <classShapeMoniker Id="5b32d78d-865e-4d4d-9051-ccb90d9a756a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="510bd180-6437-4009-80c6-2d8c44f88b0e" isExpanded="false" absoluteBounds="27.375, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/uvw_GetSubjectForHomework" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6d2b4b82-50fd-477e-9717-9fdc256e65ea" absoluteBounds="27.39, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fa10edba-8d43-4dcb-b8f8-98bab31cc9e1" isExpanded="false" absoluteBounds="30.125, 5.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/uvw_StudentHomeworkScore" />
+      <nestedChildShapes>
+        <elementListCompartment Id="88001a7e-f082-4a41-b806-37743abbeab4" absoluteBounds="30.14, 5.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="154f7fad-f3f4-46bc-949c-7be461f88abb" isExpanded="false" absoluteBounds="30, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/uvw_StudentDoAllQuiz" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f59db8fe-0cf5-4c27-ad08-cec48664913b" absoluteBounds="30.015, 0.96, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b6a425ac-67c2-4554-9148-4c44d1619443" isExpanded="false" absoluteBounds="32.5, 1.625, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/uvw_TeacherCreateTestset" />
+      <nestedChildShapes>
+        <elementListCompartment Id="44a6b90a-db2e-4f50-80a0-0eccceb3c45d" absoluteBounds="32.515, 2.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9e085b71-3e68-4c31-807a-feafaf5412f4" isExpanded="false" absoluteBounds="27.5, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/uvw_TeacherCreateHomework" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0f485cc2-7db3-4996-9c63-dd09fdf0512b" absoluteBounds="27.515, 3.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="36ccbb87-e8f6-4ba0-be46-65a39f3110ca" isExpanded="false" absoluteBounds="27.5, 6.375, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/uvw_TeacherCreateQuiz" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9662a492-5acc-4917-9b37-187b78b2cfb3" absoluteBounds="27.515, 6.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="256eb26d-8fa6-42e4-804d-2658281be5e7" isExpanded="false" absoluteBounds="32.5, 4.375, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/uvw_TeacherCreateSubject" />
+      <nestedChildShapes>
+        <elementListCompartment Id="375d6e3b-2444-4346-ab90-c611befb92b7" absoluteBounds="32.515, 4.835, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0abf02db-3cd7-4aa0-91e3-b2a10b10d8e4" absoluteBounds="17.5, 23, 2, 2.15549967447917">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblMobileAccessPassword" />
+      <nestedChildShapes>
+        <elementListCompartment Id="84756d5f-00b5-4584-9024-c375a48a7ccd" absoluteBounds="17.515, 23.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bb154794-ce66-40a5-92a4-70391f659270" absoluteBounds="15.125, 23, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblMobileRegistration" />
+      <nestedChildShapes>
+        <elementListCompartment Id="052e2a82-7b99-4943-8874-50a42f0bea11" absoluteBounds="15.14, 23.46, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7cf28aa3-e1d5-4dd7-be68-07a18ccc4c59" absoluteBounds="20, 22.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblGroupSubject" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db80265f-4604-407b-9e11-3cdecbb74150" absoluteBounds="20.015, 23.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a2ba15d1-f0de-44bd-819e-5d08afb40e25" absoluteBounds="15.375, 19.875, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblSchool" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f78eea01-8d33-4348-a9df-b8862e51e5a9" absoluteBounds="15.39, 20.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a848653c-9b1a-4df0-b316-2d960fb78815" absoluteBounds="17.75, 19.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblAmphur" />
+      <nestedChildShapes>
+        <elementListCompartment Id="210895bb-133f-40ab-88d2-8fc3cd26585b" absoluteBounds="17.765, 20.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a0cf02ab-7ab6-4abe-be13-3eaee72540ec" absoluteBounds="20.125, 20, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblProvince" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eaaa18c0-4fba-4807-900f-a23d83c36541" absoluteBounds="20.14, 20.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="391a678d-6b59-41b6-aff8-86b79886d818" absoluteBounds="22.375, 20, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblTambol" />
+      <nestedChildShapes>
+        <elementListCompartment Id="16259295-4792-4363-be24-972b38ad13a9" absoluteBounds="22.39, 20.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f0cb1ed6-2bc6-4555-9f05-5fe27382aa87" absoluteBounds="7.875, 19.875, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblModuleAssignment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="53e4e52a-1876-4297-8c21-189b72942f32" absoluteBounds="7.8900000000000006, 20.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5357e8b0-5b51-4054-acb3-56518de6c75f" absoluteBounds="3, 19.875, 2, 8.1168440755208344">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblQuiz" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e21aa3bd-b643-454f-b190-f647b8cfba49" absoluteBounds="3.0150000000000006, 20.335, 1.9700000000000002, 7.556844075520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b1dad0ac-8f56-428d-9e23-1226d669ac05" isExpanded="false" absoluteBounds="30.375, 9.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblUplevelConfirm" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4d57eb1d-bc0b-493f-ae6b-e6588c4beec1" absoluteBounds="30.39, 9.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="404b5caf-d186-43b4-b17f-199fa250d51b" isExpanded="false" absoluteBounds="30.375, 12.125, 2.375, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblSetTypeRunStudentNumber" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7b6cbff5-914c-4924-a79f-dd05cb5b62aa" absoluteBounds="30.39, 12.585, 2.3449999999999998, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d37ca9da-fe8d-42aa-97ad-358bb3a90e50" isExpanded="false" absoluteBounds="5.875, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="954bf313-08ca-41d5-b635-695b61830fef" absoluteBounds="5.89, 0.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0c3a75ac-f961-46cd-8016-5876b9714cb3" isExpanded="false" absoluteBounds="0.625, 14.375, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblStudentFinish" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2b6df226-b74c-4177-af5b-13053591a0d2" absoluteBounds="0.63999999999999968, 14.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.5 : 14.6); (2.625 : 14.6)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblStudent/t360_tblStudent_t360_tblStudentFinish" />
+      <nodes>
+        <classShapeMoniker Id="9735ac9e-844f-487c-adb3-d6e43a25b252" />
+        <classShapeMoniker Id="0c3a75ac-f961-46cd-8016-5876b9714cb3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="485ec4fa-b144-4298-ab12-10914529d655" isExpanded="false" absoluteBounds="19.375, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblNewsRoom" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9b87ab14-9641-42ee-959c-1812948dd2b3" absoluteBounds="19.39, 1.21, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a65c4a6d-7355-4ca8-b747-e1d9e3cda5ae" isExpanded="false" absoluteBounds="3.5, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblUserMenuItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f9d6ec0b-78fa-4792-8ec5-69d0a986e738" absoluteBounds="3.5149999999999997, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3 : 0.85); (3.5 : 0.85)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblMenuItem/t360_tblMenuItem_t360_tblUserMenuItem" />
+      <nodes>
+        <classShapeMoniker Id="ad2fa5a4-86c7-4293-8d34-21bf732daf26" />
+        <classShapeMoniker Id="a65c4a6d-7355-4ca8-b747-e1d9e3cda5ae" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.875 : 0.85); (5.5 : 0.85)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblUser/t360_tblUser_t360_tblUserMenuItem" />
+      <nodes>
+        <classShapeMoniker Id="d37ca9da-fe8d-42aa-97ad-358bb3a90e50" />
+        <classShapeMoniker Id="a65c4a6d-7355-4ca8-b747-e1d9e3cda5ae" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="952c6598-d068-44a7-a491-28d5e9121bc6" isExpanded="false" absoluteBounds="14.125, 2.375, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblSchool" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc5c7444-33bf-418b-a3dc-28223a221cd8" absoluteBounds="14.14, 2.835, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fdf23150-34cc-4cff-8ea0-55b60f98a47e" isExpanded="false" absoluteBounds="10.75, 11.375, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblAssistant" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ace8dd2-1d0c-461a-bbaf-74e3f05c6f78" absoluteBounds="10.765, 11.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.59375 : 13.625); (8.59375 : 11.73125); (10.75 : 11.73125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblTeacher/t360_tblTeacher_tblAssistant" />
+      <nodes>
+        <classShapeMoniker Id="60fd57e2-e809-4b04-be69-0e008a9d7fae" />
+        <classShapeMoniker Id="fdf23150-34cc-4cff-8ea0-55b60f98a47e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="dad02ae0-f9ac-4402-bf11-115d7089b3e0" isExpanded="false" absoluteBounds="19.5, 3.25, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dbed4361-552e-4cfb-86f8-045e036765a3" absoluteBounds="19.515, 3.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="319c3b4a-7e8d-4598-a373-c9f5c8860887" absoluteBounds="12.625, 22.75, 2, 5.0400211588541657">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblSetEmail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a3ffa374-e96f-4eb0-92fd-85ba87a01a32" absoluteBounds="12.64, 23.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fece74de-877a-478c-9600-99bf6847d8c6" isExpanded="false" absoluteBounds="16.75, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblNew" />
+      <nestedChildShapes>
+        <elementListCompartment Id="de497814-960c-4b8e-9c4f-d7d6b837778e" absoluteBounds="16.765, 1.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(18.75 : 0.975); (19.375 : 0.975)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblNew/t360_tblNew_t360_tblNewsRoom" />
+      <nodes>
+        <classShapeMoniker Id="fece74de-877a-478c-9600-99bf6847d8c6" />
+        <classShapeMoniker Id="485ec4fa-b144-4298-ab12-10914529d655" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f88de90c-9f2c-43f5-8063-67147a6bdcfc" isExpanded="false" absoluteBounds="18.875, 12, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblSchoolClass" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7966ab68-55b7-497f-a039-ff7091b9850c" absoluteBounds="18.89, 12.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(18 : 12.225); (18.875 : 12.225)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblClass/t360_tblClass_t360_tblSchoolClass" />
+      <nodes>
+        <classShapeMoniker Id="fc850daa-3c03-4615-a913-ee473c439f98" />
+        <classShapeMoniker Id="f88de90c-9f2c-43f5-8063-67147a6bdcfc" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e035b151-7d19-4e85-a0f7-44eaffdbe7d3" absoluteBounds="9.5, 23, 2, 3.1170068359375">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblModuleDetailCompletion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="92ff0f43-8d93-4bde-ac6c-bbb4a6d9cdd0" absoluteBounds="9.515, 23.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7fa97f86-3e6b-474a-88a6-e6a71628d18f" absoluteBounds="24.75, 20, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblSyncLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bef05657-c840-4487-b701-6fcb7a18e66a" absoluteBounds="24.765, 20.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="186202a5-c5dd-404b-8ff4-2213d92b5488" isExpanded="false" absoluteBounds="11.25, 2.875, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblCalendar" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ed55b74-9310-49fb-8794-64074db9dd16" absoluteBounds="11.265, 3.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="596e48cc-457c-495a-981c-0571280bd4ea" absoluteBounds="22.375, 23.125, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblLevel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5c4906a1-f094-4e6c-931a-dfea543be524" absoluteBounds="22.39, 23.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="56341968-2a2d-4750-b968-1311447fdd3d" absoluteBounds="27.375, 23.375, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7a959226-4dea-427b-903c-d8cdc2185454" absoluteBounds="27.39, 23.835, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ed201fca-5431-4f5f-8a48-bbdc473d11fd" absoluteBounds="24.875, 23.375, 2, 3.1170068359375">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblUserSubjectClass" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a192dbb1-b044-4bba-ab4f-c1ff4081a124" absoluteBounds="24.89, 23.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c6eab51a-8033-41e2-9bf9-d793311efacc" isExpanded="false" absoluteBounds="16.75, 9.75, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblTabletRepair" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9fbceda1-bd32-4e00-a0bd-711369a41335" absoluteBounds="16.765, 10.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(17.460939375 : 7.2); (17.460939375 : 9.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblTabletOwner/t360_tblTabletOwner_t360_tblTabletRepair" />
+      <nodes>
+        <classShapeMoniker Id="4b0a784e-9137-4ade-928a-83b6bf2afe7c" />
+        <classShapeMoniker Id="c6eab51a-8033-41e2-9bf9-d793311efacc" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="70471e24-3b9f-4f50-abd4-d1406389226b" isExpanded="false" absoluteBounds="28, 12.375, 2.25, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblUpLevelDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97d5550b-bbd7-4619-85a7-784be4df8b8c" absoluteBounds="28.015, 12.835, 2.2199999999999998, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fc22b7e0-0c27-46b5-b433-9d0929067447" absoluteBounds="27.125, 19.875, 2, 3.1170068359375">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="99769bbc-09d2-44b6-b3f9-aaed3c8dd4dd" absoluteBounds="27.14, 20.335, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1e5d8fa5-a48c-4a4a-8dad-aff509407ffb" isExpanded="false" absoluteBounds="25.25, 9.375, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblTempTeacher" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ba2bfc5f-7ee9-4196-a89f-ee371d56dd94" absoluteBounds="25.265, 9.835, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9d9b7900-2697-4610-bce6-d2744d0f3c5f" isExpanded="false" absoluteBounds="8.875, 7.125, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblTabletLab" />
+      <nestedChildShapes>
+        <elementListCompartment Id="82ba4b6a-b6be-4c17-9109-cb1f605b057e" absoluteBounds="8.89, 7.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7a5c6601-70bc-4e92-8ca3-9789211185d6" absoluteBounds="11.375, 7.375, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblTabletLabDesk" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c970aba-7bdd-4c31-8a09-ea9e83ee743a" absoluteBounds="11.39, 7.8350000000000009, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.875 : 7.575); (9.875 : 8.64890105338542); (11.375 : 8.64890105338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/tblTabletLab/tblTabletLab_tblTabletLabDesk" />
+      <nodes>
+        <classShapeMoniker Id="9d9b7900-2697-4610-bce6-d2744d0f3c5f" />
+        <classShapeMoniker Id="7a5c6601-70bc-4e92-8ca3-9789211185d6" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b5dfeeb2-d931-4991-a400-1c3585fa997f" isExpanded="false" absoluteBounds="27.75, 9.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblUpLevel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8bf2c3bb-bb85-44ed-aafa-77ddbea2a384" absoluteBounds="27.765, 9.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b692e316-3d2a-445d-9b1d-f8cf3d9f417a" isExpanded="false" absoluteBounds="19.375, 1.625, 2, 0.45">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblNewsDetailCompletion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="34ccb005-bc12-4cad-8173-8e85f3f8a0fe" absoluteBounds="19.39, 2.0850000000000009, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(20.375 : 1.2); (20.375 : 1.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblNewsRoom/t360_tblNewsRoom_t360_tblNewsDetailCompletion" />
+      <nodes>
+        <classShapeMoniker Id="485ec4fa-b144-4298-ab12-10914529d655" />
+        <classShapeMoniker Id="b692e316-3d2a-445d-9b1d-f8cf3d9f417a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="146bc1ec-2ea3-4a51-925f-ba520995b621" absoluteBounds="13.625, 10, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblTabletStatusDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="90d620ea-540f-4928-b4db-3c3ef6775a96" absoluteBounds="13.64, 10.46, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="59b82ff7-3bd9-40a8-b358-14c7b3d27396" absoluteBounds="13.875, 6.375, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblTablet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a420ee3c-a118-444a-b530-4d0a3609c3bc" absoluteBounds="13.89, 6.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(15.875 : 6.975); (16.75 : 6.975)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblTablet/t360_tblTablet_t360_tblTabletOwner" />
+      <nodes>
+        <classShapeMoniker Id="59b82ff7-3bd9-40a8-b358-14c7b3d27396" />
+        <classShapeMoniker Id="4b0a784e-9137-4ade-928a-83b6bf2afe7c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.875 : 8.33735270182292); (13.375 : 8.33735270182292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblTablet/t360_tblTablet_tblTabletLabDesk" />
+      <nodes>
+        <classShapeMoniker Id="59b82ff7-3bd9-40a8-b358-14c7b3d27396" />
+        <classShapeMoniker Id="7a5c6601-70bc-4e92-8ca3-9789211185d6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.75 : 9.29970540364583); (14.75 : 10)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblTablet/t360_tblTablet_t360_tblTabletStatusDetail" />
+      <nodes>
+        <classShapeMoniker Id="59b82ff7-3bd9-40a8-b358-14c7b3d27396" />
+        <classShapeMoniker Id="146bc1ec-2ea3-4a51-925f-ba520995b621" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e7e711d6-aa44-4a16-b5f6-827e514ea743" absoluteBounds="24.875, 12.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/t360_tblNetworkWarnReason" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3dae68cb-1e10-4810-a5f2-d4140551e538" absoluteBounds="24.89, 12.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(23.875 : 13.2027498372396); (24.875 : 13.2027498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/t360_tblNetwork/t360_tblNetwork_t360_tblNetworkWarnReason" />
+      <nodes>
+        <classShapeMoniker Id="7024aa10-06fd-465f-8608-022872d5d4ca" />
+        <classShapeMoniker Id="e7e711d6-aa44-4a16-b5f6-827e514ea743" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="57925006-c22c-4926-8766-e4caaba1fb6f" absoluteBounds="20.25, 25.5, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/DataClassesTablet360DataContext/tblSchoolSubjectClass" />
+      <nestedChildShapes>
+        <elementListCompartment Id="88be024c-3f54-4f87-b1fc-4636b6e9c7e9" absoluteBounds="20.265, 25.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(21.125 : 24.3285953776042); (21.125 : 25.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesTablet360DataContext/tblGroupSubject/tblGroupSubject_tblSchoolSubjectClass" />
+      <nodes>
+        <classShapeMoniker Id="7cf28aa3-e1d5-4dd7-be68-07a18ccc4c59" />
+        <classShapeMoniker Id="57925006-c22c-4926-8766-e4caaba1fb6f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
