@@ -1,0 +1,452 @@
+﻿
+#main {
+    text-align: center;
+}
+
+h3 {
+    font-weight: bold;
+    margin: 0 !important;
+}
+
+.form {
+    padding: 20px;
+    margin: auto;
+    width: 90%;
+    border-radius: 5px;
+    text-align: left;
+}
+
+    .form > div.form2 {
+        background: #D3F2F7;
+        border-radius: 10px;
+        padding: 10px 10px 0 10px;
+        margin-top: 10px;
+    }
+
+.form2 table {
+    margin: 0;
+}
+
+    .form2 table tr td {
+        background: initial;
+        font-size: 16px;
+        border-bottom-color: #D3F2F7;
+    }
+
+        .form2 table tr td:first-child {
+            text-align: right;
+            width: 170px;
+            font-weight: bold;
+        }
+
+        .form2 table tr td:last-child {
+            padding-left: 10px;
+        }
+
+.btn {
+    font: 100% 'THSarabunNew';
+    border: 0;
+    width: 100px;
+    height: 33px;
+    padding: 2px 0 3px 0;
+    cursor: pointer;
+    background: #1EC9F4;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    color: #FFF;
+    border: solid 1px #0D8AA9;
+    text-shadow: 1px 1px #178497;
+    background-color: #B6B6B6;
+    border-radius: 0.5em;
+    behavior: url('../css/PIE.htc');
+    background: #63cfdf; /* Old browsers */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYzY2ZkZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxN2IyZDkiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, #63cfdf 0%, #17b2d9 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#63cfdf), color-stop(100%,#17b2d9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #63cfdf 0%,#17b2d9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #63cfdf 0%,#17b2d9 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #63cfdf 0%,#17b2d9 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #63cfdf 0%,#17b2d9 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63cfdf', endColorstr='#17b2d9',GradientType=0 ); /* IE6-8 */
+}
+
+input[type=text], textarea {
+    width: 299px;
+    font: 100% 'THSarabunNew';
+    border: 1px solid #C6E7F0;
+    background: #EFF8FB;
+    color: #47433F;
+    border-radius: 7px;
+}
+
+textarea {
+    resize: none;
+    padding: 5px;
+    width: 450px;
+}
+
+input[type=radio] + label {
+    margin-left: 5px;
+}
+
+.btnQuestionNumberBar {
+    display: inline-flex;
+}
+
+    .btnQuestionNumberBar > div {
+        width: 35px;
+        height: 35px;
+        background-color: whitesmoke;
+        border: 1px solid;
+        border-radius: 50%;
+        cursor: pointer;
+        text-align: center;
+        font-weight: bold;
+        margin: 3px;
+    }
+
+        .btnQuestionNumberBar > div.currentQuestion {
+            background-color: darkseagreen;
+        }
+
+
+
+/* Question Style */
+
+.divQuestionAndAnswer, .divQuestionAndAnswerExplain {
+    position: relative;
+    width: 610px;
+    border-radius: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+    .divQuestionAndAnswer td, .divQuestionAndAnswer td span.drag {
+        font-size: 24px;
+        background-color: initial;
+    }
+
+        .divQuestionAndAnswer td span.drag {
+            cursor: pointer;
+        }
+
+
+.Question {
+    font-size: 30px;
+    position: relative;
+    background-color: #ffc76f;
+    height: auto;
+    font-weight: bold;
+    width: 650px;
+    border: 20px;
+    padding: 20px;
+    margin-left: -40px;
+    border-radius: 10px 10px 0px 0px;
+    behavior: url('../css/PIE.htc');
+    -pie-track-active: false;
+}
+
+div#mainAnswer, div#mainAnswerExplain {
+    width: 650px;
+    position: relative;
+    background-color: #F4F7FF;
+    padding: 20px;
+    margin-left: -40px;
+    border-radius: 0px 0px 10px 10px;
+    behavior: url('../css/PIE.htc');
+    -pie-track-active: false;
+}
+
+.Answer {
+    width: 283px;
+    position: relative;
+    float: left;
+    height: 80px;
+    font-size: 20px;
+    border-right: solid 1px #AFAFAF;
+    border-left: solid 1px #AFAFAF;
+    border-bottom: solid 1px #AFAFAF;
+    padding: 20px;
+    background-color: #F4F7FF;
+}
+
+body {
+    background: url(../Images/Activity/bg5.png) no-repeat center center fixed;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font: normal 0.95em 'THSarabunNew';
+    color: #444;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: gray;
+}
+
+div.Question p:first-child {
+    display: inline;
+}
+
+#mainAnswer td p:first-child {
+    display: inline;
+}
+
+#DivBtn {
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    text-align: center;
+}
+
+    #DivBtn input[type=button] {
+        font-size: 20px;
+        width: 100px;
+        height: 50px;
+    }
+
+/*li:before {
+    content: "ลำดับที่ " counter(li) " ";
+    counter-increment: li;
+    color: orange;
+}
+
+li {
+    background-color: white;
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    width: 613px;
+    text-align: left;
+    padding-left: 20px;
+    line-height: 40px;
+    -webkit-border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid gray;
+}*/
+
+/*li div {
+        display: inline;
+    }
+
+ul {
+    counter-reset: li;
+    margin-top: 0px;
+    list-style: none;
+    margin-left: -40px;
+}*/
+
+#imgSwapMode {
+    cursor: pointer;
+    position: fixed;
+    top: 33px;
+    width: 50px;
+    height: 50px;
+}
+
+#AnswerExp .ImgCircle {
+    top: 30px;
+    left: -5px;
+}
+
+#AnswerExp > div {
+    padding: 5px 0;
+    border-bottom: 1px solid grey;
+    position: relative;
+}
+
+    /*#AnswerExp > div > div {
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 24px;
+    }*/
+
+    #AnswerExp > div > div > div {
+        border: 1px dashed;
+        border-width: 2px;
+        border-radius: 5px;
+        margin-left: 25px;
+        margin-right: 10px;
+        padding: 10px;
+    }
+
+    #AnswerExp > div div.Correct {
+        background-color: #2CA505;
+        color: white;
+    }
+
+        #AnswerExp > div div.Correct div, ul > li > div.Correct {
+            background-color: #77BD60;
+        }
+
+    #AnswerExp > div div.InCorrect {
+        background-color: #FF0B00;
+        color: white;
+    }
+
+        #AnswerExp > div div.InCorrect div, ul > li > div.InCorrect {
+            background-color: #FF7A74;
+        }
+
+
+    #AnswerExp > div div.NotAnswered div, div.NotAnswered div {
+        background-color: rgb(192, 226, 255);
+    }
+
+#btnAnswerExp, #btnQuestionExp {
+    width: 75px;
+    height: 75px;
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 9;
+    background-image: url('../images/activity/btnExplain-85.png');
+}
+
+div#QuestionExp {
+    border: 1px dashed;
+    border-width: 2px;
+    background-color: #FFE3B6;
+    width: 625px;
+    padding: 10px;
+    word-wrap: break-word;
+    border-radius: 5px;
+    display: block;
+}
+
+ul > li > div.Correct, ul > li > div.InCorrect {
+    border: 1px dashed;
+    padding: 10px;
+    border-width: 2px;
+    border-radius: 5px;
+    margin: 10px 10px 10px 0;
+    display: none;
+}
+
+.addAnswer {
+    border: 1px dashed;
+    text-align: center;
+    z-index: 5 !important;
+}
+
+    .addAnswer:hover {
+        background-color: beige;
+        cursor: pointer;
+    }
+
+#Table1 tr td:nth-child(2n+1) {
+    height: 50px;
+    /*font-weight: bold;*/
+    width: 35px;
+    position: relative;    
+}
+#Table1 tr td{
+    vertical-align: top;
+}
+
+#Table1 tr td:nth-child(2n+0) {
+    width: 45%;
+}
+
+
+.btnDeleteAnswer, .btnDeleteQuestion {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.btnDeleteQuestion {
+    top: 50px;
+}
+
+/** Question Explain Part */
+.divQuestionAndAnswer table, .divQuestionAndAnswerExplain table {
+    margin: 0 !important;
+}
+
+    .divQuestionAndAnswerExplain table tr {
+        vertical-align: top;
+    }
+
+        .divQuestionAndAnswerExplain table tr td {
+            background: initial !important;
+            color: initial !important;
+            border-bottom: initial !important;
+            padding: 0 !important;
+        }
+
+.divQuestionAndAnswerExplain div.Correct, .divQuestionAndAnswerExplain div.NotAnswered, .divQuestionAndAnswerExplain div.answerExplain {
+    padding: 5px;
+}
+
+.divQuestionAndAnswerExplain div.Correct, td.Correct {
+    background-color: #2CA505;
+    color: white;
+    border-radius: 5px;
+    color: white;
+}
+
+    .divQuestionAndAnswerExplain div.NotAnswered div, .divQuestionAndAnswerExplain div.Correct div, .divQuestionAndAnswerExplain div.answerExplain div {
+        border: 2px dashed;
+        border-radius: 5px;
+    }
+
+.divQuestionAndAnswerExplain div.answerExplain div { /*.divQuestionAndAnswerExplain div.NotAnswered div*/
+    background-color: rgb(192, 226, 255);
+}
+
+.divQuestionAndAnswerExplain div.Correct div {
+    background-color: #77BD60;
+    border-color: white;
+}
+
+.divQuestionAndAnswerExplain div.Correct table tr td {
+    color: white !important;
+}
+
+/*Placeholder in contenteditable*/
+[contentEditable=true]:empty:not(:focus):before {
+    content: attr(defaultText);
+    color: gray;
+}
+
+.questionSelected {
+    background-color: rgba(0, 128, 4, 0.43) !important;
+}
+
+
+/* ข้อสอบแบบเรียงลำดับ */
+#mainAnswer ul {
+    counter-reset: li;
+    margin: 0;
+    list-style: none;
+}
+
+#mainAnswer li div {
+    display: inline-flex;
+}
+
+#mainAnswer li:before {
+    content: "ลำดับที่ " counter(li) " ";
+    counter-increment: li;
+    color: orange;
+}
+
+#mainAnswer li {
+    list-style-type: none;
+    background-color: white;
+    padding: 5px;
+    line-height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid gray;
+    position: relative;
+}
