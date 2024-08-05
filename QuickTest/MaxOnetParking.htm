@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        h1 {
+            font-size: 30px;
+        }
+        div{
+            text-align:center;
+        }
+    </style>
+    
+</head>
+<body>
+    <div>
+        <h1>โหลด APP กันก่อนนะจ๊ะ</h1><br />
+        <span id="spnModel"></span>
+    </div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        var txt = (iOS) ? "IOS" : "Android"; console.log(txt);
+        document.getElementById("spnModel").textContent = txt;
+</script>
