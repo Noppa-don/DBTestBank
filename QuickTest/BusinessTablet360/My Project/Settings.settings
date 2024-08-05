@@ -1,0 +1,118 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="Tablet360ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=.\sql2008;Initial Catalog=Tablet360;Persist Security Info=True;User ID=sa;Password=love&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=.\sql2008;Initial Catalog=Tablet360;Persist Security Info=True;User ID=sa;Password=love</Value>
+    </Setting>
+    <Setting Name="QuickTest_9_fromSupport_20130214_noonConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=10.100.1.111\sqlserver2008,1501;Initial Catalog=QuickTest_9_fromSupport_20130214_noon;Persist Security Info=True;User ID=sa&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=10.100.1.111\sqlserver2008,1501;Initial Catalog=QuickTest_9_fromSupport_20130214_noon;Persist Security Info=True;User ID=sa</Value>
+    </Setting>
+    <Setting Name="QuickTest_9_fromSupport_20130214_noonConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=10.100.1.111\sqlserver2008,1501;Initial Catalog=QuickTest_9_fromSupport_20130214_noon;User ID=sa&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=10.100.1.111\sqlserver2008,1501;Initial Catalog=QuickTest_9_fromSupport_20130214_noon;User ID=sa</Value>
+    </Setting>
+    <Setting Name="QuickTest_9_fromSupport_20130214_noonConnectionString2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=10.100.1.111\sqlserver2008,1501;Initial Catalog=QuickTest_9_fromSupport_20130214_noon;User ID=sa;Password=kl123&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=10.100.1.111\sqlserver2008,1501;Initial Catalog=QuickTest_9_fromSupport_20130214_noon;User ID=sa;Password=kl123</Value>
+    </Setting>
+    <Setting Name="QuickTest_9_fromSupport_20130214_noonConnectionString3" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=10.100.1.116\sqlserver2008,1600;Initial Catalog=QuickTest_9_fromSupport_20130214_noon;Persist Security Info=True;User ID=sa&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=10.100.1.116\sqlserver2008,1600;Initial Catalog=QuickTest_9_fromSupport_20130214_noon;Persist Security Info=True;User ID=sa</Value>
+    </Setting>
+    <Setting Name="QuickTest_9_fromSupport_20130214_noonConnectionString4" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=10.100.1.116\sqlserver2008,1600;Initial Catalog=QuickTest_9_fromSupport_20130214_noon;Persist Security Info=True;User ID=sa;Password=kl123&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=10.100.1.116\sqlserver2008,1600;Initial Catalog=QuickTest_9_fromSupport_20130214_noon;Persist Security Info=True;User ID=sa;Password=kl123</Value>
+    </Setting>
+    <Setting Name="QuickTest_9_TesterConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=10.100.1.116\sqlserver2008,1600;Initial Catalog=QuickTest_9_Tester;User ID=sa&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=10.100.1.116\sqlserver2008,1600;Initial Catalog=QuickTest_9_Tester;User ID=sa</Value>
+    </Setting>
+    <Setting Name="QuickTest_9_TesterConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=10.100.1.116\sqlserver2008,1600;Initial Catalog=QuickTest_9_Tester;Persist Security Info=True;User ID=sa&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=10.100.1.116\sqlserver2008,1600;Initial Catalog=QuickTest_9_Tester;Persist Security Info=True;User ID=sa</Value>
+    </Setting>
+    <Setting Name="QuickTest_9ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=10.100.1.80\sql2008r2;Initial Catalog=QuickTest_9;Persist Security Info=True;User ID=sa&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=10.100.1.80\sql2008r2;Initial Catalog=QuickTest_9;Persist Security Info=True;User ID=sa</Value>
+    </Setting>
+    <Setting Name="Quicktest_9_TesterConnectionString2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=10.100.1.80\sql2008r2;Initial Catalog=Quicktest_9_Tester;Persist Security Info=True;User ID=sa&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=10.100.1.80\sql2008r2;Initial Catalog=Quicktest_9_Tester;Persist Security Info=True;User ID=sa</Value>
+    </Setting>
+    <Setting Name="QuickTest_9_fromSupport_20130214_noonConnectionString5" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=10.100.1.72;Initial Catalog=QuickTest_9_fromSupport_20130214_noon;Persist Security Info=True;User ID=sa&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=10.100.1.72;Initial Catalog=QuickTest_9_fromSupport_20130214_noon;Persist Security Info=True;User ID=sa</Value>
+    </Setting>
+    <Setting Name="QuickTest_9_fromSupport_20130214_noonConnectionString6" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=10.100.1.72;Initial Catalog=QuickTest_9_fromSupport_20130214_noon;Persist Security Info=True;User ID=sa;Password=kl123&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=10.100.1.72;Initial Catalog=QuickTest_9_fromSupport_20130214_noon;Persist Security Info=True;User ID=sa;Password=kl123</Value>
+    </Setting>
+    <Setting Name="QuickTest_9_fromSupport_20130214_noonConnectionString7" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=10.100.1.90;Initial Catalog=QuickTest_9_fromSupport_20130214_noon;User ID=sa&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=10.100.1.90;Initial Catalog=QuickTest_9_fromSupport_20130214_noon;User ID=sa</Value>
+    </Setting>
+    <Setting Name="QuickTest_9_fromSupport_20130214_noonConnectionString8" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=10.100.1.90;Initial Catalog=QuickTest_9_fromSupport_20130214_noon;Persist Security Info=True;User ID=sa&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=10.100.1.90;Initial Catalog=QuickTest_9_fromSupport_20130214_noon;Persist Security Info=True;User ID=sa</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
