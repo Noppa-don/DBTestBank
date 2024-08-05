@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{0963366A-7F33-447C-91CE-8CA85A93BE56}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BusinessTablet360</RootNamespace>
+    <AssemblyName>BusinessTablet360</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\Tablet360\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>BusinessTablet360.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DefineConstants>ForTestUpload="2",F5="1"</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'PRODUCTION-release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>BusinessTablet360.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DefineConstants>
+    </DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QC-release|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\QC-release\</OutputPath>
+    <DefineConstants>ForTestUpload="2",ShowQsetTypeName = "1"</DefineConstants>
+    <DocumentationFile>BusinessTablet360.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ProductionAzureMaxONET|AnyCPU'">
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\ProductionAzureMaxONET\</OutputPath>
+    <DocumentationFile>BusinessTablet360.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ProdMaxonetAZ|AnyCPU'">
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\ProdMaxonetAZ\</OutputPath>
+    <DocumentationFile>BusinessTablet360.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>ForTestUpload="2",F5="1"</DefineConstants>
+    <DocumentationFile>BusinessTablet360.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PRODUCTION-release|x64'">
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\PRODUCTION-release\</OutputPath>
+    <DocumentationFile>BusinessTablet360.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QC-release|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\QC-release\</OutputPath>
+    <DefineConstants>ForTestUpload="2",ShowQsetTypeName = "1"</DefineConstants>
+    <DocumentationFile>BusinessTablet360.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ProductionAzureMaxONET|x64'">
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\ProductionAzureMaxONET\</OutputPath>
+    <DocumentationFile>BusinessTablet360.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ProdMaxonetAZ|x64'">
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\ProdMaxonetAZ\</OutputPath>
+    <DocumentationFile>BusinessTablet360.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\QuickTest\Source\QuickTest\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\QuickTest\Source\QuickTest\packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=4.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\QuickTest\Source\QuickTest\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="KnowledgeUtils.System" />
+    <Import Include="KnowledgeUtils.System.String" />
+    <Import Include="Microsoft.Practices.Unity" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\DTO\CalendarDTO.vb" />
+    <Compile Include="BLL\DTO\ChartTableStatus.vb" />
+    <Compile Include="BLL\DTO\ClassDto.vb" />
+    <Compile Include="BLL\DTO\LogDTO.vb" />
+    <Compile Include="BLL\DTO\ModuleDTO.vb" />
+    <Compile Include="BLL\DTO\ReportHeaderDTO.vb" />
+    <Compile Include="BLL\DTO\SchoolSubjectClassDTO.vb" />
+    <Compile Include="BLL\DTO\UserSubjectClassDTO.vb" />
+    <Compile Include="BLL\IImportManager.vb" />
+    <Compile Include="BLL\ILocalManager.vb" />
+    <Compile Include="BLL\IModuleManager.vb" />
+    <Compile Include="BLL\INetworkManager.vb" />
+    <Compile Include="BLL\ISchoolManager.vb" />
+    <Compile Include="BLL\IStudentManager.vb" />
+    <Compile Include="BLL\ISubjectManager.vb" />
+    <Compile Include="BLL\ITabletManager.vb" />
+    <Compile Include="BLL\ITeacherManager.vb" />
+    <Compile Include="BLL\IUserManager.vb" />
+    <Compile Include="BLL\DTO\MenuItemDTO.vb" />
+    <Compile Include="BLL\DTO\NetworkDTO.vb" />
+    <Compile Include="BLL\DTO\NewsDTO.vb" />
+    <Compile Include="BLL\DTO\UseTabletDetailDTO.vb" />
+    <Compile Include="BLL\DTO\SubjectDTO.vb" />
+    <Compile Include="BLL\DTO\TabletOwnerDTO.vb" />
+    <Compile Include="BLL\DTO\TabletStatusDTO.vb" />
+    <Compile Include="BLL\DTO\TeacherDTO.vb" />
+    <Compile Include="BLL\DTO\UserDTO.vb" />
+    <Compile Include="BLL\SyncManager.vb" />
+    <Compile Include="Class\ClsActivity.vb" />
+    <Compile Include="Class\ClsCheckMark.vb" />
+    <Compile Include="Class\ClsHomework.vb" />
+    <Compile Include="Class\ClsKNSession.vb" />
+    <Compile Include="Class\ClsNews.vb" />
+    <Compile Include="Class\ClsPracticeMode.vb" />
+    <Compile Include="Class\ClsScheduler.vb" />
+    <Compile Include="Class\ClsSchool.vb" />
+    <Compile Include="Class\ClsStudent.vb" />
+    <Compile Include="Class\ClsSystem.vb" />
+    <Compile Include="Class\ClsTimeAgo.vb" />
+    <Compile Include="Class\ElmahExtension.vb" />
+    <Compile Include="Class\MD5.vb" />
+    <Compile Include="CrossCutting\ClassConnectSql.vb" />
+    <Compile Include="CrossCutting\ClsConnect.vb" />
+    <Compile Include="CrossCutting\ClsLanguage.vb" />
+    <Compile Include="CrossCutting\FactoryUnity.vb" />
+    <Compile Include="CrossCutting\GenerateUtil.vb" />
+    <Compile Include="CrossCutting\IApplicationManager.vb" />
+    <Compile Include="CrossCutting\IPage.vb" />
+    <Compile Include="CrossCutting\KNConfigData.vb" />
+    <Compile Include="CrossCutting\MaxOnetCI.vb" />
+    <Compile Include="CrossCutting\MenuManager.vb" />
+    <Compile Include="CrossCutting\NetUtil.vb" />
+    <Compile Include="CrossCutting\PageManager.vb" />
+    <Compile Include="CrossCutting\ServiceSystem.vb" />
+    <Compile Include="CrossCutting\UserConfig.vb" />
+    <Compile Include="DAL\DataClassesTablet360.designer.vb">
+      <DependentUpon>DataClassesTablet360.dbml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DAL\DataClassesTablet360.vb">
+      <DependentUpon>DataClassesTablet360.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Repo\ICalendarRepo.vb" />
+    <Compile Include="DAL\Repo\IClassRepo.vb" />
+    <Compile Include="DAL\Repo\IDistrictRepo.vb" />
+    <Compile Include="DAL\Repo\INewsRepo.vb" />
+    <Compile Include="DAL\Repo\INewsRoomRepo.vb" />
+    <Compile Include="DAL\Repo\IProviceRepo.vb" />
+    <Compile Include="DAL\Repo\IRoomRepo.vb" />
+    <Compile Include="DAL\Repo\ISchoolRepo.vb" />
+    <Compile Include="DAL\Repo\IStudentRepo.vb" />
+    <Compile Include="DAL\Repo\IStudentRoomRepo.vb" />
+    <Compile Include="DAL\Repo\ISubdistrictRepo.vb" />
+    <Compile Include="DAL\Repo\ISubjectRepo.vb" />
+    <Compile Include="DAL\Repo\ISubjectTypeRepo.vb" />
+    <Compile Include="DAL\Repo\ITeacherRepo.vb" />
+    <Compile Include="Enum\EnumClass.vb" />
+    <Compile Include="Enum\EnumDashBoard.vb" />
+    <Compile Include="Enum\EnumFileColumn.vb" />
+    <Compile Include="Enum\EnumIsActiveStatus.vb" />
+    <Compile Include="BLL\DTO\StudentDTO.vb" />
+    <Compile Include="Enum\EnumCalendarType.vb" />
+    <Compile Include="Enum\EnumLogType.vb" />
+    <Compile Include="Enum\EnumMobileAccessType.vb" />
+    <Compile Include="Enum\EnumModuleStatus.vb" />
+    <Compile Include="Enum\EnumModuleType.vb" />
+    <Compile Include="Enum\EnumNetworkType.vb" />
+    <Compile Include="Enum\EnumPermission.vb" />
+    <Compile Include="Enum\EnumPlayerType.vb" />
+    <Compile Include="Enum\EnumPrefixName.vb" />
+    <Compile Include="Enum\EnumRecordStatus.vb" />
+    <Compile Include="Enum\EnumScoreType.vb" />
+    <Compile Include="Enum\EnumStatusModule.vb" />
+    <Compile Include="Enum\EnumStatusTabletUse.vb" />
+    <Compile Include="Enum\EnumStudentMoveType.vb" />
+    <Compile Include="Enum\EnumStudentProcessType.vb" />
+    <Compile Include="Enum\EnumStudentStatus.vb" />
+    <Compile Include="Enum\EnumTabletOwnerType.vb" />
+    <Compile Include="Enum\EnumTabletStatus.vb" />
+    <Compile Include="Enum\EnumTeacherStatus.vb" />
+    <Compile Include="Enum\EnumUseTabletType.vb" />
+    <Compile Include="Enum\EnumValidateStatus.vb" />
+    <Compile Include="Model\StudentCheckMark.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DAL\DataClassesTablet360.dbml">
+      <SubType>Designer</SubType>
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClassesTablet360.designer.vb</LastGenOutput>
+    </None>
+    <None Include="DAL\DataClassesTablet360.dbml.layout">
+      <DependentUpon>DataClassesTablet360.dbml</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KnowledgeUtils\KnowledgeUtils\KnowledgeUtils.vbproj">
+      <Project>{7d43f596-b917-42bf-8fce-35b9a61717ef}</Project>
+      <Name>KnowledgeUtils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!--<Import Project="$(SolutionDir)\.nuget\nuget.targets" />-->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
