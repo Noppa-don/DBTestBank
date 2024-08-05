@@ -1,0 +1,539 @@
+/* <RadMenu / Vista> */
+
+.RadMenu_GirdQuickTest .rmRootGroup,
+.RadMenu_GirdQuickTest .rmFirst,
+.RadMenu_GirdQuickTest a.rmLink,
+.RadMenu_GirdQuickTest .rmText,
+.RadMenu_GirdQuickTest .rmLeftArrow,
+.RadMenu_GirdQuickTest .rmRightArrow,
+.RadMenu_GirdQuickTest .rmTopArrow,
+.RadMenu_GirdQuickTest .rmBottomArrow
+{
+	background-image: url('Menu/rmSprite.png');
+	background-color: transparent;
+}
+
+.RadMenu_GirdQuickTest .rmRootGroup
+{
+	border: 1px solid #aabfd6;
+	background-repeat: repeat-x;
+	background-position: 0 -408px;
+	background-color: #f1f5fb;
+}
+
+.RadMenu_GirdQuickTest .rmFirst
+{
+	background-position: 0 -24px;
+}
+
+.RadMenu_GirdQuickTest .rmVertical .rmFirst,
+.RadMenu_GirdQuickTest .rmVertical .rmLast
+{
+	background: none;
+	padding: 0;
+}
+
+/* <Root items> */
+
+.RadMenu_GirdQuickTest,
+.RadMenu_GirdQuickTest a.rmLink
+{
+	font: normal 12px/23px "Segoe UI", Arial, sans-serif;
+	color: #4c607a;
+	text-decoration: none;
+}
+
+.RadMenu_GirdQuickTest a.rmLink,
+.RadMenu_GirdQuickTest .rmText
+{
+	background-position: 0 1050px;
+	background-repeat: no-repeat;
+}
+
+.RadMenu_GirdQuickTest a.rmLink:hover,
+.RadMenu_GirdQuickTest a.rmFocused,
+.RadMenu_GirdQuickTest a.rmSelected
+{
+	background-position: 0 -72px;
+}
+
+.RadMenu_GirdQuickTest a.rmLink:hover .rmText,
+.RadMenu_GirdQuickTest a.rmFocused .rmText,
+.RadMenu_GirdQuickTest a.rmSelected .rmText
+{
+	background-position: 100% -96px;
+}
+
+.RadMenu_GirdQuickTest a.rmExpanded,
+.RadMenu_GirdQuickTest a.rmExpanded:hover
+{
+	background-position: 0 -120px;
+}
+
+.RadMenu_GirdQuickTest a.rmExpanded .rmText,
+.RadMenu_GirdQuickTest a.rmExpanded:hover .rmText
+{
+	background-position: 100% -144px;
+}
+
+.RadMenu_GirdQuickTest a.rmDisabled,
+.RadMenu_GirdQuickTest a.rmDisabled:hover
+{
+	color: #a7a7a7;
+}
+
+.RadMenu_GirdQuickTest a.rmDisabled:hover,
+.RadMenu_GirdQuickTest a.rmDisabled:hover .rmText
+{
+	background: none;
+}
+
+/* </Root items> */
+
+
+/* <Submenu items> */
+
+.RadMenu_GirdQuickTest .rmGroup,
+.RadMenu_GirdQuickTest .rmMultiColumn,
+.RadMenu_GirdQuickTest .rmGroup .rmVertical
+{
+	border: 1px solid #a5b3c5;
+	background: #fff url('Menu/rmVSprite.png') repeat-y -1px 0;
+}
+
+.RadMenu_GirdQuickTest .rmTopFix,
+.RadMenu_GirdQuickTest .rmBottomFix,
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmGroup .rmItem,
+.RadMenu_GirdQuickTest .rmRoundedCorners li.rmFirstGroupColumn .rmItem,
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmFirstGroupColumn li.rmFirstGroupColumn .rmItem,
+.RadMenu_GirdQuickTest .rmRoundedCorners ul.rmHorizontal .rmFirst,
+.RadMenu_GirdQuickTest_Context.rmRoundedCorners .rmGroup .rmItem,
+.RadMenu_GirdQuickTest_Context.rmRoundedCorners ul.rmHorizontal .rmFirst
+{
+	background-image: url('Menu/rmVSprite.png');
+	background-color: #fff; 
+	background-repeat: repeat-y;
+	background-position: -3px 0;
+}
+
+* html .rmRoundedCorners_GirdQuickTest .rmGroup .rmItem,
+* html .rmRoundedCorners_GirdQuickTest ul.rmHorizontal .rmFirst
+{
+	background-image: url('Menu/rmVSprite.png');
+	background-color: #fff; 
+	background-repeat: repeat-y;
+	background-position: -3px 0;
+}
+
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmScrollWrapContainer .rmGroup,
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmScrollWrap .rmItem,
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmGroupColumn .rmItem,
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmGroupColumn .rmGroupColumn .rmItem,
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmHorizontal .rmItem,
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmScrollWrap .rmVertical,
+.RadMenu_GirdQuickTest_Context.rmRoundedCorners .rmScrollWrapContainer .rmGroup,
+.RadMenu_GirdQuickTest_Context.rmRoundedCorners .rmScrollWrap .rmItem,
+.RadMenu_GirdQuickTest_Context.rmRoundedCorners .rmHorizontal .rmItem,
+.RadMenu_GirdQuickTest_Context.rmRoundedCorners .rmScrollWrap .rmVertical
+{
+	background-image: none;
+}
+
+* html .rmRoundedCorners_GirdQuickTest .rmScrollWrapContainer .rmGroup,
+* html .rmRoundedCorners_GirdQuickTest .rmScrollWrap .rmItem,
+* html .rmRoundedCorners_GirdQuickTest .rmHorizontal .rmItem,
+* html .rmRoundedCorners_GirdQuickTest .rmScrollWrap .rmVertical
+{
+	background-image: none;
+}
+
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmGroupColumn
+{
+	background-color: #fff;
+}
+
+.RadMenu_GirdQuickTest .rmBottomLeft,
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmScrollWrapContainer,
+.RadMenu_GirdQuickTest_Context.rmRoundedCorners .rmScrollWrapContainer,
+.RadMenu_GirdQuickTest_Context.rmRoundedCorners ul.rmGroup,
+.RadMenu_GirdQuickTest .rmRoundedCorners ul.rmGroup,
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmMultiColumn
+{
+	background-image: url('Menu/rmRoundedLeft.png');
+	background-color: transparent; 
+	background-repeat: no-repeat;
+}
+
+* html .rmRoundedCorners_GirdQuickTest .rmScrollWrapContainer,
+* html .rmRoundedCorners_GirdQuickTest .rmGroup ul.rmGroup,
+* html .rmRoundedCorners_GirdQuickTest ul.rmGroup
+{
+	background-image: url('Menu/rmRoundedLeft.png');
+	background-color: transparent; 
+	background-repeat: no-repeat;
+}
+
+.RadMenu_GirdQuickTest .rmTopRight,
+.RadMenu_GirdQuickTest .rmBottomRight
+{
+	background-image: url('Menu/rmRoundedRight.png');
+	background-color: transparent; 
+	background-repeat: no-repeat;
+}
+
+.RadMenu_GirdQuickTest .rmTopFix,
+.RadMenu_GirdQuickTest .rmBottomFix,
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmGroup .rmFirst,
+.RadMenu_GirdQuickTest_Context.rmRoundedCorners .rmGroup .rmFirst,
+.rmRoundedCorners_GirdQuickTest .rmGroup .rmFirst
+{
+	border-color: #a5b3c5;
+}
+
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmScrollWrapContainer .rmTopFix,
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmScrollWrapContainer .rmBottomFix,
+.RadMenu_GirdQuickTest_Context.rmRoundedCorners .rmScrollWrapContainer .rmTopFix,
+.RadMenu_GirdQuickTest_Context.rmRoundedCorners .rmScrollWrapContainer .rmBottomFix
+{
+	background: #FFF;
+}
+
+* html .rmRoundedCorners_GirdQuickTest .rmScrollWrapContainer .rmTopFix,
+* html .rmRoundedCorners_GirdQuickTest .rmScrollWrapContainer .rmBottomFix
+{
+	background: #FFF;
+}
+
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmScrollWrapContainer .rmTopArrow,
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmScrollWrapContainer .rmBottomArrow,
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmScrollWrapContainer .rmLeftArrow,
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmScrollWrapContainer .rmRightArrow,
+.RadMenu_GirdQuickTest_Context.rmRoundedCorners .rmScrollWrapContainer .rmTopArrow,
+.RadMenu_GirdQuickTest_Context.rmRoundedCorners .rmScrollWrapContainer .rmBottomArrow,
+.RadMenu_GirdQuickTest_Context.rmRoundedCorners .rmScrollWrapContainer .rmLeftArrow,
+.RadMenu_GirdQuickTest_Context.rmRoundedCorners .rmScrollWrapContainer .rmRightArrow
+{
+	background-color: #FFF;
+	border: 0;
+}
+
+* html .rmRoundedCorners_GirdQuickTest .rmScrollWrapContainer .rmTopArrow,
+* html .rmRoundedCorners_GirdQuickTest .rmScrollWrapContainer .rmBottomArrow,
+* html .rmRoundedCorners_GirdQuickTest .rmScrollWrapContainer .rmLeftArrow,
+* html .rmRoundedCorners_GirdQuickTest .rmScrollWrapContainer .rmRightArrow
+{
+	background-color: #FFF;
+	border: 0;
+}
+
+.RadMenu_GirdQuickTest li.rmTopFix,
+.RadMenu_GirdQuickTest li.rmBottomFix
+{
+	background-position: -4px 0;
+}
+
+.RadMenu_GirdQuickTest_rtl .rmBottomLeft,
+.RadMenu_GirdQuickTest_rtl .rmRoundedCorners ul.rmGroup,
+.RadMenu_GirdQuickTest_rtl .rmRoundedCorners .rmMultiColumn,
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmScrollWrapContainer,
+.RadMenu_GirdQuickTest .rmScrollWrapContainer .rmBottomLeft,
+.rmRoundedCorners.RadMenu_GirdQuickTest_Context_rtl ul.rmGroup,
+.RadMenu_GirdQuickTest_Context.rmRoundedCorners .rmScrollWrapContainer
+{
+	background-image: url('Menu/rmRoundedLeft_rtl.png');
+}
+
+.RadMenu_GirdQuickTest_rtl .rmTopRight,
+.RadMenu_GirdQuickTest_rtl .rmBottomRight
+{
+	background-image: url('Menu/rmRoundedRight_rtl.png');
+}
+
+.RadMenu_GirdQuickTest_rtl li.rmTopFix,
+.RadMenu_GirdQuickTest_rtl li.rmBottomFix,
+.RadMenu_GirdQuickTest_rtl .rmRoundedCorners .rmGroup .rmItem,
+.rmRoundedCorners.RadMenu_GirdQuickTest_Context_rtl ul.rmGroup .rmItem
+{
+	background-position: 101% 0;
+}
+
+.RadMenu_GirdQuickTest .rmSlide .rmScrollWrap
+{
+	background-image: none;
+}
+
+.RadMenu_GirdQuickTest_rtl .rmGroup,
+.RadMenu_GirdQuickTest_rtl .rmMultiColumn,
+.RadMenu_GirdQuickTest_rtl .rmGroup .rmVertical
+{
+	background-position: 101% 0;
+}
+
+.RadMenu_GirdQuickTest .rmRootGroup .rmHorizontal
+{
+	background-image: none;
+}
+
+.RadMenu_GirdQuickTest .rmScrollWrap .rmVertical
+{
+	border: 0;
+}
+
+.RadMenu_GirdQuickTest .rmGroup .rmFirst,
+.RadMenu_GirdQuickTest .rmGroup .rmLast,
+.RadMenu_GirdQuickTest .rmRoundedCorners .rmScrollWrapContainer li.rmItem,
+.RadMenu_GirdQuickTest_Context.rmRoundedCorners .rmScrollWrapContainer li.rmItem,
+.rmRoundedCorners_GirdQuickTest .rmScrollWrapContainer li.rmItem
+{
+	background: none;
+}
+
+.RadMenu_GirdQuickTest .rmGroup .rmLast
+{
+	padding-bottom: 1px;
+}
+
+.RadMenu_GirdQuickTest .rmGroup a.rmLink
+{
+	color: #000;
+}
+
+.RadMenu_GirdQuickTest .rmGroup a.rmLink:hover,
+.RadMenu_GirdQuickTest .rmGroup a.rmFocused,
+.RadMenu_GirdQuickTest .rmGroup a.rmSelected,
+.RadMenu_GirdQuickTest .rmGroup a.rmExpanded
+{
+    color: #4c607a;
+	background-position: 0 -168px;
+}
+
+.RadMenu_GirdQuickTest .rmGroup a.rmLink:hover .rmText,
+.RadMenu_GirdQuickTest .rmGroup a.rmFocused .rmText,
+.RadMenu_GirdQuickTest .rmGroup a.rmSelected .rmText,
+.RadMenu_GirdQuickTest .rmGroup a.rmExpanded .rmText
+{
+	background-position: 100% -192px;
+}
+
+/* <expand arrows> */
+
+.RadMenu_GirdQuickTest .rmVertical .rmExpandRight,
+.RadMenu_GirdQuickTest_Context .rmGroup .rmExpandRight,
+.RadMenu_GirdQuickTest .rmGroup .rmExpandDown
+{
+	background-position: 100% -216px;
+}
+
+.RadMenu_GirdQuickTest  .rmVertical a.rmLink:hover .rmExpandRight,
+.RadMenu_GirdQuickTest  .rmVertical a.rmFocused .rmExpandRight,
+.RadMenu_GirdQuickTest  .rmVertical a.rmExpanded .rmExpandRight,
+.RadMenu_GirdQuickTest  .rmVertical a.rmSelected .rmExpandRight,
+.RadMenu_GirdQuickTest  .rmVertical a.rmLink:hover .rmExpandLeft,
+.RadMenu_GirdQuickTest  .rmVertical a.rmFocused .rmExpandLeft,
+.RadMenu_GirdQuickTest  .rmVertical a.rmExpanded .rmExpandLeft,
+.RadMenu_GirdQuickTest  .rmVertical a.rmSelected .rmExpandLeft
+{
+    background-image: url('Menu/rmRootExpand.png');
+}
+
+.RadMenu_GirdQuickTest  .rmVertical a.rmLink:hover .rmExpandRight,
+.RadMenu_GirdQuickTest  .rmVertical a.rmSelected .rmExpandRight,
+.RadMenu_GirdQuickTest  .rmVertical a.rmFocused .rmExpandRight
+{
+	background-position: 100% -2px;
+}
+
+.RadMenu_GirdQuickTest  .rmVertical a.rmExpanded .rmExpandRight,
+.RadMenu_GirdQuickTest  .rmVertical a.rmExpanded:hover .rmExpandRight
+{
+	background-position: 100% -29px;
+}
+
+.RadMenu_GirdQuickTest .rmGroup a.rmLink:hover .rmExpandRight,
+.RadMenu_GirdQuickTest .rmGroup a.rmFocused .rmExpandRight,
+.RadMenu_GirdQuickTest .rmGroup a.rmSelected .rmExpandRight,
+.RadMenu_GirdQuickTest .rmGroup a.rmExpanded .rmExpandRight,
+.RadMenu_GirdQuickTest .rmGroup a.rmLink:hover .rmExpandDown,
+.RadMenu_GirdQuickTest .rmGroup a.rmFocused .rmExpandDown,
+.RadMenu_GirdQuickTest .rmGroup a.rmSelected .rmExpandDown,
+.RadMenu_GirdQuickTest .rmGroup a.rmExpanded .rmExpandDown
+{
+    background-image: url('Menu/rmSprite.png');
+	background-position: 100% -240px;
+}
+
+.RadMenu_GirdQuickTest .rmGroup a.rmDisabled,
+.RadMenu_GirdQuickTest .rmGroup a.rmDisabled:hover
+{
+	color: #a7a7a7;
+}
+
+.RadMenu_GirdQuickTest .rmGroup a.rmDisabled:hover,
+.RadMenu_GirdQuickTest .rmGroup a.rmDisabled:hover .rmText
+{
+	background: none;
+}
+
+.RadMenu_GirdQuickTest .rmRootGroup a.rmDisabled:hover .rmExpandRight,
+.RadMenu_GirdQuickTest_Context .rmGroup a.rmDisabled:hover .rmExpandRight,
+.RadMenu_GirdQuickTest_Context .rmGroup a.rmDisabled:hover .rmExpandLeft,
+.RadMenu_GirdQuickTest .rmGroup a.rmDisabled:hover .rmExpandDown
+{
+	background-image: url('Menu/rmSprite.png');
+	background-position: 100% -216px;
+}
+
+/* </expand arrows> */
+
+/* <rtl> */
+
+.RadMenu_GirdQuickTest_rtl a.rmLink:hover,
+.RadMenu_GirdQuickTest_rtl a.rmFocused,
+.RadMenu_GirdQuickTest_rtl a.rmSelected
+{
+    background-position: 100% -96px;
+}
+
+.RadMenu_GirdQuickTest_rtl a.rmLink:hover .rmText,
+.RadMenu_GirdQuickTest_rtl a.rmFocused .rmText,
+.RadMenu_GirdQuickTest_rtl a.rmSelected .rmText
+{
+    background-position: 0 -72px;
+}
+
+.RadMenu_GirdQuickTest_rtl a.rmExpanded,
+.RadMenu_GirdQuickTest_rtl a.rmExpanded:hover
+{
+    background-position: 100% -144px;
+}
+
+.RadMenu_GirdQuickTest_rtl a.rmExpanded .rmText,
+.RadMenu_GirdQuickTest_rtl a.rmExpanded:hover .rmText
+{
+    background-position: 0 -120px;
+}
+
+.RadMenu_GirdQuickTest_rtl .rmGroup a.rmLink:hover,
+.RadMenu_GirdQuickTest_rtl .rmGroup a.rmFocused,
+.RadMenu_GirdQuickTest_rtl .rmGroup a.rmSelected,
+.RadMenu_GirdQuickTest_rtl .rmGroup a.rmExpanded
+{
+	background-position: 100% -264px;
+}
+
+.RadMenu_GirdQuickTest_rtl .rmGroup a.rmLink:hover .rmText,
+.RadMenu_GirdQuickTest_rtl .rmGroup a.rmFocused .rmText,
+.RadMenu_GirdQuickTest_rtl .rmGroup a.rmSelected .rmText,
+.RadMenu_GirdQuickTest_rtl .rmGroup a.rmExpanded .rmText
+{
+	background-position: 0 -288px;
+}
+
+.RadMenu_GirdQuickTest_Context_rtl .rmVertical .rmExpandLeft,
+.RadMenu_GirdQuickTest_rtl .rmRootGroup .rmExpandLeft
+{
+	background-position: 0 -312px;
+}
+
+.RadMenu_GirdQuickTest_rtl a.rmLink:hover .rmExpandLeft,
+.RadMenu_GirdQuickTest_rtl a.rmSelected .rmExpandLeft,
+.RadMenu_GirdQuickTest_rtl a.rmFocused .rmExpandLeft
+{
+	background-position: 0 -2px;
+}
+
+.RadMenu_GirdQuickTest_rtl a.rmExpanded .rmExpandLeft,
+.RadMenu_GirdQuickTest_rtl a.rmExpanded:hover .rmExpandLeft
+{
+	background-position: 0 -29px;
+}
+
+.RadMenu_GirdQuickTest_rtl .rmGroup a.rmLink:hover .rmExpandLeft,
+.RadMenu_GirdQuickTest_rtl .rmGroup a.rmFocused .rmExpandLeft,
+.RadMenu_GirdQuickTest_rtl .rmGroup a.rmSelected .rmExpandLeft,
+.RadMenu_GirdQuickTest_rtl .rmGroup a.rmExpanded .rmExpandLeft
+{
+    background-image: url('Menu/rmSprite.png');
+	background-position: 0 -336px;
+}
+
+.RadMenu_GirdQuickTest_Context_rtl .rmGroup a.rmDisabled:hover .rmExpandLeft,
+.RadMenu_GirdQuickTest_rtl .rmRootGroup a.rmDisabled:hover .rmExpandLeft
+{
+    background-image: url('Menu/rmSprite.png');
+	background-position: 0 -312px;
+}
+
+/* </rtl> */
+
+/* </Submenu items> */
+
+/* <Submenu offsets (Vista - specific, overlapping submenus)> */
+
+.RadMenu_GirdQuickTest .rmSlide
+{
+	margin: -3px 0 0 1px;
+}
+
+.RadMenu_GirdQuickTest .rmVertical .rmSlide,
+.RadMenu_GirdQuickTest .rmSlide .rmSlide,
+.RadMenu_GirdQuickTest_Context .rmGroup .rmSlide
+{
+	margin: 0 0 0 -5px;
+}
+
+.RadMenu_GirdQuickTest_rtl .rmSlide
+{
+	margin: -3px 0 0 -1px;
+}
+
+.RadMenu_GirdQuickTest_rtl .rmVertical .rmSlide,
+.RadMenu_GirdQuickTest_rtl .rmSlide .rmSlide,
+.RadMenu_GirdQuickTest_Context_rtl .rmGroup .rmSlide
+{
+	margin: 0 0 0 5px;
+}
+
+/* </Submenu offsets> */
+
+/* <Scrolling arrows> */
+
+.RadMenu_GirdQuickTest .rmLeftArrow,
+.RadMenu_GirdQuickTest .rmRightArrow
+{
+	background-color: #E0E5F5;
+}
+
+.RadMenu_GirdQuickTest .rmLeftArrow { background-position: -8px -312px; border-right: 1px solid #B7BDCD; }
+.RadMenu_GirdQuickTest .rmRightArrow { background-position: -482px -216px; border-left: 1px solid #B7BDCD; }
+
+.RadMenu_GirdQuickTest .rmTopArrow,
+.RadMenu_GirdQuickTest .rmBottomArrow,
+.RadMenu_GirdQuickTest .rmGroup .rmLeftArrow,
+.RadMenu_GirdQuickTest .rmGroup .rmRightArrow
+{
+	background-color: #f0f0f0;
+}
+
+.RadMenu_GirdQuickTest .rmTopArrow { background-position: 50% -367px; border-bottom: 1px solid #B7BDCD; }
+.RadMenu_GirdQuickTest .rmBottomArrow { background-position: 50% -391px; border-top: 1px solid #B7BDCD; }
+
+/* </Scrolling arrows> */
+
+/* <Separators> */
+
+.RadMenu_GirdQuickTest .rmVertical .rmSeparator .rmText,
+.RadMenu_GirdQuickTest .rmHorizontal .rmVertical .rmSeparator .rmText
+{
+	background-position: 0 -406px;
+}
+
+.RadMenu_GirdQuickTest .rmHorizontal .rmSeparator .rmText,
+.RadMenu_GirdQuickTest .rmVertical .rmHorizontal .rmSeparator .rmText
+{
+	background-position: 0 -386px;
+}
+
+/* </Separators> */
+
+/* </RadMenu / Vista> */
