@@ -1,0 +1,971 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+KnowledgeUtils
+</name>
+</assembly>
+<members>
+<member name="M:KnowledgeUtils.Database.Command.ManageCommandSql.AddFieldDate(System.String,KnowledgeUtils.Database.Command.EnDateStyle)">
+	<summary>
+ ระบุเพิ่มเติมให้รู้ว่า ฟิววันที่จะมีการสร้างคำสั่งให้สร้างแบบไหน Default จะนำค่าจาก RowValue มาใช้เลย
+ </summary>
+	<param name="FieldName">ชื่อฟิว</param>
+	<param name="DateStyle">รูปแบบ</param>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.Command.ManageCommandSql.CreateCommandSql(System.Data.DataTable,System.Data.DataRow,KnowledgeUtils.Database.Command.EnActionType)">
+	<summary>
+ สร้างคำสั่ง Sql Command
+ </summary>
+	<param name="TableStructure">รูปแบบฟิวต่างๆโดยส่งเข้ามาในรูปแบบ DataTable</param>
+	<param name="RowValue">ค่าที่จะนำมาสร้างคำสั่งโดยส่งเข้ามาในรูปแบบ DataRow</param>
+	<param name="Action">ประเภท Command</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.Command.ManageCommandSql.CreateCommandSql(System.Data.DataTable,System.String[],System.Data.DataRow,KnowledgeUtils.Database.Command.EnActionType)">
+	<summary>
+ สร้างคำสั่ง Sql Command
+ </summary>
+	<param name="TableStructure">ปแบบฟิวต่างๆโดยส่งเข้ามาในรูปแบบ DataTable</param>
+	<param name="PrimaryKey">ในกรณีที่ TableStructure ไม่ได้มีการระบุฟิว Key ให้มาระบุที่นิแทน</param>
+	<param name="RowValue">ค่าที่จะนำมาสร้างคำสั่งโดยส่งเข้ามาในรูปแบบ DataRow</param>
+	<param name="Action">ประเภท Command</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Database.Command.ManageCommandSql">
+	<summary>
+ คลาสช่วยสร้าง Command Sql
+ </summary>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Xml.Serialization.ManageXmlSerialize.SerializeToXmlDocument(System.Object)">
+	<summary>
+ ทำการแปลง Object เป็น Xml อยู่ในรูป XmlDocument
+ </summary>
+	<param name="Obj">Instance</param>
+	<returns>XmlDocument</returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Xml.Serialization.ManageXmlSerialize.SerializeToXDocument(System.Object)">
+	<summary>
+ ทำการแปลง Object เป็น Xml อยู่ในรูป XDocument
+ </summary>
+	<param name="Obj">Instance</param>
+	<returns>XDocument</returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Xml.Serialization.ManageXmlSerialize.Deserialize``1(System.Xml.XmlDocument)">
+	<summary>
+ ทำการแปลง Xml เป็น Object ของคลาสที่ส่งมา
+ </summary>
+	<typeparam name="T">Type</typeparam>
+	<param name="Doc">XmlDocument</param>
+	<returns>คลาสที่ต้องการจะแปลง</returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Xml.Serialization.ManageXmlSerialize.Deserialize``1(System.Xml.Linq.XDocument)">
+	<summary>
+ ทำการแปลง Xml เป็น Object ของคลาสที่ส่งมา
+ </summary>
+	<typeparam name="T">Type</typeparam>
+	<param name="Doc">XDocument</param>
+	<returns>คลาสที่ต้องการจะแปลง</returns>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Xml.Serialization.ManageXmlSerialize">
+	<summary>
+ คลาสจัดการเกี่ยวกับการแปลง Object ระหว่าง Xml
+ </summary>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Xml.Serialization.ModuleManageXmlSerialize.SerializeToXmlDocument(System.Object)">
+	<summary>
+ ทำการแปลง Object เป็น Xml อยู่ในรูป XmlDocument
+ </summary>
+	<param name="Obj">Instance</param>
+	<returns>XmlDocument</returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Xml.Serialization.ModuleManageXmlSerialize.SerializeToXDocument(System.Object)">
+	<summary>
+ ทำการแปลง Object เป็น Xml อยู่ในรูป XDocument
+ </summary>
+	<param name="Obj">Instance</param>
+	<returns>XDocument</returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Xml.Serialization.ModuleManageXmlSerialize.Deserialize``1(System.Xml.XmlDocument)">
+	<summary>
+ ทำการแปลง Xml เป็น Object ของคลาสที่ส่งมา
+ </summary>
+	<typeparam name="T">Type</typeparam>
+	<param name="Doc">XmlDocument</param>
+	<returns>คลาสที่ต้องการจะแปลง</returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Xml.Serialization.ModuleManageXmlSerialize.Deserialize``1(System.Xml.Linq.XDocument)">
+	<summary>
+ ทำการแปลง Xml เป็น Object ของคลาสที่ส่งมา
+ </summary>
+	<typeparam name="T">Type</typeparam>
+	<param name="Doc">XDocument</param>
+	<returns>คลาสที่ต้องการจะแปลง</returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Xml.Serialization.ModuleManageXmlSerialize.ToXML(System.Xml.XmlDocument)">
+	<summary>
+ ทำการแปลงเป็น Xml ในรูปของ String
+ </summary>
+	<param name="Doc">XmlDocument</param>
+	<returns>Xml ในรูป String</returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Binary.Serialization.ManageBinarySerialize.SerializeToFile(System.String,System.Object,System.IO.FileMode)">
+	<summary>
+ จัดเก็บ Object ในรูปแบบไฟล์
+ </summary>
+	<param name="FileName">ชื่อและแฟ้มที่ต้องการจะเก็บ</param>
+	<param name="Obj">Instance</param>
+	<param name="Mode">โหมดการสร้างไฟล์ Default ที่สร้างใหม่ ถ้ามีอยู่แล้วจะทับไฟล์เก่า</param>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Binary.Serialization.ManageBinarySerialize.SerializeToBinary(System.Object)">
+	<summary>
+ แปลง Object ให้อยู่ในรูปแบบ Binary
+ </summary>
+	<param name="Obj">Instance</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Binary.Serialization.ManageBinarySerialize.Deserialize``1(System.String)">
+	<summary>
+ แปลงไฟล์ ให้เป็น Object
+ </summary>
+	<typeparam name="T">Type</typeparam>
+	<param name="FileName">ชื่อและแฟ้มที่ต้องการจะแปลง</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Binary.Serialization.ManageBinarySerialize.Deserialize``1(System.Byte[])">
+	<summary>
+ แปลง Binary ให้อยู่ในรูปแบบ Object
+ </summary>
+	<typeparam name="T">Type</typeparam>
+	<param name="ByteArray">Binary</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Binary.Serialization.ManageBinarySerialize">
+	<summary>
+ คลาสจัดการเกี่ยวกับการแปลง Object ระหว่าง Binary
+ </summary>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Binary.Serialization.ModuleManageBinarySerialize.SerializeToBinary(System.Object)">
+	<summary>
+ แปลง Object ให้อยู่ในรูปแบบ Binary
+ </summary>
+	<param name="Obj">Instance</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Binary.Serialization.ModuleManageBinarySerialize.Deserialize``1(System.Byte[])">
+	<summary>
+ แปลง Binary ให้อยู่ในรูปแบบ Object
+ </summary>
+	<typeparam name="T">Type</typeparam>
+	<param name="ByteArray">Binary</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Json.Serialization.ManageJsonSerialize.SerializeToJson(System.Object)">
+	<summary>
+ แปลง Object ให้อยู่ในรูปแบบ Json
+ </summary>
+	<param name="Obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Json.Serialization.ModuleManageJsonSerialize.SerializeToJson(System.Object)">
+	<summary>
+ แปลง Object ให้อยู่ในรูปแบบ Json
+ </summary>
+	<param name="Obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Json.Serialization.ModuleManageJsonSerialize.DeserializeObject(System.String)">
+	<summary>
+ แปลง JsonString ให้อยู่ในรูป Object ถ้า String ไม่อยู่ใน Format Json จะทำการคืนค่า nothing
+ </summary>
+	<param name="JsonString"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Json.Serialization.ModuleManageJsonSerialize.Deserialize``1(System.String)">
+	<summary>
+ แปลง JsonString ให้อยู่ในรูป Object ตาม Type ที่ส่งเข้ามาถ้า String ไม่อยู่ใน Format Json จะทำการคืนค่า nothing หรือ ถ้า JsonString ที่ส่งเข้ามาเป็น Array ก็จะคืนค่า nothing เช่นกัน
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="JsonString"></param>
+	<returns></returns>
+	<remarks>ไม่สามารถแปลงข้อมูลที่เป็น array ได้</remarks>
+</member><member name="M:KnowledgeUtils.System.EnumRegister.AddItem(System.Int32,System.String)">
+	<summary>
+ เพิ่ม Item
+ </summary>
+	<param name="Value"></param>
+	<param name="Text"></param>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.EnumRegister.GetText(System.Int32)">
+	<summary>
+ หาค่า Text โดยระบุค่า Value
+ </summary>
+	<param name="Value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.EnumRegister.GetValue(System.String)">
+	<summary>
+ หาค่า Value โดยระบุ Text
+ </summary>
+	<param name="Text"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.EnumRegister.GetList">
+	<summary>
+ คืนค่าทั้งหมด
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.ModuleEnumRegister.GetEnumText``1(System.Enum)">
+	<summary>
+ คืนค่าข้อความที่ได้จาก Class EnumRegister
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="Source"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Web.WebUserControlManager.CreateUserControl(System.String,KnowledgeUtils.System.ListProperty)">
+	<summary>
+ ฟังชั่น Generate User Control ในรูปแบบ Html เหมาะกับการใช้สร้าง User Control เรียกผ่าน Service
+ </summary>
+	<param name="UserControlPath"></param>
+	<param name="Properties"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Web.WebUserControlManager">
+	<summary>
+ คลาสช่วยจัดการ User Control ของ Web
+ </summary>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Web.JavaScript.JavaScriptTool.ScriptShowMsgBox(System.Web.UI.Page,System.String)">
+	<summary>
+ ใช้แสดง Message Box
+ </summary>
+	<param name="Page">หน้า UI</param>
+	<param name="Word">ข้อความที่ใช้แสดง</param>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Web.JavaScript.JavaScriptTool.ScriptConfirmBox(System.Web.UI.WebControls.Button,System.String)">
+	<summary>
+ ใช้ทำให้ปุ่มมีการกดยืนยันก่อนทำงาน
+ </summary>
+	<param name="Button">ปุ่มที่จะให้ทำงาน</param>
+	<param name="Word">ข้อความที่ใช้แสดง</param>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Web.JavaScript.JavaScriptTool.ScriptAssignValueByEvent(System.Web.UI.Page,System.String,System.String)">
+	<summary>
+ สร้าง javascript เผื่อ ระบุค่าให้กับคอนโทรนที่ต้องการ
+ </summary>
+	<param name="Page">Page ที่ ControlName อยู่</param>
+	<param name="ControlName">ชื่อ Control ที่จะระบุค่าให้ในฟังชั้นจะแปลงเป็นชื่อ ClientID เอง</param>
+	<param name="JavaName">ชื่อ Function Javascript</param>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Web.JavaScript.JavaScriptTool">
+	<summary>
+ คลาสจัดการ JavaScript
+ </summary>
+	<remarks></remarks>
+</member><member name="P:KnowledgeUtils.IO.ManageFile.PathName">
+	<summary>
+ คืนค่า Path
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:KnowledgeUtils.IO.ManageFile.PathFullName">
+	<summary>
+ คืนค่า File + Path
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:KnowledgeUtils.IO.ManageFile.FullFileName">
+	<summary>
+ คืนค่าชื่อไฟล์ + นามสกุลไฟล์
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:KnowledgeUtils.IO.ManageFile.FileSize">
+	<summary>
+ คืนค่าขนาดข้อมูล
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:KnowledgeUtils.IO.ManageFile.FileName">
+	<summary>
+ คืนค่าชื่อของไฟล์
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:KnowledgeUtils.IO.ManageFile.FileExtensionName">
+	<summary>
+ คืนค่านามสกุลของไฟล์ มีจุดอยุ่ข้างหน้าด้วยนะ ตัวอย่าง .jpg
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.IO.ManageFile.CheckFile(System.String)">
+	<summary>
+ เช็คไฟล์ที่ต้องการค้นหา
+ </summary>
+	<param name="FileName">Path + filename</param>
+	<returns>yes=พบไฟล์,false=ไม่พบ</returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.IO.ManageFile.CheckFolder(System.String,System.String)">
+	<summary>
+ เช็คแฟ้มที่ต้องการค้นหา
+ </summary>
+	<param name="FolderName">ชื่อแฟ้มที่ต้องการค้นหา</param>
+	<param name="Path">Path ที่จะเช็คแฟ้มที่ต้องการค้นหาถ้าไม่ระบุจะหมายถึง path app เหมาะกับ app ถ้าเป็น web ควรระบุ</param>
+	<returns>yes=พบแฟ้ม,false=ไม่พบแฟ้ม</returns>
+	<remarks>กรณีไม่ระบุ Path จะใช้ Path ของ Project</remarks>
+</member><member name="M:KnowledgeUtils.IO.ManageFile.DeleteFileInFolder(System.String,System.String,System.String,Microsoft.VisualBasic.FileIO.RecycleOption)">
+	<summary>
+ ลบไฟล์ที่อยู่ในแฟ้มทั้งหมด
+ </summary>
+	<param name="FolderName">ชื่อแฟ้มที่ต้องการจะลบไฟล์ที่อยู่ข้างใน</param>
+	<param name="Path">Path ของแฟ้มที่ต้องการจะลบไฟล์ ถ้าไม่ระบุจะหมายถึง path app เหมาะกับ app ถ้าเป็น web ควรระบุ</param>
+	<param name="FilePatern">รูปแบบไฟล์ที่จะลบ Default = *.*</param>
+	<param name="RecycleBin">กรณีที่ไม่ได้ระบุค่าจะหมายถึง ไม่เก็บไฟล์ไว้ที่ RecycleBin</param>
+	<remarks>กรณีไม่ระบุ Path จะใช้ Path ของ Project</remarks>
+</member><member name="M:KnowledgeUtils.IO.ManageFile.CreateFolder(System.String,System.String)">
+	<summary>
+ สร้างแฟ้ม
+ </summary>
+	<param name="FolderName">ชื่อแฟ้มที่ต้องการสร้าง</param>
+	<param name="Path">Path ที่จะสร้างแฟ้ม ถ้าไม่ระบุจะหมายถึง path app เหมาะกับ app ถ้าเป็น web ควรระบุ</param>
+	<remarks>กรณีไม่ระบุ Path ใจะใช้ Path ของ Project</remarks>
+</member><member name="M:KnowledgeUtils.IO.ManageFile.CreateFile(System.String,System.String,System.Boolean)">
+	<summary>
+ สร้างไฟล์
+ </summary>
+	<param name="FileName">Path + filename</param>
+	<param name="TextInput">ข้อความที่จะใส่เข้าไปในไฟล์</param>
+	<param name="Append">true=เขียนข้อความต่อท้ายของเก่า,false=เขียนทับ</param>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.IO.ManageFile.DeleteFile(System.String,Microsoft.VisualBasic.FileIO.RecycleOption)">
+	<summary>
+ ลบไฟล์
+ </summary>
+	<param name="FileName">Path + filename</param>
+	<param name="RecycleBin">กรณีที่ไม่ได้ระบุค่าจะหมายถึง ไม่เก็บไฟล์ไว้ที่ RecycleBin</param>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.IO.ManageFile.CopyFile(System.String,System.String,System.Boolean)">
+	<summary>
+ คัดลอกไฟล์
+ </summary>
+	<param name="FileName">Path + filename</param>
+	<param name="FilePathDestination">สถานที่ปลายทางที่จะคัดลอกลงไป+ชื่อไฟล์</param>
+	<param name="OverWrite">กรณีไม่ระบุจะหมายถึงคัดลอกทับ</param>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.IO.ManageFile.Readfile(System.String)">
+	<summary>
+ อ่านไฟล์ทั้งหมด
+ </summary>
+	<param name="FileName">Path + filename</param>
+	<returns>ข้อความในไฟล์</returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.IO.ManageFile.OpenFile(System.String)">
+	<summary>
+ เปิดไฟล์ที่จะอ่าน
+ </summary>
+	<param name="FileName">Path + filename</param>
+	<remarks>เปิดเพื่อจะอ่านข้อมูลในไฟล์</remarks>
+</member><member name="M:KnowledgeUtils.IO.ManageFile.ReadLine">
+	<summary>
+ อ่านไฟล์ทีละบรรทัด
+ </summary>
+	<returns>คืนค่าที่อ่านมาทีละบรรทัด</returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.IO.ManageFile.Read(System.SByte)">
+	<summary>
+ อ่านไฟล์ทีละตัวอักษร(กรณีที่จบไฟล์คืนค่า=EndOfFile,กรณีที่จบบรรทัด=LineFeed,กรณีที่สุดบรรทัด=Return)
+ </summary>
+	<param name="ForChr">1=คืนค่า CHR,0=คืนค่า ASC</param>
+	<returns>คืนค่าที่อ่านมาทีละตัวอักษร(กรณีที่จบไฟล์คืนค่า=EndOfFile,กรณีที่จบบรรทัด=LineFeed,กรณีที่สุดบรรทัด=Return)</returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.IO.ManageFile.CloseFile">
+	<summary>
+ ปิดไฟล์ที่อ่านอยู่
+ </summary>
+	<remarks>ควรใช้เมื่อมีการเปิดไฟล์ทิ้งไว้เฉพาะกลุ่มคำสั่งอ่านไฟล์ควรปิดด้วย</remarks>
+</member><member name="M:KnowledgeUtils.IO.ManageFile.CheckLanguage(System.String)">
+	<summary>
+ เช็คตัวอักษรที่ส่งมาเพื่อตรวจสอบว่าเป็นตัวอักษรประเภทไหน
+ </summary>
+	<param name="Charecter">คืนค่าเป็นภาษา</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Database.DbCommonSqlServer">
+	<summary>
+ กลุ่ม SqlServer Command
+ </summary>
+	<remarks></remarks>
+</member><member name="P:KnowledgeUtils.Database.DBManager.ApplicationManager">
+	<summary>
+ ผูกกับ AplicationManager เผื่อเอาค่า connectionstring จาก Method GetSqlConnectionString
+ </summary>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.DBManager.GetNextId(System.String,System.String)">
+	<summary>
+ Gen Id ตามชื่อ Table
+ </summary>
+	<param name="TableName"></param>
+	<param name="ColumnName"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.DBManager.GetTableSchema(System.String)">
+	<summary>
+ คืนโครงสร้างเทเบิลในรูปแบบ xml
+ </summary>
+	<param name="TableName"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.DBManager.SelectData(System.String)">
+	<summary>
+ ดูข้อมูล (Query ใส่ DataTable)
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.DBManager.ExeData(KnowledgeUtils.Database.EnExecuteType)">
+	<summary>
+ ประมวลผลคำสั่ง
+ </summary>
+	<param name="ExecuteType"></param>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.DBManager.ExeDataWithCommandBuilder(System.Data.DataTable)">
+	<summary>
+ ประมวลผลคำสั่งแบบรับผลลัพธ์จาก data table ที่ถูกปรับปรุงแล้ว DataTable ควรมีชื่อ Table ติดมาด้วย
+ </summary>
+	<param name="ResultData"></param>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Database.DBManager">
+	<summary>
+ คลาสช่วยการทำงานของดาต้าเบสกลุ่ม Command
+ </summary>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Database.Sqlite.ManageSqlite">
+	<summary>
+ คลาสช่วยจัดการ Sqlite
+ </summary>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Database.SqlServer.ManageSqlServer">
+	<summary>
+ คลาสช่วยจัดการ Sql Server
+ </summary>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Export.ExportManager">
+	<summary>
+ คลาสช่วยการเรื่อง Export รูปแบบต่างๆ
+ </summary>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.ModuleManageObject.ToType``1(System.Object)">
+	<summary>
+ Map Class
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="Obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.ModuleManageObject.ToDataTable(System.Collections.IEnumerable)">
+	<summary>
+ แปลง IEnumerable ให้เป็น DataTable
+ </summary>
+	<param name="Source"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.DateTimeUtil.ManageDateTime.DiffTime(System.TimeSpan,System.TimeSpan)">
+	<summary>
+ หาค่าต่างของเวลาสองเวลา
+ </summary>
+	<param name="Time1">เวลาเริ่ม</param>
+	<param name="Time2">เวลาสิ้นสุด</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.DateTimeUtil.ManageDateTime.CalculateAge(System.DateTime,System.DateTime)">
+	<summary>
+ คำนวนระยะห่างระหว่างวัน ในรูปแบบ วัน เดือน ปี (ช่องที่ 0,ช่องที่ 1,ช่องที่ 2)
+ </summary>
+	<param name="TargetDate">วันที่เริ่มต้น</param>
+	<param name="CalDate">วันที่สิ้นสุด</param>
+	<returns>คืนค่าเป็น array of integer</returns>
+	<remarks>วันที่ Araayช่องที่ 1,เดือน Araayช่องที่ 2,ปี Araayช่องที่ 3</remarks>
+</member><member name="M:KnowledgeUtils.System.DateTimeUtil.ManageDateTime.ToDate(System.String,KnowledgeUtils.System.DateTimeUtil.EnumCultureInfo)">
+	<summary>
+ แปลงวันที่รูปแบบ String เป็น Date เหมาะกับ วันที่ที่ถูกแปลงมาจาก CurrentCulture
+ </summary>
+	<param name="DateString"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.DateTimeUtil.ModuleManageDateTime.ToDate(System.String,KnowledgeUtils.System.DateTimeUtil.EnumCultureInfo)">
+	<summary>
+ แปลงวันที่รูปแบบ String เป็น Date เหมาะกับ วันที่ที่ถูกแปลงมาจาก CurrentCulture
+ </summary>
+	<param name="DateString"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.DBFactory.RegisterApplicationManager(KnowledgeUtils.Database.IApplicationManager)">
+	<summary>
+ รับคุณสมบัติคลาส IApplicationManager เผื่อระบุถึงประเภทของ App ซึ่งจะมีการจัดเก็บข้อมูลพื้นฐานต่างไว้ให้ใช้
+ </summary>
+	<param name="ApplicationManager"></param>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.DBFactory.RegisterDbCommon(KnowledgeUtils.Database.IDbCommon)">
+	<summary>
+ รับคุณสมบัติคลาส IData เผื่อระบุประเภทของฐานข้อมูลใช้กับกลุ่มคลาสข้อมูลพื้นฐาน
+ </summary>
+	<param name="DbCommon"></param>
+	<remarks></remarks>
+</member><member name="P:KnowledgeUtils.Database.DBFactory.GetApplicationManager">
+	<summary>
+ คืนค่า IApplicationManager
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:KnowledgeUtils.Database.DBFactory.GetDB">
+	<summary>
+ คืนค่ากลุ่มคลาสข้อมูลพื้นฐาน
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:KnowledgeUtils.Database.DBFactory.LinqToSql`1.GetLinqToSql">
+	<summary>
+ คืนค่ากลุ่มคลาสข้อมูล Linq to sql
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Database.DBFactory">
+	<summary>
+ คลาสช่วยเรื่องดาต้าเบส
+ </summary>
+	<remarks></remarks>
+</member><member name="P:KnowledgeUtils.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:KnowledgeUtils.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:KnowledgeUtils.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:KnowledgeUtils.Web.ManageHierarchy.#ctor(System.Collections.IEnumerable,System.Type,System.String,System.String,System.String)">
+	<summary>
+	</summary>
+	<param name="Data">กลุ่มข้อมูลที่ใช้</param>
+	<param name="DataType">ประเภทข้อมูลควรเป็น Class Type ไม่ใช List Type</param>
+	<param name="IdName">ชื่อฟิวที่เก็บ Id</param>
+	<param name="ParentName">ชื่อฟิวที่เก็บ Id แม่</param>
+	<param name="LabelName">ชื่อฟิวที่เก็บคำที่จะแสดง</param>
+	<remarks>ตัวอย่างการใช้คลาสนี้ Dim Tree As New ManageHierarchy(value, GetType(TreeData), "Id", "IdParent", "Name") ถ้าจะนำไปใช้กับ Tree คอนโทรนเรียก Method GetRoot ด้วย</remarks>
+</member><member name="M:KnowledgeUtils.Web.ManageHierarchy.GetAll">
+	<summary>
+ คืนค่าทั้งหมด
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Web.ManageHierarchy.GetRoot">
+	<summary>
+ คืนค่าข้อมูลที่เป็น แม่
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Web.ManageHierarchy">
+	<summary>
+ คลาสช่วยเรื่องข้อมูลประเภท ลำดับขั้น หรือ Tree
+ </summary>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Network.ManageNetwork.Ping(System.String,System.Int32)">
+	<summary>
+ Ping IP
+ </summary>
+	<param name="IP">IP หรือ URL</param>
+	<param name="TimeOut">ตั้งเวลา</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Email.ManageEmail.SendEmail(KnowledgeUtils.Email.EmailDetail,KnowledgeUtils.Email.SmtpSetting)">
+	<summary>
+ ส่ง email
+ </summary>
+	<param name="Msg">รายละเอียดตัวอีเมล</param>
+	<param name="MailSetting">รายละเอียดการตั้งค่า SMTP</param>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Email.ManageEmail">
+	<summary>
+ ใช้จัดการเกี่ยวกับระบบอีเมล
+ </summary>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Email.EmailDetail">
+	<summary>
+ ใช้เก็บรายละเอีดยในอีเมลว่าต้องมีอะไรบ้าง เช่น ส่งให้ใคร, จากใคร
+ </summary>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Email.SmtpSetting">
+	<summary>
+ ใช้เก็บรายละเอียดการตั้า SMTP
+ </summary>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.String.ManageString.CutWord(System.String,System.String,System.String)">
+	<summary>
+ ฟังชั่นใช้ตัดคำที่อยู่ระหว่างคำสองคำ ถ้าไม่เจอหรือมีปัญหาส่งค่าช่องว่างออกไป
+ </summary>
+	<param name="Source">ประโยคที่จะถูกตัด</param>
+	<param name="FirstChar">ตัวอักษรตัวแรกที่จะตัด</param>
+	<param name="LastChar">ตัวอักษรตัวสุดท้ายที่จะตัด</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.String.ManageString.FusionText(System.String,System.String,KnowledgeUtils.System.String.EnumTextPosition)">
+	<summary>
+ ฟังชั่นต่อคำที่ต้องการไปไว้ตามตำแหน่งที่ระบุ
+ </summary>
+	<param name="Source">ประโยชคต้นฉบับ</param>
+	<param name="InsertText">คำที่ต้องการจะแทรกเข้าไป</param>
+	<param name="Position">ตำแหน่งที่ต้องการจะแทกโดยถ้าไม่ระบุจะหมายถึงทั้งสองข้าง</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.String.ManageString.TextOrNothing(System.String)">
+	<summary>
+ ฟังชั่นเช็ค String ถ้ามีค่าจะคืนค่าตัวเอง ถ้าเป็นช่องว่าง หรือ Nothing จะทำการคืนค่า Nothing
+ </summary>
+	<param name="Source"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.String.ManageString.StripTags(System.String)">
+	<summary>
+ ฟังชั่นรับสตริงที่เป็นรูปแบบ Tag จะทำการตัด Tag ทั้งหมดทิ้งทำให้เหลือแต่ข้อความ
+ </summary>
+	<param name="HTML"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.String.ManageString.StripSpecialTags(System.String,System.String)">
+	<summary>
+ ฟั่งชั่นตัดเอกสาร ในรูปแบบ Html ทิ้งทั้งหมด เหมาะกับการนำค่าจาก Response.Write ไปใช้
+ </summary>
+	<param name="Source"></param>
+	<param name="TagName"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.String.ManageString.GetTextReader(System.String)">
+	<summary>
+ ฟั่งชั่นแปลง String ให้อยู่ในรูปแบบ StringReader
+ </summary>
+	<param name="Souce"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.System.String.ManageString">
+	<summary>
+ คลาสจัดการ String
+ </summary>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.String.ModuleManageString.CutWord(System.String,System.String,System.String)">
+	<summary>
+ ฟังชั่นใช้ตัดคำที่อยู่ระหว่างคำสองคำ ถ้าไม่เจอหรือมีปัญหาส่งค่าช่องว่างออกไป
+ </summary>
+	<param name="FirstChar">ตัวอักษรตัวแรกที่จะตัด</param>
+	<param name="LastChar">ตัวอักษรตัวสุดท้ายที่จะตัด</param>
+	<param name="Source">ประโยคที่จะถูกตัด</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.String.ModuleManageString.FusionText(System.String,System.String,KnowledgeUtils.System.String.EnumTextPosition)">
+	<summary>
+ ฟังชั่นต่อคำที่ต้องการไปไว้ตามตำแหน่งที่ระบุ
+ </summary>
+	<param name="Source">ประโยชคต้นฉบับ</param>
+	<param name="InsertText">คำที่ต้องการจะแทรกเข้าไป</param>
+	<param name="Position">ตำแหน่งที่ต้องการจะแทกโดยถ้าไม่ระบุจะหมายถึงทั้งสองข้าง</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.String.ModuleManageString.TextOrNothing(System.String)">
+	<summary>
+ ฟังชั่นเช็ค String ถ้ามีค่าจะคืนค่าตัวเอง ถ้าเป็นช่องว่าง หรือ Nothing จะทำการคืนค่า Nothing
+ </summary>
+	<param name="Source"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.String.ModuleManageString.StripSpecialTags(System.String,System.String)">
+	<summary>
+ ฟั่งชั่นตัดเอกสาร ในรูปแบบ Html ทิ้งทั้งหมด เหมาะกับการนำค่าจาก Response.Write ไปใช้
+ </summary>
+	<param name="Source"></param>
+	<param name="TagName"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.String.ModuleManageString.GetTextReader(System.String)">
+	<summary>
+ ฟั่งชั่นแปลง String ให้อยู่ในรูปแบบ StringReader
+ </summary>
+	<param name="Souce"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.String.ModuleManageString.NumberToString(System.Int32,System.String)">
+	<summary>
+ ฟังชั่นแปลง Integer เป็น String ถ้าค่าเป็น 0 จะคืนค่าช่องว่างแทน และสามารถกำหนดรูปแบบได้
+ </summary>
+	<param name="Souce"></param>
+	<param name="Format"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:KnowledgeUtils.Database.LinqSqlManager`1.ApplicationManager">
+	<summary>
+ ผูกกับ AplicationManager เผื่อเอาค่า connectionstring จาก Method GetSqlConnectionString
+ </summary>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.LinqSqlManager`1.GetDataContext">
+	<summary>
+ ใช้สร้าง DataContext แบบไม่ใช้ Transection
+ </summary>
+	<returns></returns>
+	<remarks>
+ ปัญหาตอนแรกที่ไม่มีฟังชั่นนี้คือ StoreDataContext ใช้ ConnectionString ใน  app config จาก Project BusinessStore
+ เลยต้องทำให้ดึง  ConnectionString จากตัวแปรของ IAplicationManager
+ </remarks>
+</member><member name="M:KnowledgeUtils.Database.LinqSqlManager`1.GetDataContextWithTransaction">
+	<summary>
+ ใช้สร้าง DataContext แบบใช้ Transection
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.LinqSqlManager`1.DataContextCommitTransaction">
+	<summary>
+ ใช้คู่กับฟังชั่น GetDataContextWithTransaction ใช้เมื่อจะ Commit Database
+ </summary>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.LinqSqlManager`1.DataContextRollbackTransaction">
+	<summary>
+ ใช้คู่กับฟังชั่น GetDataContextWithTransaction ใช้เมื่อจะ Rollback Database
+ </summary>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.LinqSqlManager`1.DataContextExecuteObjects``1(System.Data.Linq.DataContext)">
+	<summary>
+ ประมวลผลคำสั่ง SQL ให้ได้ผลลัพธ์ในรูป Object ที่ส่งเข้ามา
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="Context"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.LinqSqlManager`1.DataContextExecuteCommand(System.Data.Linq.DataContext)">
+	<summary>
+ ประมวลผลคำสั่ง Command Insert, Update, Delete ของ DataContext
+ </summary>
+	<param name="Context"></param>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Database.LinqSqlManager`1">
+	<summary>
+ คลาส Linq to sql
+ </summary>
+	<typeparam name="ClassDataContext"></typeparam>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.ModuleLinqSqlManager.GetDbCommand(System.Linq.IQueryable,System.Data.Linq.DataContext)">
+	<summary>
+ ฟั่งชั่นคืนค่า DbCommand ที่แปลงจาก IQueryable
+ </summary>
+	<param name="Source"></param>
+	<param name="Ctx">DataContext ตัวที่ใช้อยู่ก็ได้ หรือ ตัวใหม่เลยก็ได้</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Web.ManageWeb.CheckConnectInternet">
+	<summary>
+ ฟังชั่น Check ว่าสามารถต่อ Internet ได้หรือเปล่า
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Web.ManageWeb.PostData(System.String)">
+	<summary>
+ ส่งข้อมูลไปที่ Url นั้นๆ ถ้าไม่สามารถส่งได้ หรือ ไม่ได้ระบุ url ไว้จะคืนค่า False
+ </summary>
+	<param name="Data">ข้อมูลที่จะส่ง</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Web.ManageWeb">
+	<summary>
+ คลาสช่วยจัดการเกี่ยวกับ Web Page เช่นการ Post
+ </summary>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Web.ModuleManageWeb.ShowAllControl(System.Web.UI.Page,System.Web.UI.ControlCollection,System.Int32)">
+	<summary>
+ ใช้โชว์ Control ใน Page ว่ามีอะไรบ้างโดยแสดงเป็น Lv
+ </summary>
+	<param name="Page">Page จะโชว์ข้อมูล</param>
+	<param name="Controls">Control หลักเช่นถ้าส่ง Page มาก็จะหมายถึง Control ใน Page ทั้งหมด</param>
+	<param name="Depth">ระดับความลึก Lv ถ้าไม่ใส่อะไรหมายถึงโชว์หมด</param>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Web.ModuleManageWeb.FindDeepControl(System.Web.UI.Control,System.String)">
+	<summary>
+ หา Control ไม่ว่าจะลึกขนาดไหน ถ้าไม่เจอจะคืนค่า Nothing
+ </summary>
+	<param name="Root">Control หลักเช่นถ้าส่ง Page มาก็จะหา Control ที่อยู่ใน Page นั้น</param>
+	<param name="ControlId">ชื่อ Control ไม่ใช่ ClientID</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Encode.ManageEncode.GetSalt">
+	<summary>
+ Sault คือสิ่งที่จะประสมกับ Password ที่ถูก Encode แล้วจะนำสองสิ่งนี้ผสมกันแล้วนำมา Decode ให้เป็น password จริง
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Encode.ManageEncode.Encode(System.String,System.String)">
+	<summary>
+ ฟังชั่นทำการเข้าระหัส Password กับ Salt ผสมกัน 
+ </summary>
+	<param name="Word"></param>
+	<param name="Salt"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Database.IDbCommon">
+	<summary>
+ Interface กลางกลุ่ม Command
+ </summary>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.ActiveDirectory.ManageActiveDirectory.#ctor(System.String)">
+	<summary>
+	</summary>
+	<param name="path">ตัวอย่าง Path Ldap "LDAP://192.168.0.200", "LDAP://ppg.cementhai.com/DC=ppg,DC=cementhai,DC=com"</param>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.ActiveDirectory.ManageActiveDirectory.IsAuthenticated(System.String,System.String,System.String)">
+	<summary>
+ ฟังชั่นเช็คสิทธิ์ที่อยู่ใน Active Directory ที่เซ็ตไว้ที่เครื่อง Server
+ </summary>
+	<param name="domain">ชื่อโดเมนเช่น bz, ppg ถ้าไม่มีใส่อะไรก็ได้</param>
+	<param name="username">username</param>
+	<param name="pwd">password</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.ActiveDirectory.ManageActiveDirectory.GetInfo">
+	<summary>
+ ฟั่งชั่นให้ค่า Info ที่อยู่ในรูปแบบ Dictionary
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.ActiveDirectory.ManageActiveDirectory.GetInfoByKey(System.String)">
+	<summary>
+ ฟั่งชั่นให้ค่า Info โดยมีการรับเงื่อนไข Key ที่ต้องการ
+ </summary>
+	<param name="Key">เช่น Group, FullName, Mail</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.ActiveDirectory.ManageActiveDirectory">
+	<summary>
+ Class ช่วยเกี่ยวกับเช็คสิทธิ์ที่อยู่ใน Active Directory ที่เซ็ตไว้ที่เครื่อง Server
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KnowledgeUtils.Database.DatabaseUtil.LockWhere">
+	<summary>
+ Defualt ที่ false ถ้ามีการกำหนดเป็น true จะหมายถึงไม่มีการตัด WHERE ไม่ว่าจะคำสั่ง ApplySqlPart จะไม่มี parameter เลยก็ตาม
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KnowledgeUtils.Database.DatabaseUtil.ListSqlPart">
+	<summary>
+ ไว้ใช้เก็บเงื่อนไขในประโยค
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KnowledgeUtils.Database.DatabaseUtil._MainSql">
+	<summary>
+ เก็บประโยค SQL หลัก
+ </summary>
+	<remarks></remarks>
+</member><member name="P:KnowledgeUtils.Database.DatabaseUtil.CountSqlPart">
+	<summary>
+ คืนค่าจำนวนของ SqlPart ที่ถูกเพิ่มเข้าไป ควรจะทำการ ApplySqlPart หรือ ApplyTagWithValue ก่อนเพราะจะทำให้เกิดจำนวน SqlPart
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="F:KnowledgeUtils.Database.DatabaseUtil._Symbol">
+	<summary>
+ กำหนดรูปแบบสัญญาลักษณ์ของ Parameter
+ </summary>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.DatabaseUtil.GetValueListSqlPart">
+	<summary>
+ คืนค่า Value ของเงื่อนไขทั้งหมด
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.DatabaseUtil.GetAllListSqlPart">
+	<summary>
+ คืนค่า SqlCondition, Value ของเงื่อนไขทั้งหมด
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.DatabaseUtil.MapDbCommandParameters(System.Data.Common.DbParameterCollection)">
+	<summary>
+ Add Parameter ของ DbCommand
+ </summary>
+	<param name="Params"></param>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.DatabaseUtil.ApplyTextPart(System.String,System.String,System.Object,System.String)">
+	<summary>
+ ฟั่งชั่นปรับ Tag ที่อยู่ใน MainSql ให้ใส่ค่า String ที่ส่งเข้ามาไปแปะใส่ MainSql ช่วยในกรณีที่ต้องการแทนที่ Tag ด้วย String ล้วนๆ ประมาณว่า String ได้ปรับรูปมาแล้ว
+ ยกตัวอย่าง กรณี Field1 IN ('a','b','c') กรณีนี้ควรใช้แบบนี้
+ </summary>
+	<param name="TagName">ชื่อ Tag ที่จะโดนแปะ</param>
+	<param name="TextValue">ค่าที่จะไปแปะ tag</param>
+	<param name="FieldData">ถ้า FieldData = Nothing ค่าของ TextValue = "" โดยอัตโนมัติ</param>
+	<param name="WordLink">ตัวเชื่อมถ้าต้องการให้มีจะไว้ที่ข้างหน้า</param>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.DatabaseUtil.ApplyTagWithValue(System.String,System.Object)">
+	<summary>
+ เหมาะกับฟิวเงื่อนไขที่รอรับค่าแน่นอนคือมีเงื่อนไขนี้แน่นอน
+ ที่ MainSql เขียน field1 = {a} ตอนจะระบุค่าเรียก MapTagWithValue("a","test")
+ </summary>
+	<param name="TagName">ชื่อ Tag ที่ระบุไว้ที่ MainSql</param>
+	<param name="TagValue">ค่าที่จะใส่ให้ Tag ตัวนี้</param>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.DatabaseUtil.ApplySqlPart(System.String,KnowledgeUtils.Database.SqlPart)">
+	<summary>
+ ใส่เงื่อนใขที่คลาส SqlFilter เข้าไปใน MainSql
+ </summary>
+	<param name="TagName"></param>
+	<param name="SP"></param>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Database.DatabaseUtil">
+	<summary>
+ คลาสช่วยเรื่อง Sql Command ต้องนำไป Inherit
+ </summary>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Database.EnJoinType">
+	<summary>
+ ใช้กำหนดให้กับ Class SqlFilter เป็นจะใช้ Join แบบไหน
+ </summary>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Database.ListSqlPart">
+	<summary>
+ เป็น List Type ประเภท PropertySqlFilter ไว้ใช้คู่กับ ClassSqlFilter
+ </summary>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.SqlPart.#ctor(System.String)">
+	<summary>
+	</summary>
+	<param name="WordLink">ตัวเชื่อมถ้าต้องการให้มีจะไว้ที่ข้างหน้า</param>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.Database.SqlPart.AddPart(System.String,System.Object,KnowledgeUtils.Database.EnJoinType)">
+	<summary>
+ เพิ่มเงื่อนไข Sql ถ้า Value เป็น Nothing จะไม่ถูกเพิ่มเข้ามา
+ </summary>
+	<param name="SqlCondition">เงื่อนไขหนึ่งเงื่อนไขเช่น Field1={0}</param>
+	<param name="Value">ค่าที่จะใส่ลงไปใน Tag</param>
+	<remarks></remarks>
+</member><member name="T:KnowledgeUtils.Database.SqlPart">
+	<summary>
+ คลาสเก็บเงื่อนไขของประโยค SQL ในรูป Lst String คู่กับ Object
+ </summary>
+	<remarks></remarks>
+</member><member name="M:KnowledgeUtils.System.Numeric.ModuleManageNumeric.IntegerPlus(System.Int32@,System.Int32)">
+	<summary>
+ ฟังชั่น + ค่าตัวแปรตามจำนวนเลขที่ส่งเข้ามา
+ </summary>
+	<param name="Source">เลข integer ที่ต้องการจะบวก</param>
+	<param name="Plus">จำนวนค่าที่จะบวก</param>
+	<returns></returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>
