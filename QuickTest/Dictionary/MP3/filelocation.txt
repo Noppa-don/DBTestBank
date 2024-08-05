@@ -1,0 +1,2 @@
+ไฟล์ MP3 ทั้งหมดที่ Gen จาก Dragon Speech -> Cut Silence ครบ สำหรับ 
+D:\FortressLargeFiles\QuickTest\Source\QuickTest\QuickTest\Dictionary\MP3\*.*
