@@ -212,7 +212,7 @@
         </script>
         <script type="text/javascript">
 
-            function ResetContent(sender,cONnAME,RefId,RefType) {
+            function ResetContent(sender,cONnAME,RefId,RefType,MLevel) {
            
                 var btnUpload = $(sender);
                 var fileUpload = $(sender).prev().get(0);// $(sender).prev().get(0);
@@ -232,7 +232,7 @@
                 console.log(RefId);
 
                 var cutFileName = fileName.replace('.mp3','');
-                var saveFileResult = saveSoundFile(data,RefId,RefType);
+                var saveFileResult = saveSoundFile(data,RefId,RefType,MLevel);
 
                 if (saveFileResult != "False") {
                  
@@ -254,12 +254,12 @@
                 _storedRange = selection.getRange();
             }
   
-            function saveSoundFile(data,RefId,RefType) {
+            function saveSoundFile(data,RefId,RefType,MLevel) {
                 var qsetId = '<%=Request.QueryString("QSetId").ToString()%>';
                 var returnVal;
 
                 $.ajax({
-                    url: "../Upload/FileUploadHandler.ashx?qsetId=" + qsetId + '&RefId=' + RefId + '&RefType=' + RefType,
+                    url: "../Upload/FileUploadHandler.ashx?qsetId=" + qsetId + '&RefId=' + RefId + '&RefType=' + RefType + '&MLevel=' + MLevel,
                     type: "POST",
                     data: data,
                     contentType: false,
@@ -322,19 +322,16 @@
 <body>
 
     <form id="form1" runat="server">
-        <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
-        </telerik:RadScriptManager>
-        <div>
-        </div>
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server"></telerik:RadScriptManager>
 
-        <table>
-            <tr>
+        <table id="tQuestion">
+            <tr id="UpdatetoQuiz">
                 <td colspan="2">
                     <input style="transform: scale(2); margin-left: 95px; margin-right: 15px;" type="checkbox" id="CheckAllCopy" />
                     <span style="font-size: 20px;">เลือกให้คำถาม คำตอบ และคำอธิบายทั้งหมดในข้อนี้ไปทับที่โหมด Quiz ด้วย</span>
                 </td>
             </tr>
-            <tr>
+            <tr id="ImageWarning">
                 <td colspan="2">
                     <span style="font-size: 20px; color: darkred;">
                         <br />
@@ -343,14 +340,14 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr id="QuestionHeaderAndEditor">
                 <td>
                     <b>
                         <asp:Label ID="lblWarn" Font-Size="X-Large" runat="server" Visible="false" ForeColor="Red"></asp:Label></b>
                     <br />
                     <br />
                     <asp:Label ID="lblQuestion" runat="server" Text="คำถาม" Style="font-weight: 700; text-decoration: underline; font-size: x-large"></asp:Label>
-                    <%--<asp:CheckBox ID="chkAlwaysLastRow" Visible="false" Style="margin-left: 10px;" ForeColor="Red" Font-Size="18px" runat="server" Text="แสดงเป็นตัวเลือกสุดท้ายเสมอ ? (เช่น ถูกทุกข้อ)" />--%>
+
                     <asp:CheckBox ID="chkNotAllowShuffleAnswer" ClientIDMode="Static" Visible="false" Style="margin-left: 10px;" ForeColor="Red" Font-Size="15px" runat="server" Text="ข้อนี้ห้ามสลับตัวเลือก(ตัวเลือกจะแสดงเรียงลำดับ ก. ข. ค. ง. ... ตามลำดับนี้เท่านั้น)" />
                     <br />
                     <asp:CheckBox ID="chkCopyThisQuestionToQuizMode" ClientIDMode="Static" Style="margin-left: 88px;" Font-Size="15px" runat="server" Text="เลือกให้คำถามนี้ไปทับที่โหมด Quiz ด้วย" />
@@ -387,13 +384,6 @@
                         </Content>
 
                     </telerik:RadEditor>
-
-                    <div id="divQMulti" style="border: 1px solid orange; padding: 5px; text-align: center; margin-top: 40px;" runat="server">
-                        <span style="font-weight: bold; text-decoration: underline;">เพิ่มไฟล์เสียง</span><br />
-                        <input type="file" accept=".mp4,.mp3,.wav" />
-                        <input type="button" value="Upload" onclick="ResetContent(this,'divQMulti','','1');" />
-                    </div>
-
                 </td>
                 <td style="padding-left: 10px;">
                     <asp:Label ID="Label1" runat="server" Text="อธิบายคำถาม"
@@ -401,6 +391,8 @@
                     <br />
                     <br />
                     <asp:CheckBox ID="chkCopyThisQuestionExplainToQuizMode" ClientIDMode="Static" Font-Size="15px" runat="server" Text="เลือกให้อธิบายคำถามนี้ไปทับที่โหมด Quiz ด้วย" />
+                    <br />
+                    <br />
                     <telerik:RadEditor ID="RadQuestionExplain" runat="server" Height="220px"
                         Width="680px" AutoResizeHeight="True" OnClientLoad="TelerikDemo.editor_onClientLoad" OnClientPasteHtml="OnClientPasteHtml">
                         <Modules>
@@ -425,7 +417,7 @@
                                 <telerik:EditorSplitButton Name="ForeColor">
                                 </telerik:EditorSplitButton>
                                 <telerik:EditorSeparator />
-                                <%--                                <telerik:EditorDropDown Name="FontName">
+                                <%--<telerik:EditorDropDown Name="FontName">
                                 </telerik:EditorDropDown>
                                 <telerik:EditorDropDown Name="FontSize" Width="80px">
                                 </telerik:EditorDropDown>--%>
@@ -439,18 +431,119 @@
                         <Content>
                         </Content>
                     </telerik:RadEditor>
+                </td>
+            </tr>
+            <tr id="QuestionMultiFile">
+                <td>
+                    <div id="divQMulti" style="border: 1px solid orange; padding: 5px; text-align: center; margin-top: 40px;" runat="server">
+                        <span style="font-weight: bold; text-decoration: underline;">เพิ่มไฟล์เสียง</span><br />
+                        <br />
+                        <input type="file" accept=".mp4,.mp3,.wav" />
+                        <input type="button" value="Upload" onclick="ResetContent(this,'divQMulti','','1','1');" />
+                    </div>
+                </td>
+                <td>
                     <div id="divQMultiExplain" style="border: 1px solid orange; padding: 5px; text-align: center; margin-top: 40px;" runat="server">
                         <span style="font-weight: bold; text-decoration: underline;">เพิ่มไฟล์เสียง</span><br />
+                        <br />
                         <input type="file" accept=".mp4,.mp3,.wav" />
-                        <input type="button" value="Upload" onclick="ResetContent(this,'divQMultiExplain','','2');" />
+                        <input type="button" value="Upload" onclick="ResetContent(this,'divQMultiExplain','','2','1');" />
                     </div>
                 </td>
             </tr>
+            <tr id="QuestionMultiFileSlow">
+                <td>
+                    <div id="divQMultiSlow" style="border: 1px solid orange; padding: 5px; text-align: center; margin-top: 40px;" runat="server">
+                        <span style="font-weight: bold; text-decoration: underline;">เพิ่มไฟล์เสียงแบบ Slow</span><br />
+                        <br />
+                        <input type="file" accept=".mp4,.mp3,.wav" />
+                        <input type="button" value="Upload" onclick="ResetContent(this,'divQMultiSlow','','1','2');" />
+                    </div>
 
+                </td>
+                <td>
+                    <div id="divQMultiExplainSlow" style="border: 1px solid orange; padding: 5px; text-align: center; margin-top: 40px;" runat="server">
+                        <span style="font-weight: bold; text-decoration: underline;">เพิ่มไฟล์เสียงแบบ Slow</span><br />
+                        <br />
+                        <input type="file" accept=".mp4,.mp3,.wav" />
+                        <input type="button" value="Upload" onclick="ResetContent(this,'divQMultiExplainSlow','','2','2');" />
+                    </div>
+                </td>
+            </tr>
+            <tr id="QuestionMultiFiletxt">
+                <td>
+                    <br />
+                    <span style="font-weight: bold; text-decoration: underline;">เพิ่มคำอ่านตามไฟล์เสียง</span><br />
+                    <br />
+                    <telerik:RadEditor ID="RadQMultiTxt" ClientIDMode="Static" runat="server" Height="220px" OnClientLoad="TelerikDemo.editor_onClientLoad" OnClientPasteHtml="OnClientPasteHtml"
+                        AutoResizeHeight="True">
+                        <Modules>
+                            <telerik:EditorModule Name="RadEditorNodeInspector" />
+                        </Modules>
+                        <Tools>
+                            <telerik:EditorToolGroup>
+                                <telerik:EditorSplitButton Name="Undo"></telerik:EditorSplitButton>
+                                <telerik:EditorSplitButton Name="Redo"></telerik:EditorSplitButton>
+                            </telerik:EditorToolGroup>
+                            <telerik:EditorToolGroup>
+                                <telerik:EditorTool Name="Bold" />
+                                <telerik:EditorTool Name="Italic" />
+                                <telerik:EditorTool Name="Underline" />
+                                <telerik:EditorTool Name="ImageManager" ShortCut="CTRL+G" />
+                                <telerik:EditorSplitButton Name="ForeColor"></telerik:EditorSplitButton>
+                                <telerik:EditorTool Name="Subscript" />
+                                <telerik:EditorTool Name="Superscript" />
+                                <telerik:EditorTool Name="InsertFrontDoubleQuote"></telerik:EditorTool>
+                                <telerik:EditorTool Name="InsertBackDoubleQuote"></telerik:EditorTool>
+                                <telerik:EditorTool Name="InsertDash"></telerik:EditorTool>
+                            </telerik:EditorToolGroup>
+                        </Tools>
+                        <Content>
+                        </Content>
+
+                    </telerik:RadEditor>
+                </td>
+                <td>
+                    <br />
+                    <span style="font-weight: bold; text-decoration: underline;">เพิ่มคำอ่านตามไฟล์เสียง</span><br />
+                    <br />
+                    <telerik:RadEditor ID="RadQMultiExplainTxt" ClientIDMode="Static" runat="server" Height="220px" OnClientLoad="TelerikDemo.editor_onClientLoad" OnClientPasteHtml="OnClientPasteHtml"
+                        AutoResizeHeight="True">
+                        <Modules>
+                            <telerik:EditorModule Name="RadEditorNodeInspector" />
+                        </Modules>
+                        <Tools>
+                            <telerik:EditorToolGroup>
+                                <telerik:EditorSplitButton Name="Undo"></telerik:EditorSplitButton>
+                                <telerik:EditorSplitButton Name="Redo"></telerik:EditorSplitButton>
+                            </telerik:EditorToolGroup>
+                            <telerik:EditorToolGroup>
+                                <telerik:EditorTool Name="Bold" />
+                                <telerik:EditorTool Name="Italic" />
+                                <telerik:EditorTool Name="Underline" />
+                                <telerik:EditorTool Name="ImageManager" ShortCut="CTRL+G" />
+                                <telerik:EditorSplitButton Name="ForeColor"></telerik:EditorSplitButton>
+                                <telerik:EditorTool Name="Subscript" />
+                                <telerik:EditorTool Name="Superscript" />
+                                <telerik:EditorTool Name="InsertFrontDoubleQuote"></telerik:EditorTool>
+                                <telerik:EditorTool Name="InsertBackDoubleQuote"></telerik:EditorTool>
+                                <telerik:EditorTool Name="InsertDash"></telerik:EditorTool>
+                            </telerik:EditorToolGroup>
+
+
+                        </Tools>
+                        <Content>
+                        </Content>
+
+                    </telerik:RadEditor>
+
+                </td>
+            </tr>
 
         </table>
-        <hr />
-        <table>
+        <br /><br />
+
+        <table id="tAnswer">
             <tr>
                 <td style='width: 680px'>
                     <asp:Label ID="lblAnswer" runat="server" Text="คำตอบ"
@@ -465,31 +558,38 @@
         <br />
         <asp:Repeater ID="RptCreateAnswer" runat="server">
             <ItemTemplate>
-                <%--<strong>คำตอบข้อที่ <i><%# AnswerNumber()%></i></strong>--%>
-                <strong>คำตอบข้อที่ <i><%# Container.DataItem("Answer_No")%></i></strong>
-                <br />
-                <br />
-                <img answerid="<%# Container.DataItem("Answer_Id")%>" id='btn_Del_<%# Container.DataItem("Answer_Id")%>' style='cursor: pointer;' title='ลบคำตอบ' src="../Images/Delete-icon.png" onclick='DeleteAnswer("<%# Container.DataItem("Answer_Id")%>")' />
-                <br />
-                <asp:Label ID="lblChooseThisAnswerIsCorrect" Font-Bold="true" runat="server" Text="เลือกให้เป็นคำตอบที่ถูกต้อง"></asp:Label>
-                <%--<b>เลือกให้เป็นคำตอบที่ถูกต้อง</b>--%>
-                <asp:CheckBox ID="CheckScore" CssClass="ChkScore" ClientIDMode="Static" runat="server" />
-                <br />
-                <asp:CheckBox ID="CheckThisAnswerToShowInLastRow" Visible="false" CssClass="chkShowLastRow" runat="server" Text="แสดงตัวเลือกนี้ในตำแหน่งสุดท้ายเท่านั้น(เช่น ถูกทุกข้อ , ผิดทุกข้อ)" Font-Size="15px" ForeColor="Red" />
-                <br />
+                <table>
+                    <tr>
+                        <td>
+                            <strong>คำตอบข้อที่ <i><%# Container.DataItem("Answer_No")%></i></strong>
+                            <br />
+                            <br />
+                            <img answerid="<%# Container.DataItem("Answer_Id")%>" id='btn_Del_<%# Container.DataItem("Answer_Id")%>' style='cursor: pointer;' title='ลบคำตอบ' src="../Images/Delete-icon.png" onclick='DeleteAnswer("<%# Container.DataItem("Answer_Id")%>")' />
+                            <br />
+                            <asp:Label ID="lblChooseThisAnswerIsCorrect" Font-Bold="true" runat="server" Text="เลือกให้เป็นคำตอบที่ถูกต้อง"></asp:Label>
+                            <%--<b>เลือกให้เป็นคำตอบที่ถูกต้อง</b>--%>
+                            <asp:CheckBox ID="CheckScore" CssClass="ChkScore" ClientIDMode="Static" runat="server" />
+                            <br />
+                            <asp:CheckBox ID="CheckThisAnswerToShowInLastRow" Visible="false" CssClass="chkShowLastRow" runat="server" Text="แสดงตัวเลือกนี้ในตำแหน่งสุดท้ายเท่านั้น(เช่น ถูกทุกข้อ , ผิดทุกข้อ)" Font-Size="15px" ForeColor="Red" />
+                            <br />
+                        </td>
+                        <td></td>
+                    </tr>
+                    <%--<strong>คำตอบข้อที่ <i><%# AnswerNumber()%></i></strong>--%>
+                </table>
                 <table>
                     <tr>
                         <td>
                             <asp:CheckBox ID="chkCopyThisAnswerToQuizMode" CssClass="AnswerToQuizMode" runat="server" Text="เลือกให้คำตอบนี้ไปทับที่โหมด Quiz ด้วย" Font-Size="15px" />
                         </td>
-
                         <td id="tdScore" style="padding-left: 315px;">
                             <asp:Label ID="lblScore" runat="server" Text="คะแนน" CssClass="lblScore"></asp:Label>
                             <asp:TextBox ID="txtScore" runat="server" Text="0" CssClass="ClsScoreTxt"></asp:TextBox>
                         </td>
                     </tr>
                 </table>
-
+                <br />
+                <br />
                 <table>
                     <tr>
                         <td>
@@ -528,12 +628,6 @@
                                 <Content>
                                 </Content>
                             </telerik:RadEditor>
-
-                            <div id="divAMulti<%# Container.DataItem("Answer_Id")%>" style="border: 1px solid orange; padding: 5px; text-align: center; margin-top: 40px;">
-                                <span style="font-weight: bold; text-decoration: underline;">เพิ่มไฟล์เสียง</span><br />
-                                <input type="file" accept=".mp4,.mp3,.wav" />
-                                <input type="button" value="Upload" onclick="ResetContent(this,'divAMulti<%# Container.DataItem("Answer_Id")%>    ','<%# Container.DataItem("Answer_Id")%>    ','1');" />
-                            </div>
                         </td>
                         <td style="padding-left: 10px;">
                             <asp:CheckBox ID="chkCopyThisAnswerExplainToQuizMode" CssClass="AnswerExplainToQuizMode" runat="server" Text="เลือกให้คำอธิบายคำตอบนี้ไปทับที่โหมด Quiz ด้วย" Font-Size="15px" />
@@ -573,13 +667,108 @@
                                 <Content>
                                 </Content>
                             </telerik:RadEditor>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="divAMulti<%# Container.DataItem("Answer_Id")%>" style="border: 1px solid orange; padding: 5px; text-align: center; margin-top: 40px;">
+                                <span style="font-weight: bold; text-decoration: underline;">เพิ่มไฟล์เสียง</span><br />
+                                <input type="file" accept=".mp4,.mp3,.wav" />
+                                <input type="button" value="Upload" onclick="ResetContent(this,'divAMulti<%# Container.DataItem("Answer_Id")%>    ','<%# Container.DataItem("Answer_Id")%>    ','1','1');" />
+                            </div>
+
+                        </td>
+                        <td>
                             <div id="divAMultiExplain<%# Container.DataItem("Answer_Id")%>" style="border: 1px solid orange; padding: 5px; text-align: center; margin-top: 40px;">
                                 <span style="font-weight: bold; text-decoration: underline;">เพิ่มไฟล์เสียง</span><br />
                                 <input type="file" accept=".mp4,.mp3,.wav" />
-                                <input type="button" value="Upload" onclick="ResetContent(this,'divAMultiExplain<%# Container.DataItem("Answer_Id")%>    ','<%# Container.DataItem("Answer_Id")%>    ','2');" />
+                                <input type="button" value="Upload" onclick="ResetContent(this,'divAMultiExplain<%# Container.DataItem("Answer_Id")%>    ','<%# Container.DataItem("Answer_Id")%>    ','2','1');" />
+                            </div>
+                             </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="divAMultiSlow<%# Container.DataItem("Answer_Id")%>" style="border: 1px solid orange; padding: 5px; text-align: center; margin-top: 40px;">
+                                <span style="font-weight: bold; text-decoration: underline;">เพิ่มไฟล์เสียงแบบ Slow</span><br />
+                                <input type="file" accept=".mp4,.mp3,.wav" />
+                                <input type="button" value="Upload" onclick="ResetContent(this,'divAMultiSlow<%# Container.DataItem("Answer_Id")%>    ','<%# Container.DataItem("Answer_Id")%>    ','1','2');" />
+                            </div>
+                        </td>
+                        <td>
+                            <div id="divAMultiExplainSlow<%# Container.DataItem("Answer_Id")%>" style="border: 1px solid orange; padding: 5px; text-align: center; margin-top: 40px;">
+                                <span style="font-weight: bold; text-decoration: underline;">เพิ่มไฟล์เสียงแบบ Slow</span><br />
+                                <input type="file" accept=".mp4,.mp3,.wav" />
+                                <input type="button" value="Upload" onclick="ResetContent(this,'divAMultiExplainSlow<%# Container.DataItem("Answer_Id")%>    ','<%# Container.DataItem("Answer_Id")%>    ','2','2');" />
                             </div>
                         </td>
                     </tr>
+              <%--      <tr>
+                        <td>
+                            <br />
+                            <span style="font-weight: bold; text-decoration: underline;">เพิ่มคำอ่านตามไฟล์เสียง</span><br />
+                            <br />
+                            <telerik:RadEditor ID="RadAMultiTxt" ClientIDMode="Static" runat="server" Height="220px" OnClientLoad="TelerikDemo.editor_onClientLoad" OnClientPasteHtml="OnClientPasteHtml"
+                                AutoResizeHeight="True">
+                                <Modules>
+                                    <telerik:EditorModule Name="RadEditorNodeInspector" />
+                                </Modules>
+                                <Tools>
+                                    <telerik:EditorToolGroup>
+                                        <telerik:EditorSplitButton Name="Undo"></telerik:EditorSplitButton>
+                                        <telerik:EditorSplitButton Name="Redo"></telerik:EditorSplitButton>
+                                    </telerik:EditorToolGroup>
+                                    <telerik:EditorToolGroup>
+                                        <telerik:EditorTool Name="Bold" />
+                                        <telerik:EditorTool Name="Italic" />
+                                        <telerik:EditorTool Name="Underline" />
+                                        <telerik:EditorTool Name="ImageManager" ShortCut="CTRL+G" />
+                                        <telerik:EditorSplitButton Name="ForeColor"></telerik:EditorSplitButton>
+                                        <telerik:EditorTool Name="Subscript" />
+                                        <telerik:EditorTool Name="Superscript" />
+                                        <telerik:EditorTool Name="InsertFrontDoubleQuote"></telerik:EditorTool>
+                                        <telerik:EditorTool Name="InsertBackDoubleQuote"></telerik:EditorTool>
+                                        <telerik:EditorTool Name="InsertDash"></telerik:EditorTool>
+                                    </telerik:EditorToolGroup>
+                                </Tools>
+                                <Content>
+                                </Content>
+
+                            </telerik:RadEditor>
+                        </td>
+                        <td>
+                            <br />
+                            <span style="font-weight: bold; text-decoration: underline;">เพิ่มคำอ่านตามไฟล์เสียง</span><br />
+                            <br />
+                            <telerik:RadEditor ID="RadAMultiExplainTxt" ClientIDMode="Static" runat="server" Height="220px" OnClientLoad="TelerikDemo.editor_onClientLoad" OnClientPasteHtml="OnClientPasteHtml"
+                                AutoResizeHeight="True">
+                                <Modules>
+                                    <telerik:EditorModule Name="RadEditorNodeInspector" />
+                                </Modules>
+                                <Tools>
+                                    <telerik:EditorToolGroup>
+                                        <telerik:EditorSplitButton Name="Undo"></telerik:EditorSplitButton>
+                                        <telerik:EditorSplitButton Name="Redo"></telerik:EditorSplitButton>
+                                    </telerik:EditorToolGroup>
+                                    <telerik:EditorToolGroup>
+                                        <telerik:EditorTool Name="Bold" />
+                                        <telerik:EditorTool Name="Italic" />
+                                        <telerik:EditorTool Name="Underline" />
+                                        <telerik:EditorTool Name="ImageManager" ShortCut="CTRL+G" />
+                                        <telerik:EditorSplitButton Name="ForeColor"></telerik:EditorSplitButton>
+                                        <telerik:EditorTool Name="Subscript" />
+                                        <telerik:EditorTool Name="Superscript" />
+                                        <telerik:EditorTool Name="InsertFrontDoubleQuote"></telerik:EditorTool>
+                                        <telerik:EditorTool Name="InsertBackDoubleQuote"></telerik:EditorTool>
+                                        <telerik:EditorTool Name="InsertDash"></telerik:EditorTool>
+                                    </telerik:EditorToolGroup>
+                                </Tools>
+                                <Content>
+                                </Content>
+
+                            </telerik:RadEditor>
+                        </td>
+                    </tr>--%>
                 </table>
                 <hr />
                 <br />
@@ -694,7 +883,6 @@
             </table>
             <br />
         </div>
-
 
         <asp:ImageButton ID="btnAddNewAnswer" ImageUrl="~/Images/New.png" ToolTip='เพิ่มคำตอบ' OnClientClick="return confirm('ต้องการเพิ่มคำตอบ ?');" runat="server" />
         <img id='imgPrint' style='float: right; cursor: pointer;' src="../Images/another_page.png" />
