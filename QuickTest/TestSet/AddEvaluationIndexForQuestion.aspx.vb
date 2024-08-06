@@ -63,6 +63,9 @@ Public Class AddEvaluationIndexForQuestion
             'หาข้อมูลที่เคยเลือกเอาไว้แล้วมา bind control ในกรณีที่เคยมีข้อมูลแล้ว
             SetCheckForControl()
 
+            '20240802 แสดงปุ่ม แก้ไขตัวชี้วัด , อนุมัติ การลบ แก้ไข ตัวชี้วัด
+            CheckUserPermission()
+
 
             'If IsConfirm() = True Then
             '    If Session("SuperUser") IsNot Nothing Then
@@ -814,13 +817,10 @@ Public Class AddEvaluationIndexForQuestion
     ''' <returns>Datatable:Item ระดับสุดท้าย</returns>
     ''' <remarks></remarks>
     Private Function GetdtLastGroup(ByVal EiId As String) As DataTable
-        'Dim sql As String = " SELECT EI_Id,EI_Code FROM dbo.tblEvaluationIndexNew WHERE " &
-        '                    " Parent_Id = '" & EiId & "' AND IsActive = '1' ORDER BY EI_Position "
-
-        Dim sql As String = " SELECT ei.EI_Id,EI_Code + ' (' + cast(count(qei.Question_Id) as varchar(7)) + ')' as EI_Code " &
-                            " FROM dbo.tblEvaluationIndexNew ei inner join tblQuestionEvaluationIndexItem qei on ei.EI_Id = qei.EI_Id" &
-                            " WHERE Parent_Id = '" & EiId & "' AND ei.IsActive = '1' and qei.IsActive = 1" &
-                            " GROUP BY ei.EI_Id,EI_Code,EI_Position ORDER BY EI_Position"
+        Dim sql As String
+        sql = " SELECT ei.EI_Id,EI_Code + ' (' + cast(count(qei.Question_Id) as varchar(7)) + ')' as EI_Code  
+                FROM dbo.tblEvaluationIndexNew ei left join tblQuestionEvaluationIndexItem qei on ei.EI_Id = qei.EI_Id and qei.IsActive = 1 
+                WHERE Parent_Id = '" & EiId & "' AND ei.IsActive = '1' GROUP BY ei.EI_Id,EI_Code,EI_Position ORDER BY EI_Position"
         Dim dt As New DataTable
         dt = useCls.getdata(sql)
         Return dt
@@ -1132,6 +1132,24 @@ Public Class AddEvaluationIndexForQuestion
         CountReturn = useCls.ExecuteScalar(sql)
         Return CInt(CountReturn)
     End Function
+
+    Private Function CheckUserPermission()
+        Dim sql As String = ""
+        sql = "select Username from tbluser where guid = '" & Session("UserId").ToString & "';"
+
+        Dim userName As String = useCls.ExecuteScalar(sql)
+
+        If userName.Substring(0, 7).ToLower = "approve" Then
+            btnApproveEvalution.Visible = True
+        End If
+
+        If userName.Substring(0, 7).ToLower = "proof" Then
+            btnApproveEvalution.Visible = False
+            btnAddNewEvalution.Visible = False
+        End If
+
+    End Function
+
 
     ''' <summary>
     ''' Function ที่จะทำการ update เนื้อข้อมูลสำหรับ ตัวชี้วัด เมื่อกดจากปุ่มดินสอ
