@@ -41,6 +41,15 @@ Partial Public Class CreateEvaluationIndex
     Protected WithEvents RadScriptManager1 As Global.Telerik.Web.UI.RadScriptManager
     
     '''<summary>
+    '''lblWarn control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblWarn As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''UpdatePanel1 control.
     '''</summary>
     '''<remarks>
@@ -95,11 +104,38 @@ Partial Public Class CreateEvaluationIndex
     Protected WithEvents ListIndexItem As Global.Telerik.Web.UI.RadListBox
     
     '''<summary>
-    '''lblWarn control.
+    '''btnDeleteIndexName control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblWarn As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents btnDeleteIndexName As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''btnDeleteIndexGroupName control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnDeleteIndexGroupName As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''btnDeleteIndexItem control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnDeleteIndexItem As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''txtUpdateIndexName control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtUpdateIndexName As Global.System.Web.UI.HtmlControls.HtmlTextArea
 End Class
