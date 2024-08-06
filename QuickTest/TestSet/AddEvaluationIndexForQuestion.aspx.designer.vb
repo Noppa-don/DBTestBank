@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class AddEvaluationIndexForQuestion
-
+    
     '''<summary>
     '''RadCodeblock control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class AddEvaluationIndexForQuestion
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RadCodeblock As Global.Telerik.Web.UI.RadCodeBlock
-
+    
     '''<summary>
     '''form1 control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class AddEvaluationIndexForQuestion
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
+    
     '''<summary>
     '''RadScriptManager1 control.
     '''</summary>
@@ -39,7 +39,25 @@ Partial Public Class AddEvaluationIndexForQuestion
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RadScriptManager1 As Global.Telerik.Web.UI.RadScriptManager
-
+    
+    '''<summary>
+    '''btnApproveEvalution control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnApproveEvalution As Global.System.Web.UI.HtmlControls.HtmlInputButton
+    
+    '''<summary>
+    '''btnAddNewEvalution control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnAddNewEvalution As Global.System.Web.UI.HtmlControls.HtmlInputButton
+    
     '''<summary>
     '''RadTabMainEvaluationIndex control.
     '''</summary>
@@ -48,7 +66,7 @@ Partial Public Class AddEvaluationIndexForQuestion
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RadTabMainEvaluationIndex As Global.Telerik.Web.UI.RadTabStrip
-
+    
     '''<summary>
     '''RadAllMultiPage control.
     '''</summary>
