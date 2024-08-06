@@ -95,15 +95,6 @@ Partial Public Class editeachquestion
     Protected WithEvents RadQuestion As Global.Telerik.Web.UI.RadEditor
     
     '''<summary>
-    '''divQMulti control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents divQMulti As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-    
-    '''<summary>
     '''Label1 control.
     '''</summary>
     '''<remarks>
@@ -131,6 +122,15 @@ Partial Public Class editeachquestion
     Protected WithEvents RadQuestionExplain As Global.Telerik.Web.UI.RadEditor
     
     '''<summary>
+    '''divQMulti control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents divQMulti As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
     '''divQMultiExplain control.
     '''</summary>
     '''<remarks>
@@ -138,6 +138,42 @@ Partial Public Class editeachquestion
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents divQMultiExplain As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''divQMultiSlow control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents divQMultiSlow As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''divQMultiExplainSlow control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents divQMultiExplainSlow As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''RadQMultiTxt control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RadQMultiTxt As Global.Telerik.Web.UI.RadEditor
+    
+    '''<summary>
+    '''RadQMultiExplainTxt control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RadQMultiExplainTxt As Global.Telerik.Web.UI.RadEditor
     
     '''<summary>
     '''lblAnswer control.
