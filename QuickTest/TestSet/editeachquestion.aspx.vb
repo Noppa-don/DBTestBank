@@ -375,7 +375,41 @@ Public Class editeachquestion
             RadQuestionExplain.ImageManager.MaxUploadFileSize = maxFileSize
 
             AddMultiControl(VBQuestionId, True, False)
+
+            sqlQuestion = "select top 1 MFileExplain from tblmultimediaobject where ReferenceId = '" & VBQuestionId & "' 
+                            and ReferenceType = 1 and MFileLevel = 1 and isActive = 1 order by lastupdate desc"
+
+            Dim qMFiletxt As String
+            qMFiletxt = ClsData.ExecuteScalar(sqlQuestion)
+
+            If qMFiletxt <> "" Then
+                Dim QMComplete As String = qMFiletxt.ToString.Replace("___MODULE_URL___", pdfCls.GenFilePath(QsetId))
+                'ทำการ Bind ข้อมูลคำถามใส่ Editor
+                RadQMultiTxt.Content = QMComplete
+                RadQMultiTxt.ImageManager.ViewPaths = fileLocationPath 'New String() {"\File" & FullPath}
+                RadQMultiTxt.ImageManager.UploadPaths = fileLocationPath 'New String() {"\File" & FullPath}
+                RadQMultiTxt.ImageManager.DeletePaths = fileLocationPath
+                RadQMultiTxt.ImageManager.MaxUploadFileSize = maxFileSize
+            End If
+
             AddMultiControl(VBQuestionId, True, True)
+
+            sqlQuestion = "select top 1 MFileExplain from tblmultimediaobject where ReferenceId = '" & VBQuestionId & "' 
+                            and ReferenceType = 2 and MFileLevel = 1 and isActive = 1 order by lastupdate desc"
+
+            Dim QEMFiletxt As String
+            QEMFiletxt = ClsData.ExecuteScalar(sqlQuestion)
+
+            If QEMFiletxt <> "" Then
+                Dim QEMComplete As String = qMFiletxt.ToString.Replace("___MODULE_URL___", pdfCls.GenFilePath(QsetId))
+                'ทำการ Bind ข้อมูลคำถามใส่ Editor
+                RadQMultiExplainTxt.Content = QEMComplete
+                RadQMultiExplainTxt.ImageManager.ViewPaths = fileLocationPath 'New String() {"\File" & FullPath}
+                RadQMultiExplainTxt.ImageManager.UploadPaths = fileLocationPath 'New String() {"\File" & FullPath}
+                RadQMultiExplainTxt.ImageManager.DeletePaths = fileLocationPath
+                RadQMultiExplainTxt.ImageManager.MaxUploadFileSize = maxFileSize
+            End If
+
         End If
 
     End Sub
@@ -411,23 +445,23 @@ Public Class editeachquestion
         Next
     End Sub
 
-    Private Function AddMultiControl(ReferenceId As String, isQ As Boolean, IsExplain As Boolean)
+    Private Sub AddMultiControl(ReferenceId As String, isQ As Boolean, IsExplain As Boolean)
         Dim FullPath As String = GetFullPath().Replace("\", "/")
         Dim sql As String = ""
-
+        '---Normal File
         If IsExplain Then
-            sql = "select MfileName from tblMultimediaObject where ReferenceId = '" & ReferenceId & "' and isactive = 1 and ReferenceType = '2'; "
+            sql = "select MfileName from tblMultimediaObject where ReferenceId = '" & ReferenceId & "' and isactive = 1 and ReferenceType = '2' and MFileLevel = '1'; "
         Else
-            sql = "select MfileName from tblMultimediaObject where ReferenceId = '" & ReferenceId & "' and isactive = 1 and ReferenceType = '1'; "
+            sql = "select MfileName from tblMultimediaObject where ReferenceId = '" & ReferenceId & "' and isactive = 1 and ReferenceType = '1' and MFileLevel = '1'; "
         End If
 
 
-        Dim dtMultiQuestion As DataTable
-        dtMultiQuestion = ClsData.getdata(sql)
+        Dim dtMulti As DataTable
+        dtMulti = ClsData.getdata(sql)
 
         Dim FPath As String
-        If dtMultiQuestion.Rows.Count <> 0 Then
-            For Each i In dtMultiQuestion.Rows
+        If dtMulti.Rows.Count <> 0 Then
+            For Each i In dtMulti.Rows
                 FPath = "../file" & FullPath & "/" & i("MfileName").ToString
 
                 If Not isQ Then
@@ -437,18 +471,47 @@ Public Class editeachquestion
                         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Script" & i("MfileName").replace(".mp3", "").ToString & ReferenceId, "setmu(""" & i("MfileName").ToString & """,""" & i("MfileName").replace(".mp3", "").ToString & """,'" & FPath & "','divAMulti" & ReferenceId & "','" & ReferenceId & "');", True)
                     End If
                 Else
-                        If IsExplain Then
+                    If IsExplain Then
                         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Script" & i("MfileName").replace(".mp3", "").ToString & ReferenceId, "setmu(""" & i("MfileName").ToString & """,""" & i("MfileName").replace(".mp3", "").ToString & """,'" & FPath & "','divQMultiExplain','" & ReferenceId & "');", True)
                     Else
                         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Script" & i("MfileName").replace(".mp3", "").ToString & ReferenceId, "setmu(""" & i("MfileName").ToString & """,""" & i("MfileName").replace(".mp3", "").ToString & """,'" & FPath & "','divQMulti','" & ReferenceId & "');", True)
                     End If
 
                 End If
-
-
             Next
         End If
-    End Function
+        '---Slow File
+        If IsExplain Then
+            sql = "select MfileName from tblMultimediaObject where ReferenceId = '" & ReferenceId & "' and isactive = 1 and ReferenceType = '2' and MFileLevel = '2'; "
+        Else
+            sql = "select MfileName from tblMultimediaObject where ReferenceId = '" & ReferenceId & "' and isactive = 1 and ReferenceType = '1' and MFileLevel = '2'; "
+        End If
+
+
+        Dim dtMultiSlow As DataTable
+        dtMultiSlow = ClsData.getdata(sql)
+
+        If dtMultiSlow.Rows.Count <> 0 Then
+            For Each i In dtMultiSlow.Rows
+                FPath = "../file" & FullPath & "/" & i("MfileName").ToString
+
+                If Not isQ Then
+                    If IsExplain Then
+                        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Script" & i("MfileName").replace(".mp3", "").ToString & ReferenceId, "setmu(""" & i("MfileName").ToString & """,""" & i("MfileName").replace(".mp3", "").ToString & """,'" & FPath & "','divAMultiExplainSlow" & ReferenceId & "','" & ReferenceId & "');", True)
+                    Else
+                        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Script" & i("MfileName").replace(".mp3", "").ToString & ReferenceId, "setmu(""" & i("MfileName").ToString & """,""" & i("MfileName").replace(".mp3", "").ToString & """,'" & FPath & "','divAMultiSlow" & ReferenceId & "','" & ReferenceId & "');", True)
+                    End If
+                Else
+                    If IsExplain Then
+                        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Script" & i("MfileName").replace(".mp3", "").ToString & ReferenceId, "setmu(""" & i("MfileName").ToString & """,""" & i("MfileName").replace(".mp3", "").ToString & """,'" & FPath & "','divQMultiExplainSlow','" & ReferenceId & "');", True)
+                    Else
+                        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Script" & i("MfileName").replace(".mp3", "").ToString & ReferenceId, "setmu(""" & i("MfileName").ToString & """,""" & i("MfileName").replace(".mp3", "").ToString & """,'" & FPath & "','divQMultiSlow','" & ReferenceId & "');", True)
+                    End If
+
+                End If
+            Next
+        End If
+    End Sub
 
     ''' <summary>
     ''' ทำการหาข้อมูลคำตอบแล้วเอามา Bind ใน RepaterAnswer
@@ -537,6 +600,9 @@ Public Class editeachquestion
         'คำอธิบายคำถามที่ดึงขึ้นมาจาก RadEditor และผ่านการ Replace ค่าต่างๆเรียบร้อยแล้ว
         Dim QuestionExplain As String = GenPathForSaveImage(RadQuestionExplain.Content.ToString()) '.Replace("<br />", "").Replace("&nbsp;", ""))
 
+        Dim QuestionMfiletxt As String = GenPathForSaveImage(RadQMultiTxt.Content.ToString())
+        Dim QuestionExplainMfiletxt As String = GenPathForSaveImage(RadQMultiExplainTxt.Content.ToString())
+
         If QuestionExplain Is Nothing Then
             QuestionExplain = ""
         End If
@@ -545,9 +611,18 @@ Public Class editeachquestion
             QuestionName = ""
         End If
 
+        If QuestionMfiletxt Is Nothing Then
+            QuestionMfiletxt = ""
+        End If
+        If QuestionExplainMfiletxt Is Nothing Then
+            QuestionExplainMfiletxt = ""
+        End If
+
         'check ว่ามี txt หรือเปล่าหรือว่ามีแต่ tag html
         QuestionName = CheckEmptyString(QuestionName)
         QuestionExplain = CheckEmptyString(QuestionExplain)
+        QuestionMfiletxt = CheckEmptyString(QuestionMfiletxt)
+        QuestionExplainMfiletxt = CheckEmptyString(QuestionExplainMfiletxt)
 
         If QuestionName = "" Or QuestionName = String.Empty Then
             lblWarn.Visible = True
@@ -630,6 +705,19 @@ Public Class editeachquestion
             If QuestionExplainBeforeEdit <> QuestionExplain Then
                 'Log.Record(Log.LogType.ManageExam, "แก้ไขคำอธิบายคำถามเป็น " & QuestionExplain & " (QuestionId=" & QuestionId & ")", True, "", QuestionId, QsetId)
                 Log.RecordLog(Log.LogCategory.EditQuestion, Log.LogAction.Update, True, "แก้ไขคำอธิบายคำถามเป็น " & QuestionExplain, QuestionId)
+            End If
+
+            Dim sql As String
+            If QuestionExplainMfiletxt <> "" Then
+                Dim ClsData As New ClassConnectSql
+                sql = "update tblmultimediaobject set MFileExplain = '" & QuestionExplainMfiletxt & "' where ReferenceId = '" & QuestionId & "' and ReferenceType = 2 and MFileLevel = 1"
+                ClsData.Execute(sql)
+            End If
+
+            If QuestionMfiletxt <> "" Then
+                Dim ClsData As New ClassConnectSql
+                sql = "update tblmultimediaobject set MFileExplain = '" & QuestionMfiletxt & "' where ReferenceId = '" & QuestionId & "' and ReferenceType = 1 and MFileLevel = 1"
+                ClsData.Execute(sql)
             End If
 
 
