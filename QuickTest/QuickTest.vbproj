@@ -2370,6 +2370,7 @@
     <Content Include="TestSet\AddNewQuestionCatAndSet.aspx" />
     <Content Include="TestSet\AddQuestionPage.aspx" />
     <Content Include="TestSet\AddQuestionSetPage.aspx" />
+    <Content Include="TestSet\ApproveEvaluationIndex.aspx" />
     <Content Include="TestSet\ConfirmCheckmark.aspx" />
     <Content Include="TestSet\CreateEvaluationIndex.aspx" />
     <Content Include="TestSet\DashboardSetupPage.aspx" />
@@ -3000,6 +3001,13 @@
     <Compile Include="TestSet\AddQuestionSetPage.aspx.vb">
       <DependentUpon>AddQuestionSetPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestSet\ApproveEvaluationIndex.aspx.designer.vb">
+      <DependentUpon>ApproveEvaluationIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestSet\ApproveEvaluationIndex.aspx.vb">
+      <DependentUpon>ApproveEvaluationIndex.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="TestSet\MoveAndCommentExam.aspx.designer.vb">
       <DependentUpon>MoveAndCommentExam.aspx</DependentUpon>
