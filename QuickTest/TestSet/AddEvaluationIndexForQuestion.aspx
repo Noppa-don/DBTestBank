@@ -22,6 +22,10 @@
                 window.location = '<%=ResolveUrl("~")%>testset/CreateEvaluationIndex.aspx';
 
             });
+            //20240802 เพิ่มปุ่มจัดการอนุมัติตัวชี้วัด
+            $('#btnApproveEvalution').click(function () {
+                window.location = '<%=ResolveUrl("~")%>testset/ApproveEvaluationIndex.aspx';
+            });
 
             $('#btnPrintEvalution').click(function () {
                 $.ajax({
@@ -164,9 +168,8 @@
 
                         <input type="button" id="btnPrintEvalution" style='width:120px;height:35px;float: right;' 
                             value='พิมพ์ดัชนีของข้อนี้' />
-                        
-                        <input type="button" id="btnAddNewEvalution" style='width:120px;height:35px;float: right;margin-right: 5px;' 
-                            id='btnAddEvalutionIndex' value='เพิ่ม/แก้ไขดัชนี' />
+                         <input type="button" id="btnApproveEvalution" style='width:120px;height:35px;float: right;margin-right: 5px;' value='เพิ่ม/แก้ไขดัชนี' runat="server" visible="false" />
+                        <input type="button" id="btnAddNewEvalution" style='width:120px;height:35px;float: right;margin-right: 5px;' value='เพิ่ม/แก้ไขดัชนี' runat="server" visible="true" />
                     </td>
 
                 </tr>
