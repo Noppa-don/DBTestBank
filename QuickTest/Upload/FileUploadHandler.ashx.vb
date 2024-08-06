@@ -12,6 +12,7 @@ Public Class FileUploadHandler
                 Dim qsetId As String = context.Request.QueryString("qsetId").ToString()
                 Dim RefId As String = context.Request.QueryString("RefId").ToString()
                 Dim RefType As String = context.Request.QueryString("RefType").ToString()
+                Dim MLevel As String = context.Request.QueryString("MLevel").ToString()
                 Dim files As HttpFileCollection = context.Request.Files
 
                 Dim lPath As String = ""
@@ -31,7 +32,7 @@ Public Class FileUploadHandler
                     If file.ContentType = "audio/mpeg" Then
                         'Save MultimediaObject
                         Dim ct As New ClsTestSet("")
-                        ct.SaveMultimediaFile(qsetId, RefId, file.FileName, file.ContentType, RefType)
+                        ct.SaveMultimediaFile(qsetId, RefId, file.FileName, file.ContentType, RefType, MLevel)
                     End If
                 Next
                 context.Response.ContentType = "text/plain"
