@@ -5123,6 +5123,42 @@ To modify move field declaration from designer file to code-behind file.
  <param name="qsetId"></param>
  <returns></returns>
 </member>
+<member name="F:QuickTest.ApproveEvaluationIndex._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTest.ApproveEvaluationIndex._RadScriptManager1">
+<summary>
+RadScriptManager1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTest.ApproveEvaluationIndex._lblWarn">
+<summary>
+lblWarn control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTest.ApproveEvaluationIndex._ContentDiv">
+<summary>
+ContentDiv control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:QuickTest.MoveAndCommentExam._RadCodeBlock1">
 <summary>
 RadCodeBlock1 control.
@@ -12350,6 +12386,24 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:QuickTest.AddEvaluationIndexForQuestion._btnApproveEvalution">
+<summary>
+btnApproveEvalution control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTest.AddEvaluationIndexForQuestion._btnAddNewEvalution">
+<summary>
+btnAddNewEvalution control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:QuickTest.AddEvaluationIndexForQuestion._RadTabMainEvaluationIndex">
 <summary>
 RadTabMainEvaluationIndex control.
@@ -12959,6 +13013,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:QuickTest.CreateEvaluationIndex._lblWarn">
+<summary>
+lblWarn control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:QuickTest.CreateEvaluationIndex._UpdatePanel1">
 <summary>
 UpdatePanel1 control.
@@ -13013,9 +13076,36 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:QuickTest.CreateEvaluationIndex._lblWarn">
+<member name="F:QuickTest.CreateEvaluationIndex._btnDeleteIndexName">
 <summary>
-lblWarn control.
+btnDeleteIndexName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTest.CreateEvaluationIndex._btnDeleteIndexGroupName">
+<summary>
+btnDeleteIndexGroupName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTest.CreateEvaluationIndex._btnDeleteIndexItem">
+<summary>
+btnDeleteIndexItem control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTest.CreateEvaluationIndex._txtUpdateIndexName">
+<summary>
+txtUpdateIndexName control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -13148,15 +13238,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:QuickTest.editeachquestion._divQMulti">
-<summary>
-divQMulti control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:QuickTest.editeachquestion._Label1">
 <summary>
 Label1 control.
@@ -13184,9 +13265,54 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:QuickTest.editeachquestion._divQMulti">
+<summary>
+divQMulti control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:QuickTest.editeachquestion._divQMultiExplain">
 <summary>
 divQMultiExplain control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTest.editeachquestion._divQMultiSlow">
+<summary>
+divQMultiSlow control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTest.editeachquestion._divQMultiExplainSlow">
+<summary>
+divQMultiExplainSlow control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTest.editeachquestion._RadQMultiTxt">
+<summary>
+RadQMultiTxt control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:QuickTest.editeachquestion._RadQMultiExplainTxt">
+<summary>
+RadQMultiExplainTxt control.
 </summary>
 <remarks>
 Auto-generated field.
