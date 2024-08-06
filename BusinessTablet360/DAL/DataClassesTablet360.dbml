@@ -1,0 +1,1258 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Pointplus_Present" Class="DataClassesTablet360DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.uvwFoundTablet" Member="uvwFoundTablets">
+    <Type Name="uvwFoundTablet">
+      <Column Name="School_Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Normal_Found" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Three_Day" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Lot_Day" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.uvwPercentClass" Member="uvwPercentClasses">
+    <Type Name="uvwPercentClass">
+      <Column Name="School_Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Class_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="false" />
+      <Column Name="Percent_Use" Type="System.Decimal" DbType="Decimal(3,1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.uvwStatisticReport" Member="uvwStatisticReports">
+    <Type Name="uvwStatisticReport">
+      <Column Name="School_Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Count_Student" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Count_Teacher" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tablet_Student" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tablet_Teacher" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Count_Study" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Start_Use" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Student_Study" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.uvwUseLocation" Member="uvwUseLocations">
+    <Type Name="uvwUseLocation">
+      <Column Name="School_Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Out_Class" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="In_Class" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblMenuItem" Member="t360_tblMenuItems">
+    <Type Name="t360_tblMenuItem">
+      <Column Name="MenuItem_Code" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MenuItem_Parent" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MenuItem_Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MenuItem_Page" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MenuItem_Type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="MenuItem_Order" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="MenuItem_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="t360_tblMenuItem_t360_tblUserMenuItem" Member="t360_tblUserMenuItems" ThisKey="MenuItem_Code" OtherKey="MenuItem_Code" Type="t360_tblUserMenuItem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblProvice" Member="t360_tblProvices">
+    <Type Name="t360_tblProvice">
+      <Column Name="Province_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Province_Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="t360_tblProvice_t360_tblDistrict" Member="t360_tblDistricts" ThisKey="Province_Id" OtherKey="Province_Id" Type="t360_tblDistrict" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblDistrict" Member="t360_tblDistricts">
+    <Type Name="t360_tblDistrict">
+      <Column Name="District_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Province_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="District_Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="t360_tblDistrict_t360_tblSubDistrict" Member="t360_tblSubDistricts" ThisKey="District_Id" OtherKey="District_Id" Type="t360_tblSubDistrict" />
+      <Association Name="t360_tblProvice_t360_tblDistrict" Member="t360_tblProvice" ThisKey="Province_Id" OtherKey="Province_Id" Type="t360_tblProvice" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblSubDistrict" Member="t360_tblSubDistricts">
+    <Type Name="t360_tblSubDistrict">
+      <Column Name="SubDistrict_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="District_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubDistrict_Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="t360_tblDistrict_t360_tblSubDistrict" Member="t360_tblDistrict" ThisKey="District_Id" OtherKey="District_Id" Type="t360_tblDistrict" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblNetwork" Member="t360_tblNetworks">
+    <Type Name="t360_tblNetwork">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Network_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Network_IP" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Network_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Network_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Network_FirstDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Network_LastDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Network_CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Network_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Network_IsIgnore" Type="System.Boolean" DbType="Bit" CanBeNull="false" />
+      <Column Name="Network_Location" Type="System.String" DbType="VarChar(100)" CanBeNull="false" />
+      <Association Name="t360_tblNetwork_t360_tblNetworkHistory" Member="t360_tblNetworkHistories" ThisKey="Network_Id" OtherKey="Network_Id" Type="t360_tblNetworkHistory" />
+      <Association Name="t360_tblNetwork_t360_tblNetworkWarnReason" Member="t360_tblNetworkWarnReasons" ThisKey="Network_Id" OtherKey="Network_Id" Type="t360_tblNetworkWarnReason" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblTabletOwner" Member="t360_tblTabletOwners">
+    <Type Name="t360_tblTabletOwner">
+      <Column Name="TON_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tablet_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Owner_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Owner_Type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="TON_ReceiveDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TON_ReturnDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TabletOwner_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="t360_tblTabletOwner_t360_tblTabletLost" Member="t360_tblTabletLosts" ThisKey="TON_Id" OtherKey="TON_Id" Type="t360_tblTabletLost" />
+      <Association Name="t360_tblTabletOwner_t360_tblTabletLog" Member="t360_tblTabletLogs" ThisKey="TON_Id" OtherKey="TON_Id" Type="t360_tblTabletLog" />
+      <Association Name="t360_tblTabletOwner_t360_tblTabletRepair" Member="t360_tblTabletRepairs" ThisKey="TON_Id" OtherKey="TON_Id" Type="t360_tblTabletRepair" />
+      <Association Name="t360_tblTablet_t360_tblTabletOwner" Member="t360_tblTablet" ThisKey="Tablet_Id" OtherKey="Tablet_Id" Type="t360_tblTablet" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblTabletLost" Member="t360_tblTabletLosts">
+    <Type Name="t360_tblTabletLost">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TON_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TLT_LostDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TLT_Station" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="TLT_DocNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="t360_tblTabletOwner_t360_tblTabletLost" Member="t360_tblTabletOwner" ThisKey="TON_Id" OtherKey="TON_Id" Type="t360_tblTabletOwner" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblTabletLog" Member="t360_tblTabletLogs">
+    <Type Name="t360_tblTabletLog">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TON_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TLG_Event" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TLG_ErrMsg" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="TLG_TimeStamp" Type="System.DateTime" DbType="SmallDateTime" IsPrimaryKey="true" CanBeNull="true" />
+      <Column Name="TLG_AppName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="TLG_InSchool" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TLG_Storage" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TLG_BatteryStatus" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="t360_tblTabletOwner_t360_tblTabletLog" Member="t360_tblTabletOwner" ThisKey="TON_Id" OtherKey="TON_Id" Type="t360_tblTabletOwner" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblClass" Member="t360_tblClasses">
+    <Type Name="t360_tblClass">
+      <Column Name="Class_Name" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Class_Order" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Class_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Class_Finish" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="t360_tblClass_t360_tblRoom" Member="t360_tblRooms" ThisKey="Class_Name" OtherKey="Class_Name" Type="t360_tblRoom" />
+      <Association Name="t360_tblClass_t360_tblSchoolClass" Member="t360_tblSchoolClasses" ThisKey="Class_Name" OtherKey="Class_Name" Type="t360_tblSchoolClass" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblRoom" Member="t360_tblRooms">
+    <Type Name="t360_tblRoom">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Class_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Room_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Room_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Room_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="t360_tblClass_t360_tblRoom" Member="t360_tblClass" ThisKey="Class_Name" OtherKey="Class_Name" Type="t360_tblClass" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblUnit" Member="t360_tblUnits">
+    <Type Name="t360_tblUnit">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Subject_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Unit_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Unit_Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Unit_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="t360_tblUnit_t360_tblLesson" Member="t360_tblLessons" ThisKey="Unit_Id" OtherKey="Unit_Id" Type="t360_tblLesson" />
+      <Association Name="t360_tblSubject_t360_tblUnit" Member="t360_tblSubject" ThisKey="Subject_Id" OtherKey="Subject_Id" Type="t360_tblSubject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblLesson" Member="t360_tblLessons">
+    <Type Name="t360_tblLesson">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Unit_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Lesson_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Lesson_Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Lesson_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="t360_tblLesson_t360_tblPart" Member="t360_tblParts" ThisKey="Lesson_Id" OtherKey="Lesson_Id" Type="t360_tblPart" />
+      <Association Name="t360_tblUnit_t360_tblLesson" Member="t360_tblUnit" ThisKey="Unit_Id" OtherKey="Unit_Id" Type="t360_tblUnit" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblPart" Member="t360_tblParts">
+    <Type Name="t360_tblPart">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Lesson_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Part_Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Part_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="t360_tblLesson_t360_tblPart" Member="t360_tblLesson" ThisKey="Lesson_Id" OtherKey="Lesson_Id" Type="t360_tblLesson" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblSubjectClass" Member="t360_tblSubjectClasses">
+    <Type Name="t360_tblSubjectClass">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Class_Name" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Subject_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="t360_tblSubject_t360_tblSubjectClass" Member="t360_tblSubject" ThisKey="Subject_Id" OtherKey="Subject_Id" Type="t360_tblSubject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblSubjectType" Member="t360_tblSubjectTypes">
+    <Type Name="t360_tblSubjectType">
+      <Column Name="ST_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ST_Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SubjectType_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="t360_tblSubjectType_t360_tblSchoolSubjectType" Member="t360_tblSchoolSubjectTypes" ThisKey="ST_Id" OtherKey="ST_Id" Type="t360_tblSchoolSubjectType" />
+      <Association Name="t360_tblSubject_t360_tblSubjectType" Member="t360_tblSubject" ThisKey="ST_Id" OtherKey="ST_Id" Type="t360_tblSubject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblSubject" Member="t360_tblSubjects">
+    <Type Name="t360_tblSubject">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Subject_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Subject_Code" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Subject_Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Subject_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="t360_tblSubject_t360_tblUnit" Member="t360_tblUnits" ThisKey="Subject_Id" OtherKey="Subject_Id" Type="t360_tblUnit" />
+      <Association Name="t360_tblSubject_t360_tblSubjectClass" Member="t360_tblSubjectClasses" ThisKey="Subject_Id" OtherKey="Subject_Id" Type="t360_tblSubjectClass" />
+      <Association Name="t360_tblSubject_t360_tblSubjectType" Member="t360_tblSubjectTypes" ThisKey="ST_Id" OtherKey="ST_Id" Type="t360_tblSubjectType" />
+      <Association Name="t360_tblSubject_t360_tblStudentCheckName" Member="t360_tblStudentCheckNames" ThisKey="Subject_Id" OtherKey="Subject_Id" Type="t360_tblStudentCheckName" />
+      <Association Name="t360_tblSubject_t360_tblStudentTest" Member="t360_tblStudentTests" ThisKey="Subject_Id" OtherKey="Student_Id" Type="t360_tblStudentTest" />
+      <Association Name="t360_tblStudentHomeWork_t360_tblSubject" Member="t360_tblStudentHomeWork" ThisKey="Subject_Id" OtherKey="Subject_Id" Type="t360_tblStudentHomeWork" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblSchoolSubjectType" Member="t360_tblSchoolSubjectTypes">
+    <Type Name="t360_tblSchoolSubjectType">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ST_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="t360_tblSubjectType_t360_tblSchoolSubjectType" Member="t360_tblSubjectType" ThisKey="ST_Id" OtherKey="ST_Id" Type="t360_tblSubjectType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblTestType" Member="t360_tblTestTypes">
+    <Type Name="t360_tblTestType">
+      <Column Name="TestType_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TestType_Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="t360_tblTestType_t360_tblStudentTest" Member="t360_tblStudentTests" ThisKey="TestType_Id" OtherKey="TestType_Id" Type="t360_tblStudentTest" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblTeacher" Member="t360_tblTeachers">
+    <Type Name="t360_tblTeacher">
+      <Column Name="Teacher_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Teacher_Code" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Teacher_PrefixName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Teacher_FirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Teacher_LastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Teacher_Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Teacher_Status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Teacher_CurrentClass" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Teacher_CurrentRoom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Teacher_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Teacher_Soi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Teacher_Street" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SubDistrict_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="District_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Province_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Teacher_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="t360_tblTeacher_t360_tblStudentHomeWork" Member="t360_tblStudentHomeWorks" ThisKey="Teacher_id" OtherKey="Teacher_Id" Type="t360_tblStudentHomeWork" />
+      <Association Name="t360_tblTeacher_t360_tblStudentCheckName" Member="t360_tblStudentCheckNames" ThisKey="Teacher_id" OtherKey="Teacher_Id" Type="t360_tblStudentCheckName" />
+      <Association Name="t360_tblTeacher_t360_tblStudentTest" Member="t360_tblStudentTests" ThisKey="Teacher_id" OtherKey="Teacher_Id" Type="t360_tblStudentTest" />
+      <Association Name="t360_tblTeacher_t360_tblTeacherRoom" Member="t360_tblTeacherRooms" ThisKey="Teacher_id" OtherKey="Teacher_Id" Type="t360_tblTeacherRoom" />
+      <Association Name="t360_tblTeacher_tblAssistant" Member="tblAssistants" ThisKey="Teacher_id" OtherKey="Assistant_id" Type="tblAssistant" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblStudentHomeWork" Member="t360_tblStudentHomeWorks">
+    <Type Name="t360_tblStudentHomeWork">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Student_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Subject_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Teacher_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="HW_Room" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HW_Class" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HW_MaxScore" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="HW_Score" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="HW_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="t360_tblStudentHomeWork_t360_tblSubject" Member="t360_tblSubjects" ThisKey="Subject_Id" OtherKey="Subject_Id" Type="t360_tblSubject" />
+      <Association Name="t360_tblTeacher_t360_tblStudentHomeWork" Member="t360_tblTeacher" ThisKey="Teacher_Id" OtherKey="Teacher_id" Type="t360_tblTeacher" IsForeignKey="true" />
+      <Association Name="t360_tblStudent_t360_tblStudentHomeWork" Member="t360_tblStudent" ThisKey="Student_Id" OtherKey="Student_Id" Type="t360_tblStudent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblStudentCheckName" Member="t360_tblStudentCheckNames">
+    <Type Name="t360_tblStudentCheckName">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Student_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Teacher_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Subject_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SCN_Class" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SCN_Room" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SCN_StartDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SCN_EndDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="t360_tblTeacher_t360_tblStudentCheckName" Member="t360_tblTeacher" ThisKey="Teacher_Id" OtherKey="Teacher_id" Type="t360_tblTeacher" IsForeignKey="true" />
+      <Association Name="t360_tblSubject_t360_tblStudentCheckName" Member="t360_tblSubject" ThisKey="Subject_Id" OtherKey="Subject_Id" Type="t360_tblSubject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblStudentTest" Member="t360_tblStudentTests">
+    <Type Name="t360_tblStudentTest">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Student_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Teacher_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ST_Class" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_Room" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TestType_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Subject_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ST_MaxScore" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_Score" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_StartTime" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ST_EndTime" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Association Name="t360_tblTeacher_t360_tblStudentTest" Member="t360_tblTeacher" ThisKey="Teacher_Id" OtherKey="Teacher_id" Type="t360_tblTeacher" IsForeignKey="true" />
+      <Association Name="t360_tblTestType_t360_tblStudentTest" Member="t360_tblTestType" ThisKey="TestType_Id" OtherKey="TestType_Id" Type="t360_tblTestType" IsForeignKey="true" />
+      <Association Name="t360_tblSubject_t360_tblStudentTest" Member="t360_tblSubject" ThisKey="Student_Id" OtherKey="Subject_Id" Type="t360_tblSubject" IsForeignKey="true" />
+      <Association Name="t360_tblStudent_t360_tblStudentTest" Member="t360_tblStudent" ThisKey="Student_Id" OtherKey="Student_Id" Type="t360_tblStudent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblStudentRoom" Member="t360_tblStudentRooms">
+    <Type Name="t360_tblStudentRoom">
+      <Column Name="SR_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Student_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Student_NoInRoom" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Class_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Room_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SR_MoveDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SR_AcademicYear" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SR_MoveType" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="SR_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Calendar_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Room_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="t360_tblStudent_t360_tblStudentRoom" Member="t360_tblStudent" ThisKey="Student_Id" OtherKey="Student_Id" Type="t360_tblStudent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblTeacherRoom" Member="t360_tblTeacherRooms">
+    <Type Name="t360_tblTeacherRoom">
+      <Column Name="TR_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Teacher_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Class_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Room_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TR_UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TR_MoveType" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="TR_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Calendar_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Room_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="t360_tblTeacher_t360_tblTeacherRoom" Member="t360_tblTeacher" ThisKey="Teacher_Id" OtherKey="Teacher_id" Type="t360_tblTeacher" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_uvwTabletDetail" Member="t360_uvwTabletDetails">
+    <Type Name="t360_uvwTabletDetail">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Student_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Student_Code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Student_PrefixName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Student_FirstName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Student_LastName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Class_Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Room_Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Class_Room" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="Start_Time" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="End_Time" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="DiffMin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hr" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Mn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Subject_Code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Subject_Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Unit_Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Lesson_Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Part_Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Teacher_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Teacher_Code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Teacher_PrefixName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Teacher_FirstName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Teacher_LastName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Check_Name" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Use_OutClassName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Use_OutClassType" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Use_InClassName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Use_InClassType" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Score_Full" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Score_Available" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Score_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblTempStudent" Member="t360_tblTempStudents">
+    <Type Name="t360_tblTempStudent">
+      <Column Name="Is_Check" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Record_Status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Validate_Status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Validate_StatusMessage" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Validate_Message" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="Student_Information" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Student_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Student_Code" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Student_PrefixName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_FirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_LastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_ParentName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Student_ParentPhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_Status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Student_CurrentClass" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_CurrentRoom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_Soi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Student_Street" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SubDistrict_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="District_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Province_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Student_IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Student_CurrentNoInRoom" Type="System.Byte" DbType="TinyInt " CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblNetworkHistory" Member="t360_tblNetworkHistories">
+    <Type Name="t360_tblNetworkHistory">
+      <Column Name="NWH_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Network_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Network_IP" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Network_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Network_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NWH_IsFound" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NWH_PingTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="t360_tblNetwork_t360_tblNetworkHistory" Member="t360_tblNetwork" ThisKey="Network_Id" OtherKey="Network_Id" Type="t360_tblNetwork" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblModule" Member="tblModules">
+    <Type Name="tblModule">
+      <Column Name="Module_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Create_By" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblModuleDetail" Member="tblModuleDetails">
+    <Type Name="tblModuleDetail">
+      <Column Name="ModuleDetail_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Module_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Reference_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Reference_Type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblModuleAssignmentDetail" Member="tblModuleAssignmentDetails">
+    <Type Name="tblModuleAssignmentDetail">
+      <Column Name="MAD_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MA_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Class_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Subject_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Room_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTestSet" Member="tblTestSets">
+    <Type Name="tblTestSet">
+      <Column Name="TestSet_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TestSet_Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="UserIdOld" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Level_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="TestSet_Time" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TestSet_FontSize" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="IsPracticeMode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsHomeWorkMode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsReportMode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsQuizMode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsStandard" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NeedConnectCheckmark" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserType" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Calendar_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblStudent" Member="t360_tblStudents">
+    <Type Name="t360_tblStudent">
+      <Column Name="Student_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Student_Code" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Student_PrefixName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Student_FirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Student_LastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Student_NickName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Student_FatherName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Student_FatherPhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_MotherName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Student_MotherPhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_Status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Student_CurrentNoInRoom" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Student_CurrentClass" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_CurrentRoom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_CurrentRoomId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Student_Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_Soi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Student_Street" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SubDistrict_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="District_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Province_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Student_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Student_Number" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Student_AvatarSeqNo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Student_Gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_FatherPhone2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="t360_tblStudent_t360_tblStudentHomeWork" Member="t360_tblStudentHomeWorks" ThisKey="Student_Id" OtherKey="Student_Id" Type="t360_tblStudentHomeWork" />
+      <Association Name="t360_tblStudent_t360_tblStudentTest" Member="t360_tblStudentTests" ThisKey="Student_Id" OtherKey="Student_Id" Type="t360_tblStudentTest" />
+      <Association Name="t360_tblStudent_t360_tblStudentRoom" Member="t360_tblStudentRooms" ThisKey="Student_Id" OtherKey="Student_Id" Type="t360_tblStudentRoom" />
+      <Association Name="t360_tblStudent_t360_tblStudentFinish" Member="t360_tblStudentFinishes" ThisKey="Student_Id" OtherKey="Student_Id" Type="t360_tblStudentFinish" />
+    </Type>
+  </Table>
+  <Table Name="dbo.uvw_GetSubjectForHomework" Member="uvw_GetSubjectForHomeworks">
+    <Type Name="uvw_GetSubjectForHomework">
+      <Column Name="GroupSubject_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="GroupSubject_Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.uvw_StudentHomeworkScore" Member="uvw_StudentHomeworkScores">
+    <Type Name="uvw_StudentHomeworkScore">
+      <Column Name="MA_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Calendar_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ModuleDetail_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Reference_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Reference_Type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="TestSet_Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GroupSubject_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="GroupSubject_Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Module_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TotalScore" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.uvw_StudentDoAllQuiz" Member="uvw_StudentDoAllQuizs">
+    <Type Name="uvw_StudentDoAllQuiz">
+      <Column Name="Student_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Student_Code" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Student_PrefixName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Student_FirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Student_LastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Student_NickName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Student_CurrentClass" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_CurrentRoom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_CurrentRoomId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Calendar_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="GroupSubject_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="GroupSubject_Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Quiz_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TotalScore" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="t360_SchoolCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IsPracticeMode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsHomeWorkMode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsQuizMode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsHalfWay" Type="System.Boolean" DbType="Bit" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.uvw_TeacherCreateTestset" Member="uvw_TeacherCreateTestsets">
+    <Type Name="uvw_TeacherCreateTestset">
+      <Column Name="Calendar_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="t360_SchoolCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IsPracticeMode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsHomeWorkMode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsQuizMode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="User_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="StartTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Teacher_FirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Teacher_LastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.uvw_TeacherCreateHomework" Member="uvw_TeacherCreateHomeworks">
+    <Type Name="uvw_TeacherCreateHomework">
+      <Column Name="Teacher_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Module_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="MA_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Calendar_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Teacher_FirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Teacher_LastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModuleDetail_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Reference_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Reference_Type" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="TestSet_Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GroupSubject_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="GroupSubject_Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.uvw_TeacherCreateQuiz" Member="uvw_TeacherCreateQuizs">
+    <Type Name="uvw_TeacherCreateQuiz">
+      <Column Name="Teacher_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Teacher_FirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Teacher_LastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Calendar_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Quiz_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="GroupSubject_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="GroupSubject_Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t360_SchoolCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="GroupSubject_ShortName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.uvw_TeacherCreateSubject" Member="uvw_TeacherCreateSubjects">
+    <Type Name="uvw_TeacherCreateSubject">
+      <Column Name="Calendar_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="GroupSubject_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="GroupSubject_Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t360_SchoolCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IsPracticeMode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsHomeWorkMode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsQuizMode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="User_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="StartTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Teacher_FirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Teacher_LastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TestSet_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="GroupSubject_ShortName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblMobileAccessPassword" Member="tblMobileAccessPasswords">
+    <Type Name="tblMobileAccessPassword">
+      <Column Name="Map_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Map_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GeneratedPassword" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblMobileRegistration" Member="tblMobileRegistrations">
+    <Type Name="tblMobileRegistration">
+      <Column Name="Mr_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Map_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Device_Id" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Register_Note" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Register_Ip" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblGroupSubject" Member="tblGroupSubjects">
+    <Type Name="tblGroupSubject">
+      <Column Name="GroupSubject_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GroupSubject_Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GroupSubject_ShortName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tblGroupSubject_tblSchoolSubjectClass" Member="tblSchoolSubjectClasses" ThisKey="GroupSubject_Id" OtherKey="GroupSubjectId" Type="tblSchoolSubjectClass" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSchool" Member="tblSchools">
+    <Type Name="tblSchool">
+      <Column Name="SchoolId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ProvinceId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AmphurId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TambolId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AreaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(32) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAmphur" Member="tblAmphurs">
+    <Type Name="tblAmphur">
+      <Column Name="AmphurId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProvinceId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AmphurName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(32) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblProvince" Member="tblProvinces">
+    <Type Name="tblProvince">
+      <Column Name="ProvinceId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProvinceName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(32) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTambol" Member="tblTambols">
+    <Type Name="tblTambol">
+      <Column Name="TambolId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AmphurId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TambolName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(32) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblModuleAssignment" Member="tblModuleAssignments">
+    <Type Name="tblModuleAssignment">
+      <Column Name="MA_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Module_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Start_Date" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="End_Date" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Calendar_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="AssignTo" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblQuiz" Member="tblQuizs">
+    <Type Name="tblQuiz">
+      <Column Name="Quiz_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TestSet_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="t360_ClassName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="t360_RoomName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StudentAmount" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="StartTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NeedTimer" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsPerQuestionMode" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TimePerQuestion" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="TimePerTotal" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="NeedCorrectAnswer" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsTimeShowCorrectAnswer" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TimePerCorrectAnswer" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsShowCorrectAfterComplete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsRushMode" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NeedRandomQuestion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NeedRandomAnswer" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="User_IdOld" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="t360_SchoolCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="t360_TeacherId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsQuizMode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsPracticeMode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsHomeWorkMode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NeedShowScore" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NeedShowScoreAfterComplete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDifferentQuestion" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDifferentAnswer" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Selfpace" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsUseTablet" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TabletLab_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="User_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="EnabledTools" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="FullScore" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Calendar_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="IsHalfWay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblUplevelConfirm" Member="t360_tblUplevelConfirms">
+    <Type Name="t360_tblUplevelConfirm">
+      <Column Name="Ulv_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Room_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Calendar_Year" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblSetTypeRunStudentNumber" Member="t360_tblSetTypeRunStudentNumbers">
+    <Type Name="t360_tblSetTypeRunStudentNumber">
+      <Column Name="Syr_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Syr_Type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblUser" Member="t360_tblUsers">
+    <Type Name="t360_tblUser">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="User_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="User_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="User_Password" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="User_Salt" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="User_FirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="User_LastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="User_Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="User_Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="User_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="t360_tblUser_t360_tblUserMenuItem" Member="t360_tblUserMenuItems" ThisKey="User_Id" OtherKey="User_Id" Type="t360_tblUserMenuItem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblStudentFinish" Member="t360_tblStudentFinishes">
+    <Type Name="t360_tblStudentFinish">
+      <Column Name="Student_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Class_Name" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="t360_tblStudent_t360_tblStudentFinish" Member="t360_tblStudent" ThisKey="Student_Id" OtherKey="Student_Id" Type="t360_tblStudent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblNewsRoom" Member="t360_tblNewsRooms">
+    <Type Name="t360_tblNewsRoom">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="News_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Class_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Room_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NR_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="t360_tblNewsRoom_t360_tblNewsDetailCompletion" Member="t360_tblNewsDetailCompletions" ThisKey="NR_Id" OtherKey="NR_Id" Type="t360_tblNewsDetailCompletion" />
+      <Association Name="t360_tblNew_t360_tblNewsRoom" Member="t360_tblNew" ThisKey="News_Id" OtherKey="News_Id" Type="t360_tblNew" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblUserMenuItem" Member="t360_tblUserMenuItems">
+    <Type Name="t360_tblUserMenuItem">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MenuItem_Code" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="User_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UMI_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="t360_tblMenuItem_t360_tblUserMenuItem" Member="t360_tblMenuItem" ThisKey="MenuItem_Code" OtherKey="MenuItem_Code" Type="t360_tblMenuItem" IsForeignKey="true" />
+      <Association Name="t360_tblUser_t360_tblUserMenuItem" Member="t360_tblUser" ThisKey="User_Id" OtherKey="User_Id" Type="t360_tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblSchool" Member="t360_tblSchools">
+    <Type Name="t360_tblSchool">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="School_Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="School_Number" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="School_Soi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="School_Street" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SubDistrict_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="District_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Province_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="School_DirectorName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="School_Director_Phone1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="School_Director_Phone2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="School_Phone1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="School_Phone2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="School_Fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="School_Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="School_Website" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="School_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GUID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="StartSync" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="EndSync" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="OnSync" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Report_Email" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAssistant" Member="tblAssistants">
+    <Type Name="tblAssistant">
+      <Column Name="Ass_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Teacher_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Assistant_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="t360_tblTeacher_tblAssistant" Member="t360_tblTeacher" ThisKey="Assistant_id" OtherKey="Teacher_id" Type="t360_tblTeacher" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblLog" Member="t360_tblLogs">
+    <Type Name="t360_tblLog">
+      <Column Name="Log_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Log_Type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="User_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Log_Description" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="Log_Page" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Log_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Calendar_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSetEmail" Member="tblSetEmails">
+    <Type Name="tblSetEmail">
+      <Column Name="SE_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IP" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Mask" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="GW" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="DNS1" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="DNS2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ProxyIP" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ProxyPort" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProxyUser" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ProxyPassword" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SMTPServerIP" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="SMTPServerPort" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SMTPServerUser" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SMTPServerPassword" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AskQuestionRecipient" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="RptConsultantRecipient" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ParentServerAddress" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ActivationDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblNews" Member="t360_tblNews">
+    <Type Name="t360_tblNew">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="News_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="News_Information" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="News_Announcer" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="News_StartDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="News_EndDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="News_ToStudent" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="News_ToTeacher" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="News_ToTeacherNoRoom" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="News_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="t360_tblNew_t360_tblNewsRoom" Member="t360_tblNewsRooms" ThisKey="News_Id" OtherKey="News_Id" Type="t360_tblNewsRoom" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblSchoolClass" Member="t360_tblSchoolClasses">
+    <Type Name="t360_tblSchoolClass">
+      <Column Name="Sc_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Class_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="t360_tblClass_t360_tblSchoolClass" Member="t360_tblClass" ThisKey="Class_Name" OtherKey="Class_Name" Type="t360_tblClass" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblModuleDetailCompletion" Member="tblModuleDetailCompletions">
+    <Type Name="tblModuleDetailCompletion">
+      <Column Name="MDC_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ModuleDetail_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="MA_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Student_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Quiz_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Module_Status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="TimeExitedByUser" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="DateChecked" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSyncLog" Member="tblSyncLogs">
+    <Type Name="tblSyncLog">
+      <Column Name="LogId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LogType" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="File_Id" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="SourceFrom_ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastSync" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblCalendar" Member="t360_tblCalendars">
+    <Type Name="t360_tblCalendar">
+      <Column Name="Calendar_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Calendar_Year" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Calendar_Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Calendar_FromDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Calendar_ToDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Calendar_Type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblLevel" Member="tblLevels">
+    <Type Name="tblLevel">
+      <Column Name="Level_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="true" />
+      <Column Name="Level_Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="[Level]" Member="Level" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Level_ShortName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUser" Member="tblUsers">
+    <Type Name="tblUser">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GUID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IsAllowMenuManageUserSchool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsAllowMenuManageUserAdmin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsAllowMenuAdminLog" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsAllowMenuContact" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsAllowMenuSetEmail" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUserSubjectClass" Member="tblUserSubjectClasses">
+    <Type Name="tblUserSubjectClass">
+      <Column Name="USCId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserIdOld" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Detailid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubjectId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClassId" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="GroupSubjectId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="LevelId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GUID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblTabletRepair" Member="t360_tblTabletRepairs">
+    <Type Name="t360_tblTabletRepair">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TON_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TLR_RepairDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TLR_ReturnDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TLR_Location" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="TLR_DocNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="t360_tblTabletOwner_t360_tblTabletRepair" Member="t360_tblTabletOwner" ThisKey="TON_Id" OtherKey="TON_Id" Type="t360_tblTabletOwner" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblUpLevelDetail" Member="t360_tblUpLevelDetails">
+    <Type Name="t360_tblUpLevelDetail">
+      <Column Name="ULD_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UpLevel_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Student_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Class_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Room_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Student_CurrentRoomId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsConfirm" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Student_Status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Student_CurrentNoInRoomOld" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Student_CurrentNoInRoom" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Student_Code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_PrefixName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_FirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_LastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_NickName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Student_FatherName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Student_FatherPhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_MotherName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Student_MotherPhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_Soi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Student_Street" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Student_Number" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SubDistrict_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="District_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Province_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sex" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblLog" Member="tblLogs">
+    <Type Name="tblLog">
+      <Column Name="Log_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LogType" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsManualAction" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UserIdOld" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LinkID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Calendar_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblTempTeacher" Member="t360_tblTempTeachers">
+    <Type Name="t360_tblTempTeacher">
+      <Column Name="Is_Check" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Record_Status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Validate_Status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Validate_StatusMessage" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Validate_Message" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="Teacher_Information" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Teacher_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Teacher_Code" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Teacher_PrefixName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Teacher_FirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Teacher_LastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Teacher_Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Teacher_Status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Teacher_CurrentClass" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Teacher_CurrentRoom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Teacher_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Teacher_Soi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Teacher_Street" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SubDistrict_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="District_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Province_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Teacher_IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTabletLab" Member="tblTabletLabs">
+    <Type Name="tblTabletLab">
+      <Column Name="TabletLab_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TabletLab_Name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tblTabletLab_tblTabletLabDesk" Member="tblTabletLabDesks" ThisKey="TabletLab_Id" OtherKey="TabletLab_Id" Type="tblTabletLabDesk" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTabletLabDesk" Member="tblTabletLabDesks">
+    <Type Name="tblTabletLabDesk">
+      <Column Name="TLD_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TabletLab_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Tablet_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DeskName" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Player_Type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tblTabletLab_tblTabletLabDesk" Member="tblTabletLab" ThisKey="TabletLab_Id" OtherKey="TabletLab_Id" Type="tblTabletLab" IsForeignKey="true" />
+      <Association Name="t360_tblTablet_tblTabletLabDesk" Member="t360_tblTablet" ThisKey="Tablet_Id" OtherKey="Tablet_Id" Type="t360_tblTablet" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblUpLevel" Member="t360_tblUpLevels">
+    <Type Name="t360_tblUpLevel">
+      <Column Name="UpLevel_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Rundate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpLevel_Type" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ScheduleDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Calendar_Year" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Calendar_Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="t360_tblNewsDetailCompletions">
+    <Type Name="t360_tblNewsDetailCompletion">
+      <Column Name="NDC_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NR_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolCode" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="User_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="StudentIsSeen" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TeacherIsSeen" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ParentIsSeen" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Lastupdate" Type="System.DateTime" DbType="DateTime" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="t360_tblNewsRoom_t360_tblNewsDetailCompletion" Member="t360_tblNewsRoom" ThisKey="NR_Id" OtherKey="NR_Id" Type="t360_tblNewsRoom" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblTabletStatusDetail" Member="t360_tblTabletStatusDetails">
+    <Type Name="t360_tblTabletStatusDetail">
+      <Column Name="TSD_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Tablet_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TSD_TabletType" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="TSD_Status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="TSD_SendToFixorLostDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TSD_FollowUp" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="TSD_FolliowUpDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TSD_SendToFixorLostReportAt" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="TSD_SendToFixorLostReportDocNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TSD_SendToFixTel" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TSD_Remark" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="t360_tblTablet_t360_tblTabletStatusDetail" Member="t360_tblTablet" ThisKey="Tablet_Id" OtherKey="Tablet_Id" Type="t360_tblTablet" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblTablet" Member="t360_tblTablets">
+    <Type Name="t360_tblTablet">
+      <Column Name="Tablet_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Tablet_SerialNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Tablet_IsOwner" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Tablet_Status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Tablet_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Tablet_TabletName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Tablet_LastUpdate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AssetNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="t360_tblTablet_t360_tblTabletOwner" Member="t360_tblTabletOwners" ThisKey="Tablet_Id" OtherKey="Tablet_Id" Type="t360_tblTabletOwner" />
+      <Association Name="t360_tblTablet_tblTabletLabDesk" Member="tblTabletLabDesks" ThisKey="Tablet_Id" OtherKey="Tablet_Id" Type="tblTabletLabDesk" />
+      <Association Name="t360_tblTablet_t360_tblTabletStatusDetail" Member="t360_tblTabletStatusDetails" ThisKey="Tablet_Id" OtherKey="Tablet_Id" Type="t360_tblTabletStatusDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t360_tblNetworkWarnReason" Member="t360_tblNetworkWarnReasons">
+    <Type Name="t360_tblNetworkWarnReason">
+      <Column Name="NWId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Network_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="User_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="User_Name" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="WarnReason" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CloseWarnDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="t360_tblNetwork_t360_tblNetworkWarnReason" Member="t360_tblNetwork" ThisKey="Network_Id" OtherKey="Network_Id" Type="t360_tblNetwork" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSchoolSubjectClass" Member="tblSchoolSubjectClasses">
+    <Type Name="tblSchoolSubjectClass">
+      <Column Name="SSCId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GroupSubjectId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="LevelId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="false" />
+      <Association Name="tblGroupSubject_tblSchoolSubjectClass" Member="tblGroupSubject" ThisKey="GroupSubjectId" OtherKey="GroupSubject_Id" Type="tblGroupSubject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.spTabletStatus" Method="spTabletStatus">
+    <Parameter Name="School_Code" Parameter="school_Code" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="spTabletStatusResult1">
+      <Column Name="School_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Tablet_Status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Count_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Count_ALL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Percent_Status" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
