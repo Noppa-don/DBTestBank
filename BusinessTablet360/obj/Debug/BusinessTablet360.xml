@@ -1,0 +1,658 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+BusinessTablet360
+</name>
+</assembly>
+<members>
+<member name="T:BusinessTablet360.INetworkManager">
+ <summary>
+ Network
+ (PK Database) Network_Id 
+ (PK Real) School_Code, Network_IP, IsActive
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ISchoolManager.GetClassAll">
+ <summary>
+ ทุกชั้น
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ISchoolManager.GetClassInSchool(System.String)">
+ <summary>
+ ชั้นที่มีอยู่ในโรงเรียน
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ISchoolManager.GetClassHaveRoom(System.String)">
+ <summary>
+ ชั้นที่มีอยู่ดูจากข้อมูลนักเรียน
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ISchoolManager.GetClassInStudent(System.String)">
+ <summary>
+ ชั้นที่มีอยู่ เฉพาะที่มีห้องเรียนแล้ว
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ISchoolManager.GetClassInStudentBySchoolCodeAndCurrentId(System.String,System.Guid)">
+ <summary>
+ ชั้นที่มีอยู่ดูจากข้อมูลนักเรียน
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ISchoolManager.GetClassOfStudent(System.String)">
+ <summary>
+ เอาเฉพาะชั้นที่มีนักเรียนอยู่ในโรงเรียน
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ISchoolManager.GetClassOfStudentNotOver">
+ <summary>
+ เอาชั้นเรียนที่ต่ำกว่าชั้นสุดท้ายทุกชั้น และ มีนักเรียนอยู่ด้วย ยกตัวอย่างถ้าชั้นสุดท้ายคือ ม.3 ก็จะมีได้ชั้นตั้งแต่ ม.2 ลงไป
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ISchoolManager.GetClassOfStudentFinish">
+ <summary>
+ เอาเฉพาะชั้นที่มีนักเรียนอยู่และอยู่ในชั้นที่เป็นชั้นจบของโรงเรียนเช่น ป.6, ม.3, ม.6
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ISchoolManager.GetClassOverMe(BusinessTablet360.t360_tblClass)">
+ <summary>
+ ฟั่งชั่นหาชั้นที่อยู่เหนือกว่าชั้นที่ส่งเข้ามา ยกตัวอย่าง ป.6 ก็จะได้ ม.1
+ </summary>
+ <param name="Item"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ISchoolManager.GetClassByClassName(BusinessTablet360.t360_tblClass)">
+ <summary>
+ หาชั้นโดยหาตามเงื่อนไขชื่อชั้น ไม่ได้สนใจว่า IsActive หรือเปล่า
+ </summary>
+ <param name="Item"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ISchoolManager.InsertRoom(BusinessTablet360.t360_tblRoom)">
+ <summary>
+ ค้นหา Room ตามเงื่อนไขที่ส่ง
+ </summary>
+ <param name="Item"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ISchoolManager.GetCalendarForScheduler``1(BusinessTablet360.CalendarDTO)">
+ <summary>
+ ฟังชั่นคืนค่าปฏิทินไว้ใช้กับหน้าปฏิทินเพระจะคิวรี่เอาวันที่คาบเกี่ยวระหว่างเดือนมาด้วย
+ </summary>
+ <typeparam name="T"></typeparam>
+ <param name="Item"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ISchoolManager.GetCalendarMaxYear">
+ <summary>
+ ฟังชั่นคืนค่าปีปฏิทินของปีล่าสุด
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ISchoolManager.GetCalendarAllYear">
+ <summary>
+ ฟังชั่นคืนค่าปีของปฏิทินที่ถูกบันทึกทังหมด
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ISchoolManager.CopyCalendar(System.String,System.String)">
+ <summary>
+ ฟั่งชั่น copy calendar ข้ามปีโดยส่งปีที่ต้องการ copy มา
+ </summary>
+ <param name="FromYear"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.SchoolManager.DeleteSchool(BusinessTablet360.t360_tblSchool)">
+ <summary>
+ ไม่หน้าจะใช้
+ </summary>
+ <param name="Item"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:BusinessTablet360.ITabletManager">
+ <summary>
+ TabletOwner
+ (PK Database) School_Code, TON_Id 
+ (PK Real) School_Code, Tablet_Id, Owner_Id, OwnerType
+ 
+ TabletLost
+ (PK Database) School_Code, TON_Id, TLT_LostDate
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.TabletManager.CheckLabNameByTabletSerialNumber(System.String,System.String)">
+ <summary>
+ ถ้าเจอในห้องเดียวกันที่ส่งมาคืนค่าช่องว่าง ถ้าเจอห้องอื่นคืนชื่อห้องที่เจอ
+ </summary>
+ <param name="SerialNumber"></param>
+ <param name="LabName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:BusinessTablet360.IUserManager">
+ <summary>
+ User
+ (PK Database) School_Code, User_Id 
+ (PK Real) School_Code, User_Id, UserName
+ 
+ MenuItem
+ (PK Database) MenuItem_Code 
+ 
+ UserMenuItem
+ (PK Database) School_Code, User_Id, MenuItem_Code
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.IUserManager.CheckPassword(System.String,System.String@,System.String)">
+ <summary>
+ เช็คความถูกต้องของ User Password
+ </summary>
+ <param name="User_Name"></param>
+ <param name="User_Password"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:BusinessTablet360.SyncManager._IsPass">
+ <summary>
+ property ตัวนี้ไว้ใช้ในอนาคต การ sync รอบนี้มี schoolcode ตัวไหนทำงานผ่านหรือไม่ผ่านบ้าง(ถ้าไม่ผ่านจะ roolback ทั้งโรงเรียน)
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.Service.ClsHomework.GetMaxonetActivity(System.String,System.String)">
+ <summary>
+ function ในการหากิจกรรมรวมทั้งหมดของนักเรียน โหมด Maxonet
+ </summary>
+ <param name="StudentId"></param>
+ <param name="CalendarId"></param>
+ <returns></returns>
+</member>
+<member name="M:BusinessTablet360.Service.ClsStudent.GetClassNameHaveQuizOrHomework(System.Data.SqlClient.SqlConnection)">
+ <summary>
+ Get ชื่อห้องที่มี quiz หรือ hw ที่มีอยู่ในเทอมที่เลือกและเป็นของ teacher นั้น
+ </summary>
+ <param name="InputConn">ตัวแปร connetion</param>
+ <returns>dt ชื่อห้อง / ชั้น</returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.Service.ClsStudent.GetClassNameInSchool">
+ <summary>
+ Get ชื่อห้อง ทั้งหมด IN School
+ </summary>
+ <returns>dt ห้อง/ชั้น</returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.Service.ClsStudent.getStudentFavoriteCode(System.String,System.String,System.Data.SqlClient.SqlConnection@)">
+ <summary>
+ function ในการหา student favorite code อะไร
+ </summary>
+ <param name="TeacherId"></param>
+ <param name="StudentId"></param>
+ <param name="InputConn"></param>
+ <returns>code favorite is number</returns>
+ 
+</member>
+<member name="M:BusinessTablet360.Service.ClsSystem.IsCalendarCurrent(System.String)">
+ <summary>
+ เช็คว่า calendar ที่ได้ใช่เทอมปัจจุบันเปล่า
+ </summary>
+ <param name="SchoolId"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.Service.ClsSystem.InsertNewUserAfterDeleteData(BusinessTablet360.ClassConnectSql@)">
+ <summary>
+ ทำการ Insert User Default ที่มาจาก โรงงาน โดยให้ใช้ ชั้น , วิชา ตามที่ config มา
+ </summary>
+ <param name="ObjConn">ตัวแปร Connection String</param>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.Service.ClsSystem.SpliteObjectUserSubjectClass(System.String)">
+ <summary>
+ ทำการนำค่า config มา split ค่าแล้วทำการยัดใส่ Array เพื่อคืนค่ากลับไปให้ Insert ข้อมูล
+ </summary>
+ <param name="StrConfig">Config</param>
+ <returns>ArrayList:ที่มีชั้น/วิชา ที่สามารถใช้ได้</returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.Service.ClsSystem.GetGroupSubjectIdBySubjectName(System.String,BusinessTablet360.ClassConnectSql@)">
+ <summary>
+ นำชื่อวิชาที่ได้จากค่า config มาหาว่า GroupsubjectId,SubjectNumber
+ </summary>
+ <param name="SubjectName">ชื่อวิชาที่ได้จากค่า config</param>
+ <param name="ObjDB">ตัวแปร connection</param>
+ <returns>ArrayList:ที่มี GroupSubjectId,SubjectNumber</returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.Service.ClsSystem.GetLevelIdByLevelName(System.String,BusinessTablet360.ClassConnectSql@)">
+ <summary>
+ ทำการนำค่า ชื่อชั้นที่ได้มาจาก config เข้ามาหา LevelId,LevelNumber
+ </summary>
+ <param name="LevelName">ชื่อชั้นจาก config</param>
+ <param name="ObjDB">ตัวแปร connection</param>
+ <returns>ArrayList:LevelId,LevelNumber</returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.Service.ClsSystem.GetConfigEnableUserSubjectClass(System.String)">
+ <summary>
+ ทำการ split ค่าเพื่อดึงค่า Config ชั้น,วิชา ที่ให้ รร. นี้ใช้ได้
+ </summary>
+ <param name="InputKNConfig">ค่า config</param>
+ <returns>String:สตริงที่บอกว่าสามารถใช้ ชั้น,วิชาอะไรได้บ้าง</returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.Service.ClsSystem.CheckIsCallFromIP(System.String)">
+ <summary>
+ function เช็คว่า url ที่เรียกมาจาก ip ที่ระบุหรือเปล่า
+ </summary>
+ <param name="Ip"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BusinessTablet360.ClsKNSession.RunMode">
+ <summary>
+ global property ช่วยให้ code ในหน้าหลักๆ สั้นลง อ่านเข้าใจง่ายขึ้น
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:BusinessTablet360.ClsKNSession.IsMaxONet">
+ <summary>
+ global property อ่านค่าจาก runmode มาเป็น boolean ให้เรียบร้อย / ช่วยให้ code ในหน้าหลักๆ สั้นลง อ่านเข้าใจง่ายขึ้น
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:BusinessTablet360.ClsKNSession.NeedSignalR">
+ <summary>
+ กรณี maxonet ไม่ต้องใช้ signalR, (น่าจะ ต้อง รวมกรณี standalone ด้วย, รอถาม เดก่อน)
+ (global property อ่านค่าจาก runmode มาเป็น boolean ให้เรียบร้อย / ช่วยให้ code ในหน้าหลักๆ สั้นลง อ่านเข้าใจง่ายขึ้น)
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:BusinessTablet360.ClsKNSession.DefaultSchoolCode">
+ <summary>
+ get value schoolcode from langset.bin
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:BusinessTablet360.ClassConnectSql.#ctor(System.Boolean,System.String)">
+ <summary>
+ ถ้าส่ง false มา , หรือ ไม่ได้ส่งมาเลย แปลว่าเป็น webform ก็จะเรียก หา connectionstring แบบนึง
+ </summary>
+ <param name="IsWinFormApp"></param>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ClsConnect.ExecuteLineFromFile(System.String)">
+ <summary>
+ อ่านไฟล์ทีละบรรทัด พักไว้ให้ครบ 100 บรรทัด แล้วส่งไป execute ทีละก้อน 100 บรรทัด 
+ ซึ่งไฟล์จะต้องเป็นบรรทัดละ 1 คำสั่ง, ปิดท้ายบรรทัดด้วย ; เสมอทุกบรรทัด
+ </summary>
+ <param name="filePath">ต้องเป็น full path to File name เลย</param>
+ <returns>จำนวนวินาทีที่ใช้ไป</returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ClsConnect.CleanString(System.String)">
+ <summary>
+ ใช้สำหรับการแทนที่ค่า (replace) ตัวอักษร ก่อนจะส่งลงไป save, execute, etc กับ DB Server เช่น SQLServer จะส่ง ' ไป save ไม่ได้ จะทำให้ error ทันที
+ </summary>
+ <param name="inString"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ClsLanguage.SwitchLang(System.String,BusinessTablet360.EnLangType)">
+ <summary>
+ ทำการสร้างไฟล์ langset.bin โดยมี pattern config + ' ' + fingerprint + ' ' + key + ' ' + connectionstring
+ </summary>
+ <param name="newLang">ข้อความที่จะเอาไปเขียน File langset.bin</param>
+ <param name="TypeApp">QuickTest,T360</param>
+ <returns>Boolean:True=สำเร็จ,False=ไม่สำเร็จ</returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ClsLanguage.GenerateMachineIdentification(BusinessTablet360.EnLangType)">
+ <summary>
+ หารหัสเครื่องโดยใช้ Hardware CPU,Mainboard
+ หรือ กรณี รันใน Azure จะทำการหา instance_Id มาใช้งานแทน
+ </summary>
+ <param name="TypeApp">โปรแกรมที่จะทำการ Activate quicktest,t360</param>
+ <returns>รหัสเครื่อง</returns>
+ <remarks></remarks>
+</member>
+<member name="T:BusinessTablet360.GenerateXml">
+ <summary>
+ คลาสช่วย Generate XML จาก DataTable
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateXml.#ctor(System.String,BusinessTablet360.EnVersionType,System.String,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="Version">ระบุ Version ที่จะทำการสร้าง</param>
+ <param name="VersionType"></param>
+ <param name="ClientId"></param>
+ <param name="Description"></param>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateXml.CreateRoot">
+ <summary>
+ เปิดหัว xml
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateXml.AddDataTable(System.Data.DataTable,System.String,System.Boolean)">
+ <summary>
+ เพิ่ม DataTable ที่จะทำการสร้าง XML ในกรณีที่ Dt ที่ส่งมามีชื่อ DataTable แล้วก็ไม่จำเป็นที่จะต้องส่ง TableName มาก็ได้
+ </summary>
+ <param name="Dt"></param>
+ <param name="TableName"></param>
+ <param name="MustCreate">บังคับสร้าง XML ต่อให้ไม่มีข้อมูลใน DataTable เผื่อจะนำโครงสร้างมาใช้อย่างเดียว</param>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateXml.CreateXml(System.String)">
+ <summary>
+ สร้าง XML File
+ </summary>
+ <param name="Path">ที่อยู่ที่เก็บไฟล์ระบุชื่อเต็ม</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateXml.CreateXmlZip(System.String)">
+ <summary>
+ สร้าง XML File ที่ถูก Zip ใช้ SharpZipLib
+ </summary>
+ <param name="Path">ที่อยู่ที่เก็บไฟล์ระบุชื่อเต็ม</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateXml.CreateXmlZip(System.Data.DataSet)">
+ <summary>
+ แบบคืนเป็น Byte() ใช้ gzip
+ </summary>
+ <param name="Source"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateXml.CreateXmlZip(System.Data.DataSet,System.String)">
+ <summary>
+ แบบเขียนใส่ไฟล์ ใช้ gzip
+ </summary>
+ <param name="Source"></param>
+ <param name="Path"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateXml.CreateZip(System.Data.DataSet,System.String)">
+ <summary>
+ สร้างไฟล์ zip ใช้ SharpZipLib
+ </summary>
+ <param name="Source"></param>
+ <param name="Path"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateXml.CreateXmlString">
+ <summary>
+ สร้าง XML ในรูปแบบ String
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:BusinessTablet360.GenerateDataSet">
+ <summary>
+ คลาสช่วย Generate DataTable จาก XML
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateDataSet.#ctor(System.String,BusinessTablet360.EnumLoad)">
+ <summary>
+ 
+ </summary>
+ <param name="XmlSource">แหล่งที่เก็บ XML ถ้าเป็น File ให้ระบุชื่อที่อยู่เต็ม</param>
+ <param name="XmlType">รูปแบบ XML ที่ส่งเข้ามาเป็น File หรือ เป็น String</param>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateDataSet.#ctor(System.Xml.Linq.XDocument)">
+ <summary>
+ รับรูปแบบ XDocument
+ </summary>
+ <param name="DocSouce"></param>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateDataSet.GetTablesName">
+ <summary>
+ คืนค่า ชื่อ Table ทั้งหมดที่อยู่ใน XML
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateDataSet.GetVersion">
+ <summary>
+ คืนค่าเวอร์ชั่นของ XML
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateDataSet.GetVersionType">
+ <summary>
+ คืนค่าประเภทข้อมูล
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateDataSet.GetClientId">
+ <summary>
+ คืนค่ารหัสเครื่องลูกข่าย
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateDataSet.GetDescription">
+ <summary>
+ คืนค่ารายละเอียด
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateDataSet.GetSendTime">
+ <summary>
+ คืนค่าวันเวลาในของไฟล์ XML ที่ส่งมา
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateDataSet.ToXDocument">
+ <summary>
+ คืนค่า XML กลับเป็น Type XDocument
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateDataSet.CreateDataTable(System.String)">
+ <summary>
+ สร้าง DataTable ที่อยู่ใน XML ตามชื่อ TableName ที่ส่งมา
+ </summary>
+ <param name="TableName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateDataSet.CreateXmlString">
+ <summary>
+ คืนค่า XML ในรูปแบบ String
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.GenerateDataSet.GetDataSet">
+ <summary>
+ คืนค่า Dataset
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:BusinessTablet360.IPage">
+ <summary>
+ ฟังชั่นที่ควรมีในแต่ละ Page
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.IPage.DisplayUI(BusinessTablet360.PagePart)">
+ <summary>
+ ใช้กำหนดการแสดงของ control ต่างๆของหน้านั้นๆ
+ </summary>
+ <param name="PageDetail">
+ ใช้ PageDetail.Index เมื่อใน page นั้นมีหลายส่วนเช่นมี แท็บอยู่ในหน้านั้น Index ถ้าไม่กำหนด Default=0
+ ใช้ PageDetail.Status เช็คสถานะของหน้านั้นเผื่อกำหนดรูปแบบในหน้าจอ
+ </param>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.IPage.ValidatePage(BusinessTablet360.PagePart,System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ ใช้เช็คความถูกต้องของหน้านั้นๆ
+ 1.เช็คสิ่งที่ต้องใส่
+ 2.เช็คเรื่องซ้ำ
+ </summary>
+ <param name="PageDetail">
+ ใช้ PageDetail.Index เมื่อใน page นั้นมีหลายส่วนเช่นมี แท็บอยู่ในหน้านั้น Index ถ้าไม่กำหนด Default=0
+ ใช้ PageDetail.Status เช็คสถานะของหน้านั้นเผื่อกำหนดรูปแบบในหน้าจอ
+ </param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.IPage.BindGrid(BusinessTablet360.PageGridDetail)">
+ <summary>
+ ใช้เขียนการ Bind Grid ของหน้านั้นๆ
+ </summary>
+ <param name="GridDetail"></param>
+ <remarks></remarks>
+</member>
+<member name="P:BusinessTablet360.IPage.SelectID">
+ <summary>
+ ไว้เก็บ ID ของ Grid ที่เราเลือกของหน้านั้นๆ
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.KNConfigData.KnEncryption(System.String)">
+ <summary>
+ ฟังก์ชั่นนี้ ต้อง ลบ ก่อนจะเอาไปขายจริงจัง, และต้องย้ายไปอยู่ในหน้า KNSuperAdmin ด้วย 
+ </summary>
+ <param name="stringToEnc"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:BusinessTablet360.MenuManager">
+ <summary>
+ คลาสช่วยจัดการเรื่อง Menu ของ Web แต่ต้องใส่ข้อมูลเมนูเข้ามาที่คลาสก่อน
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.MenuManager.AddSource(System.String,System.String,System.String,System.String)">
+ <summary>
+ ใส่ข้อมูล Menu
+ </summary>
+ <param name="TextDisplay">ข้อความที่จะแสดงบนเมนู</param>
+ <param name="PageUrl">ตำแหน่ง page</param>
+ <param name="CodeId">รหัสเมนู</param>
+ <param name="ParentId">รหัสแม่เนนู</param>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.MenuManager.CreateMenu(System.Web.UI.WebControls.Menu)">
+ <summary>
+ สร้าง Menu
+ </summary>
+ <param name="MainMenu">ชื่อ Menu ฝั่ง Web</param>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ServiceSystem.CalEndDateForSync(System.DateTime,System.Int32)">
+ <summary>
+ คำนวนให้เป็นวันเดียวกับที่ส่งมา แต่จะได้เป็นเวลา 23 นาฬิการ 59 นาที 59 วินาที
+ </summary>
+ <param name="StartDate"></param>
+ <param name="DiffDate"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:BusinessTablet360.ICalendarRepo">
+ <summary>
+ (PK Database) Calendar_Id 
+ (PK Real) School_Code, Calendar_Year, Calendar_Name
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:BusinessTablet360.IClassRepo">
+ <summary>
+ (PK Database) Class_Name
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:BusinessTablet360.IRoomRepo">
+ <summary>
+ (PK Database) Room_Id 
+ (PK Real) School_Code, Class_Name, Room_Name
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.IStudentRepo.GetStudentByCrit``1(BusinessTablet360.DataClassesTablet360DataContext,BusinessTablet360.StudentDTO,System.Int32,System.Int32)">
+ (PK Database) Student_Id 
+ (PK Real) School_Code, Student_Code , IsActive
+</member>
+<member name="T:BusinessTablet360.ISubjectRepo">
+ <summary>
+ (PK Database) Subject_Id 
+ (PK Real) School_Code, Subject_Code, IsActive
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:BusinessTablet360.ISubjectTypeRepo">
+ <summary>
+ (PK Database) ST_Id 
+ (PK Real) ST_Name, IsActive 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:BusinessTablet360.ITeacherRepo.GetTeacherByCrit``1(BusinessTablet360.DataClassesTablet360DataContext,BusinessTablet360.TeacherDTO,System.Int32,System.Int32)">
+ (PK Database) Teacher_Id 
+ (PK Real) School_Code, Teacher_Code, IsActive
+</member>
+<member name="T:BusinessTablet360.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:BusinessTablet360.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:BusinessTablet360.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+</members>
+</doc>
